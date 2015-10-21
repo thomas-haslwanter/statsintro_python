@@ -1,5 +1,8 @@
-''' Solution for Exercise "Data Display"
-'''
+''' Solution for Exercise "Data Display" 
+Read in weight-data recorded from newborns, and analyze the
+data based on the gender of the baby.'''
+
+# author: Thomas Haslwanter, date: Sept-2015
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -17,7 +20,7 @@ def getData():
     
     # Read and label the data
     os.chdir(dataDir)
-    data = pd.read_csv(inFile, sep='[ ]*', header=None,
+    data = pd.read_csv(inFile, sep='[ ]*', header=None, engine='python',
                        names= ['TOB', 'sex', 'Weight', 'Minutes'])
     
     # Eliminate "Minutes", since this is redundant
@@ -30,6 +33,7 @@ def showData(df):
     
     # Show the data: first all of them ....
     plt.plot(df.Weight, 'o')
+    
     plt.title('All data')
     plt.xlabel('Subject-Nr')
     plt.ylabel('Weight [g]')
@@ -53,6 +57,8 @@ def showData(df):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     
+    # "enumerate" provides a counter, and variables can be assigned names in one step if
+    # the "for"-loop uses a tuple as input for each loop:
     for (ii, (sex, group)) in enumerate(grouped):
         ax.plot(group['Weight'], marker = symbols[ii], linewidth=0, color = colors[ii], label=sex)
         

@@ -1,5 +1,4 @@
-'''Get data from MS-Excel files, which are stored zipped on the Web.
-'''
+'''Get data from MS-Excel files, which are stored zipped on the WWW. '''
 
 # author: Thomas Haslwanter, date: Jan-2014
 

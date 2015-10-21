@@ -1,5 +1,6 @@
-''' Solution to Exercise "Data Input"
-'''
+''' Solution to Exercise "Data Input" '''
+
+# author: Thomas Haslwanter, date: Sept-2015
 
 import numpy as np
 import matplotlib.pyplot as plt

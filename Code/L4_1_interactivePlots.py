@@ -19,7 +19,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # additional packages
-import tkinter as tk
+try:
+    import tkinter as tk
+except ImportError:     #different capitalization in Python 2.x
+    import Tkinter as tk
 
 t = np.arange(0,10,0.1)
 c = np.cos(t)
@@ -35,6 +38,7 @@ def normalPlot():
     
 def positionOnScreen():
     '''Position two plots on your screen. This uses the Tickle-backend, which I think is the default on all platforms.'''
+    
     # Get the screen size
     root = tk.Tk()
     (screen_w, screen_h) = (root.winfo_screenwidth(), root.winfo_screenheight())

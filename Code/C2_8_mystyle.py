@@ -1,7 +1,6 @@
 '''Common formatting and print commands, for the book "Introduction to Statistics with Python".
 These commands ensure a common layout, and reduce the code required to generate plots
 in the other modules.
-
 '''
 
 # author: Thomas Haslwanter, date: June-2015
@@ -11,16 +10,16 @@ import matplotlib.pyplot as plt
 import os
 
 # additional packages
-import matplotlib as mlb
+import matplotlib as mpl
 
 def despine(axis='right'):
-    '''Despine the plot'''
+    '''Despine a plot'''
     
     ax = plt.gca()
     ax.spines['right'].set_color('none')
     ax.yaxis.set_ticks_position('left')
 
-def set(fs=18):
+def set(fs=24):
     '''Set my favorite defaulte fonts'''
     
     font = {'family' : 'sans-serif',
@@ -42,12 +41,12 @@ def set(fs=18):
     
     figure = {'autolayout': True}
     
-    mlb.rc('font', **font)
-    mlb.rc('xtick', **xtick)
-    mlb.rc('ytick', **ytick)
-    mlb.rc('axes', **axes)
-    mlb.rc('legend', **legend)
-    mlb.rc( 'figure', **figure)
+    mpl.rc('font', **font)
+    mpl.rc('xtick', **xtick)
+    mpl.rc('ytick', **ytick)
+    mpl.rc('axes', **axes)
+    mpl.rc('legend', **legend)
+    mpl.rc( 'figure', **figure)
     
 def printout(outFile, xlabel = '', ylabel='', title='', outDir = '..\Images'):
     '''Save the current figure to a file, and then display it'''

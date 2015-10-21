@@ -1,7 +1,4 @@
-"""
-Plot showing the effekt of a Kernel-Density-Estimation (KDE).
-
-"""
+""" Plot showing the effekt of a Kernel-Density-Estimation (KDE). """
 
 # author: Thomas Haslwanter, date: May-2015
 
@@ -45,5 +42,6 @@ axs[1].plot(x,kde_large.evaluate(x),'--')
 axs[1].legend(['exact', h_str, '0.1', '1.0'])
 axs[1].set_ylim(0, 0.40)
 
+# Save and show
 C2_8_mystyle.printout_plain('kdePlot.png')
 plt.show()

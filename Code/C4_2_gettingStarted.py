@@ -17,10 +17,9 @@ This script covers the following points:
 For such a short program, the definition of a "main" function, and calling
 it by default when the module is imported by the main program, is a bit
 superfluous. But it shows good Python coding style.
-
 '''
 
-# author: Thomas Haslwanter, date: July-2015
+# author: Thomas Haslwanter, date: Sept-2015
 
 # In contrast to MATLAB, you explicitly have to load the modules that you need.
 import numpy as np
@@ -28,6 +27,7 @@ import matplotlib.pyplot as plt
 
 def main():
     '''Define the main function. '''
+    
     # Create a sine-wave
     t = np.arange(0,10,0.1)
     x = np.sin(t)
@@ -78,15 +78,20 @@ def main():
     plt.waitforbuttonpress()
     plt.close()
     print(('Fit line: intercept = {0:5.3f}, and slope = {1:5.3f}'.format(intercept, slope)))
-    #raw_input('Thanks for using programs by Thomas!')
 
     # If you want to know confidence intervals, best switch to "pandas"
     # Note that this is an advanced topic, and requires new data structures
     # such ad "DataFrames" and "ordinary-least-squares" or "ols-models".
     import pandas as pd
+    
+    # Put the data into a pandas DataFrame
     myDict = {'x':tHigh, 'y':xHigh}
     df = pd.DataFrame(myDict)
+    
+    # Fit the model
     model = pd.ols(y=df['y'], x=df['x'])
+    
+    # Print the results
     print(model)
     #raw_input('These are the summary results from Pandas - Hit any key to continue')
 

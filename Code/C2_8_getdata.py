@@ -1,9 +1,9 @@
 '''Get data for the Python programs for the book "Introduction to Statistics with Python".
-Most data are from the tables in the Altman book "Practical Statistics for Medical Research.
-I use these data quite often, so I have put those by default in a subdirectory
-"data_altman". This function reads them from there.
+Most data are from the tables in "Practical Statistics for Medical Research" by
+D. Altman.
 
-If the data are not found locally, they are retrieved from the WWW.
+This function reads in text data from a local directory. If the data are
+not found locally, they are retrieved from the WWW.
 '''
 
 #Author:  Thomas Haslwanter, June-2014
@@ -25,7 +25,9 @@ else:
     from urllib import urlopen
 
 def getData(inFile, subDir=r'..\Data'):
-    '''Data are taken from examples in D. Altman, "Practical Statistics for Medical Research" '''
+    '''Read in data from a comma-separated ASCII-file. If they are not
+    found locally retrieve them from the WWW.
+    '''
     
     dataDir = os.path.join(os.path.dirname(__file__), subDir)
     fullInFile = join(dataDir, inFile)
