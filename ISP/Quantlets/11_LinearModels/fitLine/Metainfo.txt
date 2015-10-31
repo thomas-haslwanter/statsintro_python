@@ -1,0 +1,65 @@
+# Name of QuantLet: ISP_fitLine.py
+
+# Published in:  An Introduction to Statistics with Python
+
+# Description: Linear regression fit
+
+    Parameters
+    ----------
+    x : ndarray
+        Input / Predictor    
+    y : ndarray
+        Input / Estimator    
+    alpha : float
+        Confidence limit [default=0.05]
+    newx : float or ndarray
+        Values for which the fit and the prediction limits are calculated (optional)
+    plotFlag: int (optional)
+        1 = plot, 0 = no_plot [default]
+        
+    Returns
+    -------
+    a : float
+        Intercept
+    b : float
+        Slope
+    ci : ndarray
+        Lower and upper confidence interval for the slope
+    info : dictionary, containing return information on
+        - residuals
+        - var_res
+        - sd_res
+        - alpha
+        - tval
+        - df
+    newy : list(ndarray)
+        Predictions for (newx, newx-ciPrediction, newx+ciPrediction)
+
+    Examples
+    --------
+    >>> import numpy as np
+    >>> from fitLine import fitLine
+    >>> x = np.r_[0:10:11j]
+    >>> y = x**2
+    >>> (a,b,(ci_a, ci_b),_)=fitLine(x,y)    
+
+    Notes
+    -----
+    Example data and formulas are taken from
+    D. Altman, "Practical Statistics for Medicine"
+
+# Keywords: 
+
+# See also:  
+
+# Author: Thomas Haslwanter 
+
+# Submitted: October 31, 2015 
+
+# Datafile:  
+
+# Input:  
+
+# Output: regression_wLegend.png
+
+# Example:  

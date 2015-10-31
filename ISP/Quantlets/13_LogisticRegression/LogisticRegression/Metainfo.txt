@@ -1,0 +1,27 @@
+# Name of QuantLet: ISP_logisticRegression.py
+
+# Published in:  An Introduction to Statistics with Python
+
+# Description: Logistic Regression
+    A logistic regression is an example of a "Generalized Linear Model (GLM)".
+
+    The input values are the recorded O-ring data from the space shuttle launches before 1986,
+    and the fit indicates the likelihood of failure for an O-ring.
+
+    Taken from http://www.brightstat.com/index.php?option=com_content&task=view&id=41&Itemid=1&limit=1&limitstart=2
+
+# Keywords: plot, fitting
+
+# See also:  
+
+# Author: Thomas Haslwanter 
+
+# Submitted: October 31, 2015 
+
+# Datafile:  
+
+# Input:  
+
+# Output: ChallengerPlain.png
+
+# Example:  
