@@ -13,7 +13,10 @@ enough information so that you know what you are doing (in case you don't
 know that already), and where to go next if you are looking for a more
 elaborate statistical analysis of your data.
 
-The *Quantlets* (here Python scripts) provide examples of 
+![Logo](Logo.jpg)
+
+The Python sample scripts can be found in the folder *Code-Quantlets*,
+and provide examples of:
 
 - How to visualize statistical data sets.
 - How to work with statistical distributions.
@@ -29,7 +32,6 @@ The *Quantlets* (here Python scripts) provide examples of
 Additional Python scripts can be found in the following folders, sorted by
 Chapter/Subchapter:
 
-Figures ... Python code for the generation of figures.
-Listings ... code listings that are used in the book.
-Solutions ... Solutions to exercises presented in the book.
-![Logo](Logo.jpg)
+- Figures ... Python code for the generation of figures.
+- Listings ... code listings that are used in the book.
+- Solutions ... Solutions to exercises presented in the book.

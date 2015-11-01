@@ -1,0 +1,51 @@
+NAME: The Weight of Euro Coins 
+TYPE: Fitting distributions to data
+SIZE: 2000 observations, 3 variables 
+
+DESCRIPTIVE ABSTRACT:
+In many statistical models the normal distribution of the response is an essential assumption.
+This paper uses a dataset of 2000 euro coins with information (up to the milligram) about
+the weight of each coin. As the physical coin production process is subject to a multitude
+of (very small) variability sources, it seems reasonable to expect that the empirical
+distribution of the weight of euro coins does agree with the normal distribution. Goodness
+of fit tests however show that this is not the case. Moreover, some outliers complicate
+the analysis. Mixtures of normal distributions and skew normal distributions are fitted
+to the data, revealing that the normality assumption might not hold for those weights.
+ 
+SOURCE: 
+The data were collected by Herman Callaert at Hasselt University in Belgium. The 
+euro coins were "borrowed" at a local bank. Two assistants, Sofie Bogaerts and Saskia
+Litiere weighted the coins one by one, in laboratory conditions on a weighing scale
+of the type Sartorius BP 310s.
+
+VARIABLE DESCRIPTIONS:
+Columns
+1 - 8  ID              this is the case number
+9 - 16 weight          weight of the euro coin in grams
+17     batch           number of the package
+Values are aligned and tab-delimited.
+There are no missing values
+
+STORY BEHIND THE DATA:
+Curriculum reform in Flanders (the Flemish part of Belgium) resulted in a significant
+increase of statistical topics in grades 8-12. A group of university professors and high school
+teachers took this opportunity for reshaping statistics education towards "more concepts
+and more real data". In Belgium, as in many countries in Europe, the introduction of
+the Euro has had a major impact on the life of people. That's why it was decided to
+study a characteristic (the weight) of the "Belgian 1 Euro" coin, and use this dataset
+in schools.
+
+PEDAGOGICAL NOTES:
+This dataset may be explored by students at several levels.  In high school, graphical
+methods can be used, perhaps in conjunction with a simple goodness of fit test. Also
+the story behind the data gathering process, and the lesson to be learned here, is crucial
+in any real life statistical experiment. A first year college course could delve
+a bit deeper, while a full analysis (introducing mixtures and the skew normal) can be 
+revealing in a second course in statistics.
+
+SUBMITTED BY:
+Ziv Shkedy, Marc Aerts, Herman Callaert
+Hasselt University
+Center for Statistics
+Agoralaan, 3590 Diepenbeek, Belgium
+marc.aerts@uhasselt.be 

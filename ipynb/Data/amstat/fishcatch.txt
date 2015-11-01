@@ -1,0 +1,109 @@
+NAME:  fishcatch
+TYPE:  Sample 
+SIZE:  159 observations, 8 variables
+
+DESCRIPTIVE ABSTRACT:
+
+159 fishes of 7 species are caught and measured. Altogether there are
+8 variables.  All the fishes are caught from the same lake
+(Laengelmavesi) near Tampere in Finland.
+
+SOURCES:
+Brofeldt, Pekka: Bidrag till kaennedom on fiskbestondet i vaera
+        sjoear. Laengelmaevesi. T.H.Jaervi: Finlands Fiskeriet  Band 4,
+        Meddelanden utgivna av fiskerifoereningen i Finland.
+        Helsingfors 1917
+
+VARIABLE DESCRIPTIONS:
+
+1  Obs       Observation number ranges from 1 to 159
+2  Species   (Numeric)
+        Code Finnish  Swedish    English        Latin      
+         1   Lahna    Braxen     Bream          Abramis brama
+         2   Siika    Iiden      Whitewish      Leusiscus idus
+         3   Saerki   Moerten    Roach          Leuciscus rutilus
+         4   Parkki   Bjoerknan  ?              Abramis bjrkna
+         5   Norssi   Norssen    Smelt          Osmerus eperlanus
+         6   Hauki    Jaedda     Pike           Esox lucius
+         7   Ahven    Abborre    Perch          Perca fluviatilis
+
+3  Weight      Weight of the fish (in grams)
+4  Length1     Length from the nose to the beginning of the tail (in cm)
+5  Length2     Length from the nose to the notch of the tail (in cm)
+6  Length3     Length from the nose to the end of the tail (in cm)
+7  Height%     Maximal height as % of Length3
+8  Width%      Maximal width as % of Length3
+9  Sex         1 = male 0 = female
+
+
+
+          ___/////___                  _
+         /           \    ___          |
+       /\             \_ /  /          H
+     <   )            __)  \           |
+       \/_\\_________/   \__\          _
+
+     |------- L1 -------|
+     |------- L2 ----------|
+     |------- L3 ------------|
+
+
+Values are aligned and delimited by blanks.
+Missing values are denoted with NA.
+There is one data line for each case.
+
+SPECIAL NOTES:
+I have usually calculated
+           Height =  Height%*Length3/100
+           Widht  =  Widht%*Length3/100
+
+
+PEDAGOGICAL NOTES:
+I have mainly used only  Species=7 (Perch) and here is some of the
+models and test, we have used
+
+      Weight=a+b*(Length3*Height*Width)+epsilon
+         Ho: a=0;
+         Heteroscedastic case. Question: What is proper weighting, 
+         if you use Length3 as a weighting variable.
+
+      Log(Weight)=a+b1*Length3+epsilon
+
+      Weight^(1/3)=a+b1*Length3+epsilon
+      (Given by Box-Cox-transformation)
+         Ho: a=0;
+
+      Log(Weight)=a+b1*Length3+b2*Height+b3*Width+epsilon
+         Ho: b1+b2+b3=3;  
+         i.e. dimension of the fish = 3
+
+      Weight^(1/3)=a+b1*Length3+b2*Height+b3*Width+epsilon
+      (Given by Box-Cox-transformation)
+         Ho: a=0;
+
+      Weight=a*Length3^b1*Height^b2*Width^b3+epsilon
+         Nonlinear, heteroscedastic case.
+         What is proper weighting?
+
+      Is obs 143
+
+      143  7  840.0 32.5  35.0  37.3  30.8  20.9  0
+
+      an outlier? It had in its stomach 6 roach.
+
+
+
+REFERENCES:
+Brofeldt, Pekka: Bidrag till kaennedom on fiskbestondet i vaara
+        sjoear. Laengelmaevesi. T.H.Jaervi: Finlands Fiskeriet  Band 4,
+        Meddelanden utgivna av fiskerifoereningen i Finland.
+        Helsingfors 1917
+
+
+SUBMITTED BY:
+Juha Puranen
+Departement of statistics
+PL33 (Aleksanterinkatu 7)
+000014 University of Helsinki
+Finland
+e-mail: jpuranen@noppa.helsinki.fi

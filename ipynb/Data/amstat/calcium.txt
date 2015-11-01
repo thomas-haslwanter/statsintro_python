@@ -1,0 +1,74 @@
+NAME: Calcium, inorganic phosphorus and alkaline phosphatase levels in elderly patients 
+TYPE: Retrospective chart review 
+SIZE: 178 records by 8 variables
+
+DESCRIPTIVE ABSTRACT: 
+Each record contains the results of a laboratory analysis of calcium, 
+inorganic phosphorous, and alkaline phosphatase. The variable cammol 
+is measured as millimoles per liter. Phosmol is inorganic phosphorous 
+in millimoles per liter. Alkphos is meauring alkaline phosphatase in 
+international units per liter. The purpose of the study was to 
+determine if significant gender differences exist in the mean values 
+of calcium, inorganic phosphorus, and alkaline phosphatase in 
+subjects over age 65. A second purpose was to determine if analytical 
+variation between laboratoreis would affect the mean values of the study variables. 
+Calcium.dat contains incorrect records that have transcription errors. Calciumgood.dat 
+contains the corrected values. 
+
+DATA SOURCE: 
+Used with permission from Joan Boyd, Maria Delost, and John Holcomb (1998). Boyd and Delost 
+conducted the retrospective chart review for subjects tested in the greater 
+Youngstown, OH area. 
+
+DATASETS LAYOUT:
+Calcium.dat
+Columns 	Variable 	Comment 
+9-11		OBSNO		Patient Observation Number 
+21-22		AGE 		Years 
+33		SEX 		1=Male, 2=Female 
+42-44		ALKPHOS 	Alkaline Phosphatase International Units/Liter 
+55		Lab 		Lab: 1=Metpath; 2=Deyor; 3=St. Elizabeth's; 
+				4=CB Rouche; 5=YOH; 6=Horizon 
+63-66		CAMMOL		Calcium mmol/L 
+74-77		PHOSMMOL 	Inorganic Phosphorus mmol/L 
+88		AGEGROUP 	Age group 1=65-69; 2=70-74; 3=75-79; 4=80-84; 5=85-89 Years
+
+Calciumgood.dat
+Columns 	Variable 	Comment 
+9-11		OBSNO		Patient Observation Number 
+20-22		AGE 		Years 
+32-33		SEX 		1=Male, 2=Female 
+42-44		ALKPHOS 	Alkaline Phosphatase International Units/Liter 
+54-55		Lab 		Lab: 1=Metpath; 2=Deyor; 3=St. Elizabeth's; 
+				4=CB Rouche; 5=YOH; 6=Horizon 
+62-66		CAMMOL		Calcium mmol/L 
+74-77		PHOSMMOL 	Inorganic Phosphorus mmol/L 
+88		AGEGROUP 	Age group 1=65-69; 2=70-74; 3=75-79; 4=80-84; 5=85-89 Years
+
+PEDAGOGICAL NOTES: 
+Have students use graphical and summary analysis techniques to discover 
+"problem" values in calcium.dat. The file calciumgood.dat contains the 
+corrected values. A full description of how to use this data can be found in the 
+"Datasets and Stories" article "Teaching Students to Use Summary Statistics and 
+Graphics to Clean and Analyze Data". To utilize the grid for obtaining 
+psuedo patient records to learn the correct data values, click on 
+http://www.amstat.org/publications/jse/v13n3/grid/bigtable.htm
+
+REFERENCES: 
+Boyd, J., Delost, M., and Holcomb, J., (1998). "Calcium, phosphorus, 
+and alkaline phosphatase laboratory values of elderly subjects," 
+Clinical Laboratory Science, 11, 223-227.
+
+SUBMITTED BY:
+John P. Holcomb, Jr. 
+Cleveland State University 
+2121 Euclid Ave., RT 1515 
+Cleveland, OH, 44115-2214 
+j.p.holcomb@csuohio.edu
+
+Angela Spalsbury 
+Youngstown State University 
+One University Plaza 
+Youngstown, OH 4455 
+angie@math.ysu.edu
+
