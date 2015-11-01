@@ -1,10 +1,10 @@
-# statsintro_python
+![Title](statsIntro.png)
+
 Python modules and IPython Notebooks, which accompany the book *Introduction to Statistics With Python*
 This repo contains two folders:
 - ISP
 - ipynb
 
-![Logo](statsIntro.png)
 
 ## "ISP": Introduction to Statistics with Python
 All the Python programs that go with the book:
@@ -16,5 +16,5 @@ All the Python programs that go with the book:
 ## "ipynb": IPython Notebooks
 - These notebooks are not used explicitly in the book, and contain
   important samples and solutions to statistical applications of Python.
-- Also contains a *Data* folder for data used by the IPython notebooks.
+- Also contains a folder for data used by the IPython notebooks.
 
