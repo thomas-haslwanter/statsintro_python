@@ -1,6 +1,6 @@
 '''Figure for a an example of a T-test for a mean value '''
 
-# author: Thomas Haslwanter, date: Sept-2015
+# author: Thomas Haslwanter, date: Oct-2015
 
 # Import standard packages
 import numpy as np
@@ -9,11 +9,13 @@ from scipy import stats
 import seaborn as sns
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 sns.set_context('poster')
 sns.set_style('ticks')
-C2_8_mystyle.set()
+ISP_mystyle.set()
 
 # Generate the data
 np.random.seed(1234)
@@ -30,4 +32,4 @@ plt.xlabel('Student-Nr')
 plt.ylabel('Score')
 
 outFile = 'fig_ExampleTtest.png'
-C2_8_mystyle.printout_plain(outFile)
+ISP_mystyle.printout_plain(outFile)

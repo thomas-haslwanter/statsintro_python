@@ -1,6 +1,6 @@
 ''' Figure explaining the T-Test '''
 
-# author: Thomas Haslwanter, date: Sept-2015
+# author: Thomas Haslwanter, date: Oct-2015
 
 # Import standard packages
 import numpy as np
@@ -10,8 +10,11 @@ import os
 import seaborn as sns
 
 # additional packages
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
+
 sns.set_palette('muted')
-import C2_8_mystyle
 
 def show_fig(std, ax, title):
     '''Create a plot of normally distributed data in a given axis'''
@@ -31,7 +34,7 @@ if __name__ == '__main__':
     # Set up the figure
     sns.set_context('paper')
     sns.set_style('whitegrid')
-    C2_8_mystyle.set(14)
+    ISP_mystyle.set(14)
     
     # Create 2 plots of 3 different, normally distributed data groups, with different SDs
     fig, axs = plt.subplots(1, 2)
@@ -41,4 +44,4 @@ if __name__ == '__main__':
     show_fig(0.1, axs[0], 'SD=0.1')
     show_fig(2,   axs[1], 'SD=2.0')
     
-    C2_8_mystyle.printout_plain('anova_oneway.png')
+    ISP_mystyle.printout_plain('anova_oneway.png')

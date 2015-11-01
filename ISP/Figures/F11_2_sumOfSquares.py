@@ -1,6 +1,6 @@
 '''Visualization of the Sum-of-Squares. '''
 
-# author: thomas haslwanter, date: July-2015
+# author: thomas haslwanter, date: Oct-2015
 
 # Import standard packages
 import numpy as np
@@ -8,7 +8,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 from matplotlib.patches import Rectangle
 
 # Set the figure style
@@ -60,4 +62,4 @@ for ii in range(len(y)):
 
 # Save and show
 outFile = 'sumOfSquares.png'
-C2_8_mystyle.printout_plain(outFile)
+ISP_mystyle.printout_plain(outFile)

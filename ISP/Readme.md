@@ -1,3 +1,4 @@
+# Introduction to Statistics with Python
 Almost everyone who does research needs statistics: when you have acquired
 research scientific data, you typically want to use them to show that your
 data provide *significant* support for some hypothesis, or if they allow to
@@ -31,3 +32,4 @@ Chapter/Subchapter:
 Figures ... Python code for the generation of figures.
 Listings ... code listings that are used in the book.
 Solutions ... Solutions to exercises presented in the book.
+![Logo](Logo.jpg)

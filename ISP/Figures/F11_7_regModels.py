@@ -5,7 +5,7 @@ Strongly based on a blog by Connor Johnson.
 http://connor-johnson.com/2014/02/18/linear-regression-with-python/
 '''
 
-# author: Thomas Haslwanter, date: Sept-2015
+# author: Thomas Haslwanter, date: Oct-2015
 
 # Import standard packages
 import numpy as np
@@ -13,10 +13,11 @@ import matplotlib.pyplot as plt
 from scipy import stats
 import pandas as pd
 import os
-import C2_8_mystyle
 
 # additional packages
 import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 import matplotlib as mpl
 import statsmodels.formula.api as sm
 from sklearn.linear_model import LinearRegression
@@ -43,7 +44,7 @@ else:
 df = pd.read_csv(StringIO(data_str), sep=r'\s+')
 
 # Plot the data
-C2_8_mystyle.set(18)
+ISP_mystyle.set(18)
 plt.plot(df.Tobacco, df.Alcohol, 'o', ms=10)
 plt.xlabel('Tobacco')
 plt.ylabel('Alcohol')
@@ -51,7 +52,7 @@ plt.title('Sales in Several UK Regions')
 plt.ylim([3.8, 6.7])
 
 outFile = 'Alc_vs_Tobacco.png'
-C2_8_mystyle.printout_plain(outFile)
+ISP_mystyle.printout_plain(outFile)
 
 result = sm.ols('Alcohol ~ Tobacco', df[:-1]).fit()
 print(result.summary())
@@ -223,4 +224,4 @@ plt.grid() ;
 plt.legend(loc='lower center')
 
 outFile = 'alcohol_regressed_over_tobacco.png'
-C2_8_mystyle.printout_plain(outFile)
+ISP_mystyle.printout_plain(outFile)

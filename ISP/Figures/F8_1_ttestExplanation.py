@@ -1,6 +1,6 @@
 ''' Figure explaining the T-Test '''
 
-# author: Thomas Haslwanter, date: May-2014
+# author: Thomas Haslwanter, date: Oct-2015
 
 # Import standard packages
 import numpy as np
@@ -8,7 +8,11 @@ import matplotlib.pyplot as plt
 import scipy.stats as stats
 import seaborn as sns
 import os
-import C2_8_mystyle
+
+# Import additional packages
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 # Generate the data
 np.random.seed(12345)
@@ -72,4 +76,4 @@ sns.despine()
 
 # Save image
 outFile = 'ttestExplained.png'
-C2_8_mystyle.printout_plain(outFile)
+ISP_mystyle.printout_plain(outFile)

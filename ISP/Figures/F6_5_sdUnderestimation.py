@@ -1,11 +1,14 @@
 '''Sketch to indicate why the sample SD underestimates the population SD '''
 
-# author: Thomas Haslwanter, date: Feb-2015
+# author: Thomas Haslwanter, date: Oct-2015
 
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
-import C2_8_mystyle
+
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 # Set up the three axes
 fig, axs = plt.subplots(3,1)
@@ -28,4 +31,4 @@ for index, offset in enumerate([-3,0,3]):
 
 # Save and show
 outFile = 'fig_SDunderestimation.png'
-C2_8_mystyle.printout_plain(outFile)
+ISP_mystyle.printout_plain(outFile)

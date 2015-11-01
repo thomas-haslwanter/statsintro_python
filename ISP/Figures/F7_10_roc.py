@@ -4,7 +4,7 @@ The example here uses two normally distributed groups, with a mean of 1 and 6,
 respectively, and a standard deviation of 2.
 '''
 
-# author: Thomas Haslwanter, date: Aug-2015
+# author: Thomas Haslwanter, date: Oct-2015
 
 # Import standard packages
 import numpy as np
@@ -12,7 +12,9 @@ import matplotlib.pyplot as plt
 from scipy import stats
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 def arrow_bidir(ax, start, end, headWidth=0.01):
     '''Plot a bidirectional arrow'''
@@ -94,7 +96,7 @@ def main():
     arrow_bidir(ax2, (0.5,0.5), (0.095, 0.885))
     
     # Show the plot, and create a figure
-    C2_8_mystyle.printout_plain('ROC.png')    
+    ISP_mystyle.printout_plain('ROC.png')    
     
 if __name__ == '__main__':
     main()

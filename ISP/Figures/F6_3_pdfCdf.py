@@ -1,6 +1,6 @@
 ''' Graphical display of PDF (probability density function) and CDF (cumulative density function) '''
 
-# author: Thomas Haslwanter, date: July-2014
+# author: Thomas Haslwanter, date: Oct-2015
 
 # Import standard packages
 import numpy as np
@@ -10,7 +10,9 @@ import os
 import seaborn as sns
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 # Calculate the values
 nd = stats.norm()
@@ -24,7 +26,7 @@ y1 = nd.pdf(x1)
 # Make the plot
 sns.set_context('paper')
 sns.set_style('white')
-C2_8_mystyle.set(12)
+ISP_mystyle.set(12)
 
 figs, axs = plt.subplots(1,2)
 
@@ -42,5 +44,5 @@ plt.vlines(0, 0, 1, linestyles='--')
 sns.despine()
 
 # Save and show
-C2_8_mystyle.printout_plain('PDF_CDF.png')
+ISP_mystyle.printout_plain('PDF_CDF.png')
 plt.show()

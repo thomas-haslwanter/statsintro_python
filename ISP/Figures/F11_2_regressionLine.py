@@ -8,7 +8,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 # Generate the data
 x = np.arange(-20, 80)
@@ -17,7 +19,7 @@ y = 10 + 0.2*x + 4*np.random.randn(len(x))
 # Make the plot
 sns.set_style('ticks')
 sns.set_context('poster')
-C2_8_mystyle.set()
+ISP_mystyle.set()
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
@@ -35,4 +37,4 @@ ax.plot(x,yFit, 'r')
 
 # Save and show
 outFile = 'Linear_regression.png'
-C2_8_mystyle.printout_plain(outFile)
+ISP_mystyle.printout_plain(outFile)

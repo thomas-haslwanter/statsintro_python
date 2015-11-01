@@ -1,6 +1,6 @@
 ''' Example for Skewness and Kurtosis '''
 
-# author: Thomas Haslwanter, date: Nov-2014
+# author: Thomas Haslwanter, date: Oct-2015
 
 # Import standard packages
 import numpy as np
@@ -10,7 +10,9 @@ import os
 import seaborn as sns
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 from matplotlib.mlab import frange
 
 sns.set(context='poster', style='ticks', palette='deep')
@@ -55,4 +57,4 @@ if __name__=='__main__':
 
     # Save and show
     outFile = 'Skewness.png'
-    C2_8_mystyle.printout_plain(outFile)
+    ISP_mystyle.printout_plain(outFile)

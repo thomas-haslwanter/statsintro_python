@@ -8,9 +8,11 @@ import matplotlib.pyplot as plt
 from scipy import stats
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
-C2_8_mystyle.set(fs=18)
+ISP_mystyle.set(fs=18)
 
 def plot_histogram(ax, data):
     ''' Left plot: histogram '''
@@ -82,7 +84,7 @@ def main():
     explain_KDE(axs[1], x)
     
     # Save and show
-    C2_8_mystyle.printout_plain('KDEexplained.png')
+    ISP_mystyle.printout_plain('KDEexplained.png')
     plt.show()
     
 if __name__ == '__main__':

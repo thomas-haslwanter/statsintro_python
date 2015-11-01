@@ -1,6 +1,6 @@
 ''' Lognormal distribution functions. '''
 
-# author: Thomas Haslwanter, date: July-2015
+# author: Thomas Haslwanter, date: Oct-2015
 
 
 # Import standard packages
@@ -8,7 +8,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 import seaborn as sns
-import C2_8_mystyle
+
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 # Generate the data
 x = np.logspace(-9,1,1001)+1e-9
@@ -17,7 +20,7 @@ y = lnd.pdf(x)
 
 # Generate 2 plots, side-by-side
 sns.set_style('ticks')
-C2_8_mystyle.set(18)
+ISP_mystyle.set(18)
 fig, axs = plt.subplots(1,2, sharey=True)
 sns.set_context('poster')
 
@@ -34,4 +37,4 @@ axs[1].set_xlabel('log(x)')
 
 # Save and show
 outFile = 'logNormal.png'
-C2_8_mystyle.printout_plain(outFile)
+ISP_mystyle.printout_plain(outFile)

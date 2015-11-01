@@ -1,6 +1,6 @@
 '''Scatterplot of normally distributed data, with Standard Deviation and Standard Error'''
 
-# author: Thomas Haslwanter, date: Sept-2015
+# author: Thomas Haslwanter, date: Oct-2015
 
 # Import standard packages
 import numpy as np
@@ -9,7 +9,10 @@ from scipy import stats
 import seaborn as sns
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
+
 from F7_10_roc import arrow_bidir
 
 # Generate the data
@@ -25,7 +28,7 @@ se = np.mean(x) + seVal*np.r_[-1, 1]
 # Set up the plot
 sns.set_style('ticks')
 sns.set_context('poster')
-C2_8_mystyle.set()
+ISP_mystyle.set()
 
 # Plot the data
 plt.plot(x,'.')
@@ -71,4 +74,4 @@ plt.annotate('mean', (70,np.mean(x)),xycoords='data', fontsize=28,
 
 # Save and show
 outFile = ('standardError.png')
-C2_8_mystyle.printout_plain(outFile)
+ISP_mystyle.printout_plain(outFile)

@@ -1,6 +1,6 @@
 ''' Graphical display of data within 1,2,3 SD. '''
 
-# author: Thomas Haslwanter, date: July-2014
+# author: Thomas Haslwanter, date: Oct-2015
 
 # Import standard packages
 import numpy as np
@@ -10,7 +10,9 @@ from scipy import stats
 import seaborn as sns
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 nd = stats.norm()
 x = np.linspace(-3.5, 3.5,100)
@@ -47,4 +49,4 @@ show_SD(axs[2], x3, y3, '99.7%')
 plt.tight_layout()
 
 # Save and show
-C2_8_mystyle.printout_plain('area_SDs.png')
+ISP_mystyle.printout_plain('area_SDs.png')

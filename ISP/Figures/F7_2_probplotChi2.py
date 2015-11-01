@@ -9,7 +9,9 @@ from scipy import stats
 import seaborn as sns
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 def generate_probplot():
     '''Generate a prob-plot for a chi2-distribution of sample data'''
@@ -26,7 +28,7 @@ def generate_probplot():
     # Arrange subplots
     sns.set_context('paper')
     sns.set_style('white')
-    C2_8_mystyle.set(11)
+    ISP_mystyle.set(11)
     fig, axs = plt.subplots(1,2)
     
     # Plot distribution
@@ -53,7 +55,7 @@ def generate_probplot():
     axs[1].set_aspect((x1-x0)/(y1-y0))
     #sns.despine()
     
-    C2_8_mystyle.printout_plain('chi2pp.png')
+    ISP_mystyle.printout_plain('chi2pp.png')
     
     return(data)
     '''
@@ -89,7 +91,7 @@ def KS_principle(inData):
     # Plot the data
     sns.set_style('ticks')
     sns.set_context('poster')
-    C2_8_mystyle.set(36)
+    ISP_mystyle.set(36)
     
     plt.plot(nd_x, nd_y, 'k--')
     plt.hold(True)
@@ -112,7 +114,7 @@ def KS_principle(inData):
               width=0.05, length_includes_head=True, head_length=0.04, head_width=0.4, color='k')
     
     outFile = 'KS_Example.png'
-    C2_8_mystyle.printout_plain(outFile)
+    ISP_mystyle.printout_plain(outFile)
     
 if __name__=='__main__':
     data = generate_probplot()    

@@ -1,13 +1,15 @@
 '''Demo-plot of residuals to a best-fit line '''
 
-# author: Thomas Haslwanter, date: Aug-2015
+# author: Thomas Haslwanter, date: Oct-2015
 
 # Import standard packages
 import numpy as np
 import matplotlib.pyplot as plt
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 def main():
     # generate the data
@@ -30,7 +32,7 @@ def main():
     plt.xlabel('X')
     plt.ylabel('Y')
     
-    C2_8_mystyle.printout_plain('residuals.png') 
+    ISP_mystyle.printout_plain('residuals.png') 
 
 if __name__ == '__main__':
     main()

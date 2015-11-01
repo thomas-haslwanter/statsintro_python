@@ -9,7 +9,9 @@ import matplotlib.pyplot as plt
 from scipy import stats
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 # Generate the data
 x = np.r_[3, 1.5, 4, 6, 3, 2]
@@ -18,7 +20,7 @@ xs = x-dx
 index = range(len(x))
 
 # plot the data
-C2_8_mystyle.set(20)
+ISP_mystyle.set(20)
 plt.plot(x, 'o', ms=10, label='pre')
 plt.plot(xs, 'r*', ms=12, label='post')
 plt.bar(index, dx, width=0.5, align='center',
@@ -37,4 +39,4 @@ print('A paired comparison yields p={0:.4f}, while an unpaired T-test gives us p
 
 # Show and save figure
 outFile = 'pairedTtest.png'
-C2_8_mystyle.printout(outFile, xlabel='Subject Nr', ylabel='Value')
+ISP_mystyle.printout(outFile, xlabel='Subject Nr', ylabel='Value')

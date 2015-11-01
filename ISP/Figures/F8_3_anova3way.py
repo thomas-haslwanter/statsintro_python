@@ -8,7 +8,9 @@ import seaborn as sns
 
 # additional packages
 #sns.set_palette('muted')
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 sns.set(style="whitegrid", font_scale=1.25)
 
@@ -19,4 +21,4 @@ sns.factorplot("time", "pulse", hue="kind", col="diet", data=df,
                palette="YlGnBu_d", aspect=.75).despine(left=True)
 
 outFile = 'ANOVA_3way.png'
-C2_8_mystyle.printout_plain(outFile)
+ISP_mystyle.printout_plain(outFile)

@@ -1,6 +1,6 @@
 """ Plot showing the effekt of a Kernel-Density-Estimation (KDE). """
 
-# author: Thomas Haslwanter, date: May-2015
+# author: Thomas Haslwanter, date: Oct-2015
 
 # Import standard packages
 from scipy import stats
@@ -9,7 +9,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 # Generate normally distributed data
 nd = stats.norm(0,1)
@@ -32,7 +34,7 @@ kde_large = stats.kde.gaussian_kde(data, 1)
 # Generate two plots: one KDE with rug-plot, and one with different parameters
 sns.set_context('poster')
 sns.set_style('ticks')
-C2_8_mystyle.set()
+ISP_mystyle.set()
 fig, axs = plt.subplots(1,2)
 sns.distplot(data, rug=True, ax=axs[0])
 
@@ -44,5 +46,5 @@ axs[1].legend(['exact', h_str, '0.1', '1.0'])
 axs[1].set_ylim(0, 0.40)
 
 # Save and show
-C2_8_mystyle.printout_plain('kdePlot.png')
+ISP_mystyle.printout_plain('kdePlot.png')
 plt.show()

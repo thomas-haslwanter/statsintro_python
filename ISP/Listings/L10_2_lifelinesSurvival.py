@@ -7,15 +7,18 @@ the expression levels of other genes.
 
 # Import standard packages
 import matplotlib.pyplot as plt
-import C2_8_mystyle 
 
 # additional packages
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle 
+
 from lifelines.datasets import load_waltons
 from lifelines import KaplanMeierFitter
 from lifelines.statistics import logrank_test
 
 # Set my favorite font
-C2_8_mystyle.set(18)
+ISP_mystyle.set(18)
 
 # Load and show the data
 df = load_waltons() # returns a Pandas DataFrame
@@ -46,7 +49,7 @@ kmf.plot(ax=ax)
 
 plt.ylabel('Survival Probability')
 outFile = 'lifelines_survival.png'
-C2_8_mystyle.printout_plain(outFile)
+ISP_mystyle.printout_plain(outFile)
 
 # Compare the two curves
 results = logrank_test(T[ix], T[~ix], event_observed_A=E[ix], event_observed_B=E[~ix])

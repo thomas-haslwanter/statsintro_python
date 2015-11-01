@@ -1,6 +1,6 @@
 ''' Short demo of how to check for the significance of an individual value. '''
 
-# author: Thomas Haslwanter, date: April-2014
+# author: Thomas Haslwanter, date: Oct-2015
 
 # Import standard packages
 import numpy as np
@@ -10,7 +10,9 @@ import seaborn as sns
 import os
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 # Generate a "frozen" the normal distribution
 md, sd = 3.5, 0.76
@@ -19,6 +21,7 @@ nd = stats.norm(md, sd)
 # Set up the plot
 sns.set_context(context='poster')
 sns.set_style('ticks')
+ISP_mystyle.set()
 
 # Plot the normal distribution within 3 SDs
 limits = (md-3*sd, md+3*sd)
@@ -41,10 +44,10 @@ plt.fill_between(x2, y2, alpha=0.2)
 #  Label the axes
 plt.xlabel('Weight')
 plt.ylabel('P(Weight)')
-plt.text(2.1, 0.05, '11.8%', fontsize=20)
+plt.text(2.1, 0.05, '11.8%', fontsize=24)
 
 # Remove the right- and top-axis
 sns.despine()
 
 # Save and show
-C2_8_mystyle.printout_plain('pdf_checkValue.png')
+ISP_mystyle.printout_plain('pdf_checkValue.png')

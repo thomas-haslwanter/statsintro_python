@@ -1,6 +1,6 @@
 """ Plot demonstrating the integral as the area under a curve of a PDF. """
 
-# author: Thomas Haslwanter, date: Jan-2014
+# author: Thomas Haslwanter, date: Oct-2015
 
 # Import standard packages
 import numpy as np
@@ -9,7 +9,9 @@ from scipy import stats
 import os
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 from matplotlib.patches import Polygon
 
 # Generate the data
@@ -48,4 +50,4 @@ ax.set_yticks([])
 
 # Save and show
 outFile = ('pdf.png')
-C2_8_mystyle.printout_plain(outFile)
+ISP_mystyle.printout_plain(outFile)

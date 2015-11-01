@@ -9,7 +9,9 @@ from scipy import stats
 import os
 
 # additional packages
-import C2_8_mystyle
+import sys
+sys.path.append(r'..\Quantlets\Utilities')
+import ISP_mystyle
 
 # Generate the data
 np.random.seed(12345)
@@ -56,5 +58,5 @@ axs[1].plot(fitted_x, fitted_t_w, ls='--', lw=2, label='t-dist')
 axs[1].set_title('With outliers')
 
 outFile = 'CentralLimitTheorem.png'
-C2_8_mystyle.printout_plain(outFile)
+ISP_mystyle.printout_plain(outFile)
 
