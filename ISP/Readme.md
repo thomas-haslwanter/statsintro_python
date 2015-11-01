@@ -15,7 +15,7 @@ elaborate statistical analysis of your data.
 
 ![Logo](Logo.jpg)
 
-The Python sample scripts can be found in the folder *Code-Quantlets*,
+The Python sample scripts can be found in the folder *Code_Quantlets*,
 and provide examples of:
 
 - How to visualize statistical data sets.
@@ -32,6 +32,6 @@ and provide examples of:
 Additional Python scripts can be found in the following folders, sorted by
 Chapter/Subchapter:
 
-- Figures ... Python code for the generation of figures.
-- Listings ... code listings that are used in the book.
-- Solutions ... Solutions to exercises presented in the book.
+- *Figures* ... Python code for the generation of figures.
+- *Listings* ... code listings that are used in the book.
+- *Solutions* ... Solutions to exercises presented in the book.
