@@ -1,9 +1,8 @@
-# Name of QuantLet: ISP_showData.py
+Name of QuantLet: ISP_showData
 
-# Published in:  An Introduction to Statistics with Python
+Published in:  An Introduction to Statistics with Python
 
-# Description: Show different ways to present statistical data
-
+Description: 'Show different ways to present statistical data
     The examples contain:
     - scatter plots, with 1-dimensional and higher-dimensional data
     - histograms
@@ -16,21 +15,15 @@
     - grouped boxplots
     - pieplots
     - scatterplots, with markersize proportional to value of corresponding variable
-    - 3D surface and wireframe plots 
+    - 3D surface and wireframe plots'
 
-# Keywords: data visualization, plot, visualization
+Keywords: data visualization, plot, visualization
 
-# See also:  
+Author: Thomas Haslwanter 
 
-# Author: Thomas Haslwanter 
+Submitted: October 31, 2015 
 
-# Submitted: October 31, 2015 
-
-# Datafile:  
-
-# Input:  
-
-# Output:  
+Example:  
 - 3dGraph.png
 - barplot.png
 - bivariate.png
@@ -40,5 +33,3 @@
 - multiScatterplot.png
 - piePlot.png
 - violinplot.png
-
-# Example:  
