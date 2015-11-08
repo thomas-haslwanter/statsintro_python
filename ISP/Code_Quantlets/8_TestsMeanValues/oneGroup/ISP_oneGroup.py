@@ -2,7 +2,7 @@
 
 This script shows how to
 - Use a t-test for a single mean
-- Use a non-parametric test (Wilcoxon signed rank) to check a single mean 
+- Use a non-parametric test (Wilcoxon signed rank sum) to check a single mean 
 - Compare the values from the t-distribution with those of a normal distribution
 '''
 
@@ -39,7 +39,7 @@ def check_mean():
     if prob < 0.05:
         print(('{0:4.2f} is significantly different from the mean (p={1:5.3f}).'.format(checkValue, prob)))
 
-    # For not normally distributed data, use the Wilcoxon signed rank test
+    # For not normally distributed data, use the Wilcoxon signed rank sum test
     (rank, pVal) = stats.wilcoxon(data-checkValue)
     if pVal < 0.05:
       issignificant = 'unlikely'

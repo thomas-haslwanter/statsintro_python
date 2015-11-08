@@ -1,8 +1,8 @@
-# Name of QuantLet: ISP_fitLine.py
+Name of QuantLet: ISP_fitLine
 
-# Published in:  An Introduction to Statistics with Python
+Published in:  An Introduction to Statistics with Python
 
-# Description: Linear regression fit
+Description: 'Linear regression fit
 
     Parameters
     ----------
@@ -46,20 +46,20 @@
     Notes
     -----
     Example data and formulas are taken from
-    D. Altman, "Practical Statistics for Medicine"
+    D. Altman, <Practical Statistics for Medicine>'
 
-# Keywords: 
+Keywords: line fit, confidence intervals, plot
 
-# See also:  
+See also:  
 
-# Author: Thomas Haslwanter 
+Author: Thomas Haslwanter 
 
-# Submitted: October 31, 2015 
+Submitted: October 31, 2015 
 
-# Datafile:  
+Datafile:  
 
-# Input:  
+Input:  
 
-# Output: regression_wLegend.png
+Output:
 
-# Example:  
+Example: regression_wLegend.png  

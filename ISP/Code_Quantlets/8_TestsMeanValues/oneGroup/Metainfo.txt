@@ -1,26 +1,27 @@
-# Name of QuantLet: ISP_oneGroup.py
+Name of QuantLet: ISP_oneGroup
 
-# Published in:  An Introduction to Statistics with Python
+Published in:  An Introduction to Statistics with Python
 
-# Description: Analysis of one group of data
+Description: 'Analysis of one group of data
     
     This script shows how to
     - Use a t-test for a single mean
     - Use a non-parametric test (Wilcoxon signed rank) to check a single mean 
-    - Compare the values from the t-distribution with those of a normal distribution
+    - Compare the values from the t-distribution with those of a normal
+      distribution'
 
-# Keywords: 
+Keywords: t test, Wilcoxon signed rank sum test, t distribution
 
-# See also:  
+See also:  
 
-# Author: Thomas Haslwanter 
+Author: Thomas Haslwanter 
 
-# Submitted: October 31, 2015 
+Submitted: October 31, 2015 
 
-# Datafile:  
+Datafile:  
 
-# Input:  
+Input:  
 
-# Output: 
+Output: 
 
-# Example:  
+Example:  

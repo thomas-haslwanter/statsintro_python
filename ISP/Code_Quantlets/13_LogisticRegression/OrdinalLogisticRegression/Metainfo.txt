@@ -1,21 +1,21 @@
-# Name of QuantLet: ISP_ordinalLogisticRegression.py
+Name of QuantLet: ISP_ordinalLogisticRegression
 
-# Published in:  An Introduction to Statistics with Python
+Published in:  An Introduction to Statistics with Python
 
-# Description: Implementation of logistic ordinal regression (aka proportional odds) model
+Description: Implementation of logistic ordinal regression (aka proportional odds) model
 
-# Keywords: plot, fitting
+Keywords: plot, fitting, ordinal logistic regression
 
-# See also:  
+See also:  
 
-# Author: fernando pedorosa
+Author: fernando pedorosa
 
-# Submitted: march-2013
+Submitted: march-2013
 
-# Datafile:  
+Datafile:  
 
-# Input:  
+Input:  
 
-# Output: 
+Output: 
 
-# Example:  
+Example:  

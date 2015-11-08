@@ -1,22 +1,23 @@
-# Name of QuantLet: ISP_lifelinesDemo.py
+Name of QuantLet: ISP_lifelinesDemo
 
-# Published in:  An Introduction to Statistics with Python
+Published in:  An Introduction to Statistics with Python
 
-# Description: Demonstration of the package "lifelines"
-    Based on the demo-code in http://lifelines.readthedocs.org, by Cam Davidson-Pilon
+Description: 'Demonstration of the package <lifelines>
+    Based on the demo-code in http://lifelines.readthedocs.org, by Cam
+    Davidson-Pilon'
 
-# Keywords: 
+Keywords: logrank test, kaplan-meier curve 
 
-# See also:  
+See also:  
 
-# Author: Thomas Haslwanter 
+Author: Thomas Haslwanter 
 
-# Submitted: October 31, 2015 
+Submitted: October 31, 2015 
 
-# Datafile:  
+Datafile:  
 
-# Input:  
+Input:  
 
-# Output: 
+Output: 
 
-# Example:  
+Example:  

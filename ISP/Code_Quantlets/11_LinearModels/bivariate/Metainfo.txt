@@ -1,23 +1,23 @@
-# Name of QuantLet: ISP_bivariate.py
+Name of QuantLet: ISP_bivariate
 
-# Published in:  An Introduction to Statistics with Python
+Published in:  An Introduction to Statistics with Python
 
-# Description: Analysis of multivariate data
+Description: 'Analysis of multivariate data
     - Regression line
-    - Correlation (Pearson-rho, Spearman-rho, and Kendall-tau)
+    - Correlation (Pearson-rho, Spearman-rho, and Kendall-tau)'
 
-# Keywords: 
+Keywords: correlation, pearson rho, spearman rho, kendall tau
 
-# See also:  
+See also:  
 
-# Author: Thomas Haslwanter 
+Author: Thomas Haslwanter 
 
-# Submitted: October 31, 2015 
+Submitted: October 31, 2015 
 
-# Datafile:  
+Datafile:  
 
-# Input:  
+Input:  
 
-# Output: 
+Output: 
 
-# Example:  
+Example:  

@@ -1,31 +1,27 @@
-# Name of QuantLet: ISP_distContinuous.py
+Name of QuantLet: ISP_distContinuous
 
-# Published in:  An Introduction to Statistics with Python
+Published in:  An Introduction to Statistics with Python
 
-# Description: Different continuous distribution functions.
+Description: 'Different continuous distribution functions.
     - T-distribution
     - F-distribution
     - Chi2-distribution
     - Exponential
-    - Weibull
+    - Weibull'
 
-# Keywords: 
+Keywords: visualization, plot, t-distribution, f-distribution, chi2-distribution, weibull distribution
 
-# See also:  
+See also:  
 
-# Author: Thomas Haslwanter 
+Author: Thomas Haslwanter 
 
-# Submitted: October 31, 2015 
+Submitted: October 31, 2015 
 
-# Datafile:  
+Datafile:  
 
-# Input:  
+Input:  
 
-# Output:
-    - dist_t.png
-    - dist_chi2.png
-    - dist_f.png
-    - dist_exp.png
-    - Weibull_PDF.png
+Output:
 
-# Example:  
+Example:  
+    dist_t.png, dist_chi2.png, dist_f.png, dist_exp.png, Weibull_PDF.png

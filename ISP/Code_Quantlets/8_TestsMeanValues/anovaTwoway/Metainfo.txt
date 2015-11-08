@@ -1,23 +1,23 @@
-# Name of QuantLet: ISP_anovaTwoway.py
+Name of QuantLet: ISP_anovaTwoway
 
-# Published in:  An Introduction to Statistics with Python
+Published in:  An Introduction to Statistics with Python
 
-# Description: Two-way Analysis of Variance (ANOVA)
-    The model is formulated using the "patsy" formula description. This is very
-    similar to the way models are expressed in R.
+Description: 'Two-way Analysis of Variance (ANOVA)
+    The model is formulated using the <patsy> formula description. This is very
+    similar to the way models are expressed in R.'
 
-# Keywords: plot, fitting
+Keywords: plot, fitting, two-way anova
 
-# See also:  
+See also:  
 
-# Author: Thomas Haslwanter 
+Author: Thomas Haslwanter 
 
-# Submitted: October 31, 2015 
+Submitted: October 31, 2015 
 
-# Datafile:  
+Datafile:  
 
-# Input:  
+Input:  
 
-# Output: 
+Output: 
 
-# Example:  
+Example:  

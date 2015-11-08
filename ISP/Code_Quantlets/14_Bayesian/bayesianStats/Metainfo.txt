@@ -1,25 +1,26 @@
-# Name of QuantLet: ISP_bayesianStats.py
+Name of QuantLet: ISP_bayesianStats
 
-# Published in:  An Introduction to Statistics with Python
+Published in:  An Introduction to Statistics with Python
 
-# Description: Example of PyMC - The Challenger Disaster
+Description: 'Example of PyMC - The Challenger Disaster
     This example uses Bayesian methods to find the  mean and the 95% confidence
     intervals for the likelihood of an O-ring failure in a space shuttle, as a function
     of the ambient temperature.
-    Input data are the recorded O-ring performances of the space shuttles before 1986.
+    Input data are the recorded O-ring performances of the space shuttles
+    before 1986.'
 
-# Keywords: plot, fitting
+Keywords: plot, fitting, bayesian statistics
 
-# See also:  
+See also:  
 
-# Author: Thomas Haslwanter 
+Author: Thomas Haslwanter 
 
-# Submitted: October 31, 2015 
+Submitted: October 31, 2015 
 
-# Datafile:  
+Datafile:  
 
-# Input:  
+Input:  
 
-# Output: 
+Output: 
 
-# Example:  
+Example:  
