@@ -1,6 +1,6 @@
 '''Visualization of the Sum-of-Squares. '''
 
-# author: thomas haslwanter, date: Oct-2015
+# author: thomas haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np
@@ -9,7 +9,7 @@ import seaborn as sns
 
 # additional packages
 import sys
-sys.path.append(r'..\Quantlets\Utilities')
+sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
 import ISP_mystyle
 from matplotlib.patches import Rectangle
 

@@ -10,7 +10,7 @@ import os
 
 # additional packages
 import sys
-sys.path.append(r'..\..\Utilities')
+sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
 import ISP_mystyle
 
 # Formatting options

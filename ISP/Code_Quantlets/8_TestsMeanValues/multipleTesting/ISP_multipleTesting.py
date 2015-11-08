@@ -18,7 +18,7 @@ effectiveness.
 Taken from an example by Josef Perktold (http://jpktd.blogspot.co.at/)
 '''
 
-# author: Thomas Haslwanter, date: June-2014
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np
@@ -27,8 +27,9 @@ from scipy import stats
 import pandas as pd
 
 # Other required packages
+import os
 import sys
-sys.path.append(r'..\..\Utilities')
+sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
 import ISP_mystyle
 from statsmodels.stats.multicomp import (pairwise_tukeyhsd,
                                          MultiComparison)

@@ -1,6 +1,6 @@
 ''' Short demo of how to check for the significance of an individual value. '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np
@@ -11,7 +11,7 @@ import os
 
 # additional packages
 import sys
-sys.path.append(r'..\Quantlets\Utilities')
+sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
 import ISP_mystyle
 
 # Generate a "frozen" the normal distribution

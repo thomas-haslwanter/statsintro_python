@@ -3,9 +3,9 @@ Name of QuantLet: ISP_simpleModels
 Published in:  An Introduction to Statistics with Python
 
 Description: 'Simple linear models.
-    - <model_formulas> is based on examples in Kaplan's book <Statistical Modeling>.
+    - <model_formulas> is based on examples in Kaplan''s book <Statistical Modeling>.
     - <polynomial_regression> shows how to work with simple design matrices,
-      like MATLAB's <regress> command.'
+      like MATLAB''s <regress> command.'
 
 Keywords: linear regression model
 

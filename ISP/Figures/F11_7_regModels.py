@@ -5,7 +5,7 @@ Strongly based on a blog by Connor Johnson.
 http://connor-johnson.com/2014/02/18/linear-regression-with-python/
 '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np
@@ -16,7 +16,7 @@ import os
 
 # additional packages
 import sys
-sys.path.append(r'..\Quantlets\Utilities')
+sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
 import ISP_mystyle
 import matplotlib as mpl
 import statsmodels.formula.api as sm

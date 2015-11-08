@@ -6,7 +6,7 @@
 - Weibull
 '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np
@@ -18,7 +18,7 @@ import os
 # additional packages
 from matplotlib.mlab import frange
 import sys
-sys.path.append(r'..\..\Utilities')
+sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
 import ISP_mystyle
 
 sns.set(context='poster', style='ticks', palette='muted', font_scale=1.5)

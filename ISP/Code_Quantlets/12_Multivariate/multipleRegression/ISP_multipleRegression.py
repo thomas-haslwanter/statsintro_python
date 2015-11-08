@@ -5,7 +5,7 @@ corresponding statistical parameters.
 Also shows how to make 3d plots.
 '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np
@@ -15,7 +15,8 @@ import seaborn as sns
 
 # additional packages
 import sys
-sys.path.append(r'..\..\Utilities')
+import os
+sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
 import ISP_mystyle
 
 # additional packages ...

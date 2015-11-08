@@ -1,7 +1,7 @@
 ''' Paired T-test
 '''
 
-# author: Thomas Haslwanter, Oct 2015
+# author: Thomas Haslwanter, Nov 2015
 
 # Import standard packages
 import numpy as np
@@ -10,7 +10,7 @@ from scipy import stats
 
 # additional packages
 import sys
-sys.path.append(r'..\Quantlets\Utilities')
+sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
 import ISP_mystyle
 
 # Generate the data

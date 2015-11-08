@@ -1,13 +1,13 @@
 '''Sketch to indicate why the sample SD underestimates the population SD '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
 import sys
-sys.path.append(r'..\Quantlets\Utilities')
+sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
 import ISP_mystyle
 
 # Set up the three axes

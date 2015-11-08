@@ -1,6 +1,6 @@
 '''Scatterplot of normally distributed data, with Standard Deviation and Standard Error'''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np
@@ -10,7 +10,7 @@ import seaborn as sns
 
 # additional packages
 import sys
-sys.path.append(r'..\Quantlets\Utilities')
+sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
 import ISP_mystyle
 
 from F7_10_roc import arrow_bidir

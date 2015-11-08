@@ -4,7 +4,7 @@ The example here uses two normally distributed groups, with a mean of 1 and 6,
 respectively, and a standard deviation of 2.
 '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np
@@ -13,7 +13,7 @@ from scipy import stats
 
 # additional packages
 import sys
-sys.path.append(r'..\Quantlets\Utilities')
+sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
 import ISP_mystyle
 
 def arrow_bidir(ax, start, end, headWidth=0.01):

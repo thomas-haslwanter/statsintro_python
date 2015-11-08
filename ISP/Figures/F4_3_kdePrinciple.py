@@ -1,6 +1,6 @@
 """ Plot explaining the principle of a Kernel-Density-Estimation (KDE). """
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np
@@ -9,7 +9,7 @@ from scipy import stats
 
 # additional packages
 import sys
-sys.path.append(r'..\Quantlets\Utilities')
+sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
 import ISP_mystyle
 
 ISP_mystyle.set(fs=18)

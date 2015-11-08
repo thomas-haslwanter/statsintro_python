@@ -1,6 +1,6 @@
 """ Plotting a three-way ANOVA """
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import matplotlib.pyplot as plt
@@ -9,7 +9,7 @@ import seaborn as sns
 # additional packages
 #sns.set_palette('muted')
 import sys
-sys.path.append(r'..\Quantlets\Utilities')
+sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
 import ISP_mystyle
 
 sns.set(style="whitegrid", font_scale=1.25)

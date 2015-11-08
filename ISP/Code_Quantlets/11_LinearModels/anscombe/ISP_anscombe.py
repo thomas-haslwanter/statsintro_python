@@ -4,12 +4,15 @@ http://web.stanford.edu/~mwaskom/software/seaborn/examples/anscombes_quartet.htm
 Note that this program requires a web-connection to load the dataset!
 '''
 
+# author: Thomas Haslwanter, date: Nov-2015
+
 # Import standard packages
 import seaborn as sns
 
 # additional packages
 import sys
-sys.path.append(r'..\..\Utilities')
+import os
+sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
 import ISP_mystyle
 
 sns.set(style="ticks")

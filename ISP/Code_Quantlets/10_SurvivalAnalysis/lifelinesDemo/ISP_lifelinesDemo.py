@@ -2,7 +2,7 @@
 Based on the demo-code in http://lifelines.readthedocs.org, by Cam Davidson-Pilon
 '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np
@@ -11,8 +11,9 @@ from numpy.random import uniform, exponential
 
 # additional packages
 from lifelines.plotting import plot_lifetimes
+import os
 import sys
-sys.path.append(r'..\..\Utilities')
+sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
 import ISP_mystyle
 
 

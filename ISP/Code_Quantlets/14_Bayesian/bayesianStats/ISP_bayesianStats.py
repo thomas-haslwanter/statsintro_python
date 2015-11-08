@@ -5,7 +5,7 @@ of the ambient temperature.
 Input data are the recorded O-ring performances of the space shuttles before 1986.
 '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np
@@ -20,7 +20,7 @@ import pymc as pm
 from scipy.stats.mstats import mquantiles
 
 import sys
-sys.path.append(r'..\..\Utilities')
+sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
 import ISP_mystyle
 
 sns.set_context('poster')

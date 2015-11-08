@@ -1,6 +1,6 @@
 """ Plot showing the effekt of a Kernel-Density-Estimation (KDE). """
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 from scipy import stats
@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 # additional packages
 import sys
-sys.path.append(r'..\Quantlets\Utilities')
+sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
 import ISP_mystyle
 
 # Generate normally distributed data

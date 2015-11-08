@@ -15,7 +15,7 @@ The examples contain:
 - 3D surface and wireframe plots
 '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # First, import the libraries that you are going to need. You could also do
 # that later, but it is better style to do that at the beginning.
@@ -34,7 +34,7 @@ import os
 # additional packages
 import matplotlib as mpl
 import sys
-sys.path.append(r'..\..\Utilities')
+sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
 import ISP_mystyle
 
 def simplePlots():
