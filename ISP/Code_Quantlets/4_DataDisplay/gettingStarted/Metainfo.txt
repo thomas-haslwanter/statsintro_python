@@ -1,9 +1,8 @@
-# Name of QuantLet: ISP_gettingStarted.py
+Name of QuantLet: ISP_gettingStarted
 
-# Published in:  An Introduction to Statistics with Python
+Published in:  An Introduction to Statistics with Python
 
-# Description: Short demonstration of Python for scientific data analysis
-
+Description: 'Short demonstration of Python for scientific data analysis
 This script covers the following points:
 * Plotting a sine wave
 * Generating a column matrix of data
@@ -17,23 +16,14 @@ This script covers the following points:
 * Waiting for a keyboard-press
 * Calculating confidence intervals for line-fits
 * Saving figures
-
-For such a short program, the definition of a "main" function, and calling
+For such a short program, the definition of a <main> function, and calling
 it by default when the module is imported by the main program, is a bit
-superfluous. But it shows good Python coding style.
+superfluous. But it shows good Python coding style.'
 
-# Keywords: plot, fitting
+Keywords: plot, fitting
 
-# See also:  
+Author: Thomas Haslwanter 
 
-# Author: Thomas Haslwanter 
+Submitted: October 31, 2015 
 
-# Submitted: October 31, 2015 
-
-# Datafile:  
-
-# Input:  
-
-# Output: linefit.png
-
-# Example:  
+Output: linefit.png
