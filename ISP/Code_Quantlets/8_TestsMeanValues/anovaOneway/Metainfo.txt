@@ -18,7 +18,7 @@ Author: Thomas Haslwanter
 
 Submitted: October 31, 2015 
 
-Datafile:  
+Datafile:  altman_910.txt, galton.csv
 
 Input:  
 

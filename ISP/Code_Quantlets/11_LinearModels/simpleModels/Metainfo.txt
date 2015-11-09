@@ -15,7 +15,7 @@ Author: Thomas Haslwanter
 
 Submitted: October 31, 2015 
 
-Datafile:  
+Datafile: swim100m.csv 
 
 Input:  
 

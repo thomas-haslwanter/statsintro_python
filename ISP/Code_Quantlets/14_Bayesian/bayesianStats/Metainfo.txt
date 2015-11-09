@@ -17,7 +17,7 @@ Author: Thomas Haslwanter
 
 Submitted: October 31, 2015 
 
-Datafile:  
+Datafile: challenger_data.csv 
 
 Input:  
 

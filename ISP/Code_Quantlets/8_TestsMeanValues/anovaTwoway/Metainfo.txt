@@ -14,7 +14,7 @@ Author: Thomas Haslwanter
 
 Submitted: October 31, 2015 
 
-Datafile:  
+Datafile: altman_12_6.txt 
 
 Input:  
 
