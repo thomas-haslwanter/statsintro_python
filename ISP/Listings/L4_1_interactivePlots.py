@@ -9,8 +9,8 @@ tricks that should make interactive use of plots simpler. The functions below sh
 - Evaluate keyboard inputs
 
 author: Thomas Haslwanter
-date:   March-2015
-er:    1.0
+date:   Nov-2015
+ver:    1.1
 license: Creative Commons Zero (almost public domain) http://scpyce.org/cc0
 
 '''
@@ -44,6 +44,20 @@ def positionOnScreen():
     (screen_w, screen_h) = (root.winfo_screenwidth(), root.winfo_screenheight())
     root.destroy()
     
+    def positionFigure(figure, geometry):
+        '''Position one figure on a given location on the screen.
+        This works for Tk and for Qt5 backends, but may fail on others.'''
+        
+        mgr = figure.canvas.manager
+        (pos_x, pos_y, width, height) = geometry
+        try:
+            # positioning commands for Tk
+            position = '{0}x{1}+{2}+{3}'.format(width, height, pos_x, pos_y)
+            mgr.window.geometry(position)
+        except TypeError:
+            # positioning commands for Qt5
+            mgr.window.setGeometry(pos_x, pos_y, width, height)
+        
     # The program continues after the first plot
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -51,8 +65,8 @@ def positionOnScreen():
     ax.set_title('Top Left: Close this one last')
     
     # Position the first graph in the top-left half of the screen
-    position_topLeft = '{0}x{1}+{2}+{3}'.format(screen_w//2, screen_h//2,0,0)
-    fig.canvas.manager.window.geometry(position_topLeft)
+    topLeft = (0, 0, screen_w//2, screen_h//2)
+    positionFigure(fig, topLeft)
     
     # Put another graph in the top right half
     fig2 = plt.figure()
@@ -61,8 +75,8 @@ def positionOnScreen():
     # I don't completely understand why this one has to be closed first. But otherwise the program gets unstable.
     ax2.set_title('Top Right: Close this one first (e.g. with ALT+F4)')
 
-    position_topRight = '{0}x{1}+{2}+{3}'.format(screen_w//2, screen_h//2,screen_w//2,0)
-    fig2.canvas.manager.window.geometry(position_topRight)
+    topRight = (screen_w//2, 0, screen_w//2, screen_h//2)
+    positionFigure(fig2, topRight)
     
     plt.show()
 
