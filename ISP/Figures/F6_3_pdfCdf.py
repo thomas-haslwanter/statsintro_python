@@ -10,9 +10,20 @@ import os
 import seaborn as sns
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
 # Calculate the values
 nd = stats.norm()
@@ -26,7 +37,7 @@ y1 = nd.pdf(x1)
 # Make the plot
 sns.set_context('paper')
 sns.set_style('white')
-ISP_mystyle.set(12)
+setFonts(12)
 
 figs, axs = plt.subplots(1,2)
 
@@ -44,5 +55,5 @@ plt.vlines(0, 0, 1, linestyles='--')
 sns.despine()
 
 # Save and show
-ISP_mystyle.printout_plain('PDF_CDF.png')
+showData('PDF_CDF.png')
 plt.show()

@@ -9,10 +9,19 @@ import scipy.stats as stats
 import seaborn as sns
 import os
 
-# Import additional packages
+# additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
 
 # Generate the data
 np.random.seed(12345)
@@ -76,4 +85,4 @@ sns.despine()
 
 # Save image
 outFile = 'ttestExplained.png'
-ISP_mystyle.printout_plain(outFile)
+showData(outFile)

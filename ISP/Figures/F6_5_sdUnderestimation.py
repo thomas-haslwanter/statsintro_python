@@ -6,10 +6,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
+# additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
-
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
+    
 # Set up the three axes
 fig, axs = plt.subplots(3,1)
 
@@ -31,4 +41,4 @@ for index, offset in enumerate([-3,0,3]):
 
 # Save and show
 outFile = 'fig_SDunderestimation.png'
-ISP_mystyle.printout_plain(outFile)
+showData(outFile)

@@ -10,10 +10,21 @@ import os
 import seaborn as sns
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
-
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
+    
 sns.set(context='poster', style='ticks', palette='muted')
 
 def show_fig(std, ax, title):
@@ -46,7 +57,7 @@ if __name__ == '__main__':
     centers = [5, 5.3, 4.7]
     
     np.random.seed(123)
-    ISP_mystyle.set(30)
+    setFonts(30)
     
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -55,4 +66,4 @@ if __name__ == '__main__':
     show_fig(0.1, ax, 'Sum-Squares')
     
     # Save and show
-    ISP_mystyle.printout_plain('anova_annotated.png')
+    showData('anova_annotated.png')

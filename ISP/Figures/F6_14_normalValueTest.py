@@ -10,9 +10,20 @@ import seaborn as sns
 import os
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
 # Generate a "frozen" the normal distribution
 md, sd = 3.5, 0.76
@@ -21,7 +32,7 @@ nd = stats.norm(md, sd)
 # Set up the plot
 sns.set_context(context='poster')
 sns.set_style('ticks')
-ISP_mystyle.set()
+setFonts()
 
 # Plot the normal distribution within 3 SDs
 limits = (md-3*sd, md+3*sd)
@@ -50,4 +61,4 @@ plt.text(2.1, 0.05, '11.8%', fontsize=24)
 sns.despine()
 
 # Save and show
-ISP_mystyle.printout_plain('pdf_checkValue.png')
+showData('pdf_checkValue.png')

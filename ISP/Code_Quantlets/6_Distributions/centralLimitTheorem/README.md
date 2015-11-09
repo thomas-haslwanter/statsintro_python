@@ -69,7 +69,7 @@ def main():
     # Format them and show them
     axs[0].set_ylabel('Counts')
     plt.tight_layout()
-    ISP_mystyle.printout_plain('CentralLimitTheorem.png')
+    ISP_mystyle.showData('CentralLimitTheorem.png')
     
 if __name__ == '__main__':
    main() 

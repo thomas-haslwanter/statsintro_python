@@ -1,20 +1,26 @@
 '''Get data from MS-Excel files, which are stored zipped on the WWW. '''
 
-# author: Thomas Haslwanter, date: Jan-2014
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import pandas as pd
 
 # additional packages
-import urllib
 import io
 import zipfile
 
+# Python 2/3 use different packages for "urlopen"
+import sys
+if sys.version_info[0] == 3:
+    from urllib.request import urlopen
+else:
+    from urllib import urlopen
+    
 def getDataDobson(url, inFile):
     '''Extract data from a zipped-archive on the web'''
 
     # get the zip-archive
-    GLM_archive = urllib.request.urlopen(url).read()
+    GLM_archive = urlopen(url).read()
 
     # make the archive available as a byte-stream
     zipdata = io.BytesIO()

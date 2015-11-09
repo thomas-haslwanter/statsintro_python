@@ -18,8 +18,20 @@ import seaborn as sns
 
 # additional packages
 import sys
-sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+
+try:
+# Import formatting commands if directory "Utilities" is available
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
+    
 from statsmodels.formula.api import glm
 from statsmodels.genmod.families import Binomial
 
@@ -72,7 +84,7 @@ def showResults(challenger_data, model):
     
     # First plot the original data
     plt.figure()
-    ISP_mystyle.set()
+    setFonts()
     sns.set_style('darkgrid')
     np.set_printoptions(precision=3, suppress=True)
     
@@ -94,7 +106,7 @@ def showResults(challenger_data, model):
     plt.xlim([50, 85])
     
     outFile = 'ChallengerPlain.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
     
     
 if __name__ == '__main__':

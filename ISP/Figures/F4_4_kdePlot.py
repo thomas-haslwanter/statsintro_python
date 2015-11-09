@@ -9,9 +9,20 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
 # Generate normally distributed data
 nd = stats.norm(0,1)
@@ -34,7 +45,7 @@ kde_large = stats.kde.gaussian_kde(data, 1)
 # Generate two plots: one KDE with rug-plot, and one with different parameters
 sns.set_context('poster')
 sns.set_style('ticks')
-ISP_mystyle.set()
+setFonts()
 fig, axs = plt.subplots(1,2)
 sns.distplot(data, rug=True, ax=axs[0])
 
@@ -46,5 +57,5 @@ axs[1].legend(['exact', h_str, '0.1', '1.0'])
 axs[1].set_ylim(0, 0.40)
 
 # Save and show
-ISP_mystyle.printout_plain('kdePlot.png')
+showData('kdePlot.png')
 plt.show()

@@ -18,7 +18,7 @@ from lifelines import KaplanMeierFitter
 from lifelines.statistics import logrank_test
 
 # Set my favorite font
-ISP_mystyle.set(18)
+ISP_mystyle.setFonts(18)
 
 # Load and show the data
 df = load_waltons() # returns a Pandas DataFrame
@@ -49,7 +49,7 @@ kmf.plot(ax=ax)
 
 plt.ylabel('Survival Probability')
 outFile = 'lifelines_survival.png'
-ISP_mystyle.printout_plain(outFile)
+ISP_mystyle.showData(outFile)
 
 # Compare the two curves
 results = logrank_test(T[ix], T[~ix], event_observed_A=E[ix], event_observed_B=E[~ix])

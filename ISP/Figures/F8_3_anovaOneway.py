@@ -10,9 +10,20 @@ import os
 import seaborn as sns
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
 sns.set_palette('muted')
 
@@ -34,7 +45,7 @@ if __name__ == '__main__':
     # Set up the figure
     sns.set_context('paper')
     sns.set_style('whitegrid')
-    ISP_mystyle.set(14)
+    setFonts(14)
     
     # Create 2 plots of 3 different, normally distributed data groups, with different SDs
     fig, axs = plt.subplots(1, 2)
@@ -44,4 +55,4 @@ if __name__ == '__main__':
     show_fig(0.1, axs[0], 'SD=0.1')
     show_fig(2,   axs[1], 'SD=2.0')
     
-    ISP_mystyle.printout_plain('anova_oneway.png')
+    showData('anova_oneway.png')

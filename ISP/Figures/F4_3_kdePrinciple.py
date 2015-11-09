@@ -8,11 +8,22 @@ import matplotlib.pyplot as plt
 from scipy import stats
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
-ISP_mystyle.set(fs=18)
+setFonts(18)
 
 def plot_histogram(ax, data):
     ''' Left plot: histogram '''
@@ -84,7 +95,7 @@ def main():
     explain_KDE(axs[1], x)
     
     # Save and show
-    ISP_mystyle.printout_plain('KDEexplained.png')
+    showData('KDEexplained.png')
     plt.show()
     
 if __name__ == '__main__':

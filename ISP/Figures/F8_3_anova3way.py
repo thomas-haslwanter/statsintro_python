@@ -7,10 +7,18 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # additional packages
-#sns.set_palette('muted')
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
 
 sns.set(style="whitegrid", font_scale=1.25)
 
@@ -21,4 +29,4 @@ sns.factorplot("time", "pulse", hue="kind", col="diet", data=df,
                palette="YlGnBu_d", aspect=.75).despine(left=True)
 
 outFile = 'ANOVA_3way.png'
-ISP_mystyle.printout_plain(outFile)
+showData(outFile)

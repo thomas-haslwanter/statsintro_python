@@ -9,9 +9,20 @@ from scipy import stats
 import seaborn as sns
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
 def generate_probplot():
     '''Generate a prob-plot for a chi2-distribution of sample data'''
@@ -28,7 +39,7 @@ def generate_probplot():
     # Arrange subplots
     sns.set_context('paper')
     sns.set_style('white')
-    ISP_mystyle.set(11)
+    setFonts(11)
     fig, axs = plt.subplots(1,2)
     
     # Plot distribution
@@ -41,7 +52,6 @@ def generate_probplot():
     x0, x1 = axs[0].get_xlim()
     y0, y1 = axs[0].get_ylim()
     axs[0].set_aspect((x1-x0)/(y1-y0))
-    #sns.despine()
     
     
     # Plot probplot
@@ -53,9 +63,8 @@ def generate_probplot():
     axs[1].axhline(0, lw=0.5, ls='--')
     axs[1].axvline(0, lw=0.5, ls='--')
     axs[1].set_aspect((x1-x0)/(y1-y0))
-    #sns.despine()
     
-    ISP_mystyle.printout_plain('chi2pp.png')
+    showData('chi2pp.png')
     
     return(data)
     '''
@@ -91,7 +100,7 @@ def KS_principle(inData):
     # Plot the data
     sns.set_style('ticks')
     sns.set_context('poster')
-    ISP_mystyle.set(36)
+    setFonts(36)
     
     plt.plot(nd_x, nd_y, 'k--')
     plt.hold(True)
@@ -114,7 +123,7 @@ def KS_principle(inData):
               width=0.05, length_includes_head=True, head_length=0.04, head_width=0.4, color='k')
     
     outFile = 'KS_Example.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
     
 if __name__=='__main__':
     data = generate_probplot()    

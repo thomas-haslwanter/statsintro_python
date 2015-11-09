@@ -14,13 +14,24 @@ import seaborn as sns
 
 # additional packages
 import sys
-sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+
+try:
+# Import formatting commands if directory "Utilities" is available
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
 # General formatting options
 sns.set(context='poster', style='ticks')
 sns.set_palette(sns.color_palette('hls', 3))
-ISP_mystyle.set(24)
+setFonts(24)
 
 #----------------------------------------------------------------------
 def show_binomial():
@@ -45,7 +56,7 @@ def show_binomial():
                  arrowprops=dict(shrink=0.05))
     
     # Show and save the plot
-    ISP_mystyle.printout_plain('Binomial_distribution_pmf.png')
+    showData('Binomial_distribution_pmf.png')
     
 #----------------------------------------------------------------------
 def show_poisson():
@@ -66,7 +77,7 @@ def show_poisson():
     plt.ylabel('P(X)')
     
     # Show and save the plot
-    ISP_mystyle.printout_plain('Poisson_distribution_pmf.png')
+    showData('Poisson_distribution_pmf.png')
     
 #----------------------------------------------------------------------
 def show_poisson_views():
@@ -78,7 +89,7 @@ def show_poisson_views():
     
     k = np.arange(25)
     pd = stats.poisson(10)
-    ISP_mystyle.set(12)
+    setFonts(12)
     
     ax[0].plot(k, pd.pmf(k),'x-')
     ax[0].set_title('Poisson distribution', fontsize=24)

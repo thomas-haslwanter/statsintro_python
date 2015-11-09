@@ -7,9 +7,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
 
 def main():
     # generate the data
@@ -32,7 +41,7 @@ def main():
     plt.xlabel('X')
     plt.ylabel('Y')
     
-    ISP_mystyle.printout_plain('residuals.png') 
+    showData('residuals.png') 
 
 if __name__ == '__main__':
     main()

@@ -8,11 +8,25 @@ Note that this program requires a web-connection to load the dataset!
 
 # Import standard packages
 import seaborn as sns
+import os
 
 # additional packages
 import sys
-import os
-sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+
+try:
+# Import formatting commands if directory "Utilities" is available
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
+
+# additional packages
+import sys
+sys.path.append(os.path.join('..', '..', 'Utilities'))
 import ISP_mystyle
 
 sns.set(style="ticks")
@@ -26,4 +40,4 @@ sns.lmplot(x="x", y="y", col="dataset", hue="dataset", data=df,
            scatter_kws={"s": 50, "alpha": 1})           
 
 outFile = 'Anscombes_quartet.png'
-ISP_mystyle.printout_plain(outFile)
+showData(outFile)

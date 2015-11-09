@@ -19,9 +19,21 @@ import os
 import pymc as pm
 from scipy.stats.mstats import mquantiles
 
+# additional packages
 import sys
-sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+
+try:
+# Import formatting commands if directory "Utilities" is available
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
 sns.set_context('poster')
 
@@ -50,7 +62,7 @@ def showAndSave(temperature, failures):
     
     # Plot it, as a function of tempature
     plt.figure()
-    ISP_mystyle.set()
+    setFonts()
     sns.set_style('darkgrid')
     np.set_printoptions(precision=3, suppress=True)
     
@@ -62,7 +74,7 @@ def showAndSave(temperature, failures):
     plt.tight_layout
     
     outFile = 'Challenger_ORings.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
 
 def mcmcSimulations(temperature, failures):
     '''Perform the MCMC-simulations'''
@@ -104,7 +116,7 @@ def showSimResults(alpha_samples, beta_samples):
     
     plt.figure(figsize=(12.5, 6))
     sns.set_style('darkgrid')
-    ISP_mystyle.set(18)
+    setFonts(18)
     
     # Histogram of the samples:
     plt.subplot(211)
@@ -119,7 +131,7 @@ def showSimResults(alpha_samples, beta_samples):
     plt.legend()
     
     outFile = 'Challenger_Parameters.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
     
     
 def calculateProbability(alpha_samples, beta_samples, temperature, failures):
@@ -142,7 +154,7 @@ def showProbabilities(linearTemperature, temperature, failures, mean_prob_t, p_t
 
     # --- Show the probability curve ----
     plt.figure(figsize=(12.5, 4))
-    ISP_mystyle.set(18)
+    setFonts(18)
     
     plt.plot(linearTemperature, mean_prob_t, lw=3, label="Average posterior\n \
     probability of defect")
@@ -157,10 +169,10 @@ def showProbabilities(linearTemperature, temperature, failures, mean_prob_t, p_t
     plt.xlabel("Temperature [F]")
     
     outFile = 'Challenger_Probability.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
     
     # --- Draw CIs ---
-    ISP_mystyle.set()
+    setFonts()
     sns.set_style('darkgrid')
     
     plt.fill_between(linearTemperature[:, 0], *quantiles, alpha=0.7,
@@ -179,7 +191,7 @@ def showProbabilities(linearTemperature, temperature, failures, mean_prob_t, p_t
     plt.ylabel("Posterior Probability Estimate")
     
     outFile = 'Challenger_CIs.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
 
 if __name__=='__main__':
     (temperature, failures) = getData()    

@@ -8,9 +8,36 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
+
+# additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
+import sys
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
 # Generate the data
 x = np.arange(-20, 80)
@@ -19,7 +46,7 @@ y = 10 + 0.2*x + 4*np.random.randn(len(x))
 # Make the plot
 sns.set_style('ticks')
 sns.set_context('poster')
-ISP_mystyle.set()
+setFonts()
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
@@ -37,4 +64,4 @@ ax.plot(x,yFit, 'r')
 
 # Save and show
 outFile = 'Linear_regression.png'
-ISP_mystyle.printout_plain(outFile)
+showData(outFile)

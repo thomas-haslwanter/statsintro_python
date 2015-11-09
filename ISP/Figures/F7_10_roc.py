@@ -12,9 +12,18 @@ import matplotlib.pyplot as plt
 from scipy import stats
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
 
 def arrow_bidir(ax, start, end, headWidth=0.01):
     '''Plot a bidirectional arrow'''
@@ -96,7 +105,7 @@ def main():
     arrow_bidir(ax2, (0.5,0.5), (0.095, 0.885))
     
     # Show the plot, and create a figure
-    ISP_mystyle.printout_plain('ROC.png')    
+    showData('ROC.png')    
     
 if __name__ == '__main__':
     main()

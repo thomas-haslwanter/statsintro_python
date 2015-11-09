@@ -25,12 +25,23 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 import pandas as pd
+import os
+
+# additional packages
+import sys
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+
+try:
+# Import formatting commands if directory "Utilities" is available
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
 
 # Other required packages
-import os
-import sys
-sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
-import ISP_mystyle
 from statsmodels.stats.multicomp import (pairwise_tukeyhsd,
                                          MultiComparison)
 from statsmodels.formula.api import ols
@@ -128,7 +139,7 @@ def doTukey(data, multiComp):
     
     # Save to outfile, and show the data
     outFile = 'multComp.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
     
 def Holm_Bonferroni(multiComp):
     ''' Instead of the Tukey's test, we can do pairwise t-test '''

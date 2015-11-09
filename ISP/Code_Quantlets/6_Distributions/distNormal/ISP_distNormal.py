@@ -4,7 +4,7 @@
 - Work with the cumulative distribution function (CDF)
 '''
 
-# author: Thomas Haslwanter, date: Aug-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np
@@ -15,9 +15,19 @@ import seaborn as sns
 
 # additional packages
 from matplotlib.mlab import frange
+
 import sys
-sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+
+try:
+# Import formatting commands if directory "Utilities" is available
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
 
 # General formatting options
 sns.set(context='poster', style='ticks', palette='muted')
@@ -86,7 +96,7 @@ def simple_normal():
     plt.tight_layout()
     
     outFile = 'DistributionFunctions.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
 
 def shifted_normal():
     '''PDF and scatter plot'''
@@ -111,7 +121,7 @@ def shifted_normal():
     
     # Show the plot, and save the out-file
     outFile = 'Normal_Distribution_PDF.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
     
     # Generate random numbers with a normal distribution ------------------------
     myMean = 0
@@ -155,7 +165,7 @@ def many_normals():
     
     # Show the data, and save the out-file
     outFile = 'Normal_MultHist.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
     
     # Check out the mean of 1000 normal sample distributions
     numTrials = 1000;

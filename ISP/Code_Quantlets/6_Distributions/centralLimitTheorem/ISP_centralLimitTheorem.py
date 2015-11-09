@@ -10,8 +10,19 @@ import os
 
 # additional packages
 import sys
-sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+
+try:
+# Import formatting commands if directory "Utilities" is available
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
 # Formatting options
 sns.set(context='poster', style='ticks', palette='muted')
@@ -30,7 +41,7 @@ def showAsHistogram(axis, data, title):
 def main():
     '''Demonstrate central limit theorem.'''
     
-    ISP_mystyle.set(24)
+    setFonts(24)
     # Generate data
     data = np.random.random(ndata)
     
@@ -44,7 +55,7 @@ def main():
     # Format them and show them
     axs[0].set_ylabel('Counts')
     plt.tight_layout()
-    ISP_mystyle.printout_plain('CentralLimitTheorem.png')
+    showData('CentralLimitTheorem.png')
     
 if __name__ == '__main__':
    main() 

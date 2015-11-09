@@ -4,10 +4,26 @@
 - using the formula-based approach
 '''
 
-# author: Thomas Haslwanter, date: Jun-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
+# Import standard packages
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+
+# additional packages
+import sys
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+
+try:
+# Import formatting commands if directory "Utilities" is available
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
 
 def createData():
     ''' Generate a noisy, slightly quadratic dataset '''
@@ -47,9 +63,6 @@ def smSolution(M1, M2, M3):
     '''
     
     import statsmodels.api as sm
-    import sys
-    sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
-    import ISP_mystyle
     
     Res1 = sm.OLS(y, M1).fit()
     Res2 = sm.OLS(y, M2).fit()
@@ -65,8 +78,11 @@ def smSolution(M1, M2, M3):
     plt.plot(x, Res2.fittedvalues, 'g', label='Quadratic Fit')
     plt.plot(x, Res3.fittedvalues, 'y', label='Cubic Fit')
     plt.legend(loc='upper left', shadow=True)
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.tight_layout()
     
-    ISP_mystyle.printout('linearModel.png', xlabel='x', ylabel='y')
+    showData('linearModel.png')
 
 def smfSolution(x,y):
     '''Formula-based modeling, using the tools from statsmodels

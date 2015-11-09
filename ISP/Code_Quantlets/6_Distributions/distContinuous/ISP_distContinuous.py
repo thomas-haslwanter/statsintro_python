@@ -18,8 +18,17 @@ import os
 # additional packages
 from matplotlib.mlab import frange
 import sys
-sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+
+try:
+# Import formatting commands if directory "Utilities" is available
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
 
 sns.set(context='poster', style='ticks', palette='muted', font_scale=1.5)
 
@@ -45,7 +54,7 @@ def showT():
     plt.axis('tight')
     
     outFile = 'dist_t.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
     
 #----------------------------------------------------------------------
 def showChi2():
@@ -64,7 +73,7 @@ def showChi2():
     plt.axis('tight')
     
     outFile = 'dist_chi2.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
     
 #----------------------------------------------------------------------
 def showF():
@@ -85,7 +94,7 @@ def showF():
     plt.legend()
         
     outFile = 'dist_f.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
 
 #----------------------------------------------------------------------
 def showExp():
@@ -105,7 +114,7 @@ def showExp():
     plt.legend()
         
     outFile = 'dist_exp.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
     
 #----------------------------------------------------------------------
 def showWeibull():
@@ -126,7 +135,7 @@ def showWeibull():
     plt.legend()
         
     outFile = 'Weibull_PDF.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
     
 #----------------------------------------------------------------------
 if __name__ == '__main__':

@@ -10,10 +10,20 @@ import os
 import seaborn as sns
 
 # additional packages
-import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
 from matplotlib.mlab import frange
+
+# Import formatting commands if directory "Utilities" is available
+import os
+import sys
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
 
 sns.set(context='poster', style='ticks', palette='deep')
 
@@ -57,4 +67,4 @@ if __name__=='__main__':
 
     # Save and show
     outFile = 'Skewness.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)

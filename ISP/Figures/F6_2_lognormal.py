@@ -9,9 +9,21 @@ import matplotlib.pyplot as plt
 from scipy import stats
 import seaborn as sns
 
+# additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
 # Generate the data
 x = np.logspace(-9,1,1001)+1e-9
@@ -20,7 +32,7 @@ y = lnd.pdf(x)
 
 # Generate 2 plots, side-by-side
 sns.set_style('ticks')
-ISP_mystyle.set(18)
+setFonts(18)
 fig, axs = plt.subplots(1,2, sharey=True)
 sns.set_context('poster')
 
@@ -37,4 +49,4 @@ axs[1].set_xlabel('log(x)')
 
 # Save and show
 outFile = 'logNormal.png'
-ISP_mystyle.printout_plain(outFile)
+showData(outFile)

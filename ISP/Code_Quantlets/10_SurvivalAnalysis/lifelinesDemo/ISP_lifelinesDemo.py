@@ -8,15 +8,22 @@ Based on the demo-code in http://lifelines.readthedocs.org, by Cam Davidson-Pilo
 import numpy as np
 import matplotlib.pyplot as plt
 from numpy.random import uniform, exponential
+import os
 
 # additional packages
 from lifelines.plotting import plot_lifetimes
-import os
 import sys
-sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
 
-
+try:
+# Import formatting commands if directory "Utilities" is available
+    from ISP_mystyle import setFonts
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    
 # Generate some dummy data
 np.set_printoptions(precision=2)
 N = 20
@@ -28,7 +35,7 @@ observed_subscriptiontimes = np.minimum(actual_subscriptiontimes,study_duration)
 observed= actual_subscriptiontimes < study_duration
 
 # Show the data
-ISP_mystyle.set(18)
+setFonts(18)
 plt.xlim(0,24)
 plt.vlines(12, 0, 30, lw=2, linestyles="--")
 plt.xlabel('time')

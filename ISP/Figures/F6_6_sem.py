@@ -9,9 +9,20 @@ from scipy import stats
 import seaborn as sns
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
 from F7_10_roc import arrow_bidir
 
@@ -28,7 +39,7 @@ se = np.mean(x) + seVal*np.r_[-1, 1]
 # Set up the plot
 sns.set_style('ticks')
 sns.set_context('poster')
-ISP_mystyle.set()
+setFonts()
 
 # Plot the data
 plt.plot(x,'.')
@@ -74,4 +85,4 @@ plt.annotate('mean', (70,np.mean(x)),xycoords='data', fontsize=28,
 
 # Save and show
 outFile = ('standardError.png')
-ISP_mystyle.printout_plain(outFile)
+showData(outFile)

@@ -10,9 +10,18 @@ from scipy import stats
 import seaborn as sns
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
 
 nd = stats.norm()
 x = np.linspace(-3.5, 3.5,100)
@@ -49,4 +58,4 @@ show_SD(axs[2], x3, y3, '99.7%')
 plt.tight_layout()
 
 # Save and show
-ISP_mystyle.printout_plain('area_SDs.png')
+showData('area_SDs.png')

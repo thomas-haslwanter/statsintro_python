@@ -15,9 +15,21 @@ import pandas as pd
 import os
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
+    
 import matplotlib as mpl
 import statsmodels.formula.api as sm
 from sklearn.linear_model import LinearRegression
@@ -44,7 +56,7 @@ else:
 df = pd.read_csv(StringIO(data_str), sep=r'\s+')
 
 # Plot the data
-ISP_mystyle.set(18)
+setFonts(18)
 plt.plot(df.Tobacco, df.Alcohol, 'o', ms=10)
 plt.xlabel('Tobacco')
 plt.ylabel('Alcohol')
@@ -52,7 +64,7 @@ plt.title('Sales in Several UK Regions')
 plt.ylim([3.8, 6.7])
 
 outFile = 'Alc_vs_Tobacco.png'
-ISP_mystyle.printout_plain(outFile)
+showData(outFile)
 
 result = sm.ols('Alcohol ~ Tobacco', df[:-1]).fit()
 print(result.summary())
@@ -224,4 +236,4 @@ plt.grid() ;
 plt.legend(loc='lower center')
 
 outFile = 'alcohol_regressed_over_tobacco.png'
-ISP_mystyle.printout_plain(outFile)
+showData(outFile)

@@ -9,10 +9,20 @@ from scipy import stats
 import os
 
 # additional packages
-import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
 from matplotlib.patches import Polygon
+
+# Import formatting commands if directory "Utilities" is available
+import os
+import sys
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
 
 # Generate the data
 a, b = -0.5, 1.5 #integral limits
@@ -50,4 +60,4 @@ ax.set_yticks([])
 
 # Save and show
 outFile = ('pdf.png')
-ISP_mystyle.printout_plain(outFile)
+showData(outFile)

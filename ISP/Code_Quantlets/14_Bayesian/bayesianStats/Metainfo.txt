@@ -23,4 +23,4 @@ Input:
 
 Output: 
 
-Example:  
+Example: Challenger_Parameters.png 

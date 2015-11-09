@@ -9,13 +9,24 @@ from scipy import stats
 import seaborn as sns
 
 # additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
 import sys
-sys.path.append(os.path.join('.', '..', 'Quantlets', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
 sns.set_context('poster')
 sns.set_style('ticks')
-ISP_mystyle.set()
+setFonts()
 
 # Generate the data
 np.random.seed(1234)
@@ -32,4 +43,4 @@ plt.xlabel('Student-Nr')
 plt.ylabel('Score')
 
 outFile = 'fig_ExampleTtest.png'
-ISP_mystyle.printout_plain(outFile)
+showData(outFile)

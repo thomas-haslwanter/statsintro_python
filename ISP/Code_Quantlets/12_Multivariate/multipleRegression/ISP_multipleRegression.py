@@ -16,8 +16,17 @@ import seaborn as sns
 # additional packages
 import sys
 import os
-sys.path.append(os.path.join('.', '..', '..', 'Utilities'))
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+
+try:
+# Import formatting commands if directory "Utilities" is available
+    from ISP_mystyle import showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def showData(*options):
+        plt.show()
+        return
 
 # additional packages ...
 # ... for the 3d plot ...
@@ -57,7 +66,7 @@ def generateData():
     fig.colorbar(surf, shrink=0.6)
     
     outFile = '3dSurface.png'
-    ISP_mystyle.printout_plain(outFile)
+    showData(outFile)
     
     
     return (X.flatten(),Y.flatten(),Z.flatten())
@@ -95,7 +104,7 @@ def scatterplot():
     
     df = sns.load_dataset("iris")
     sns.pairplot(df, hue="species", size=2.5)    
-    ISP_mystyle.printout_plain('multiScatterplot.png')
+    showData('multiScatterplot.png')
     
 if __name__ == '__main__':
     scatterplot()
