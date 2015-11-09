@@ -3,23 +3,16 @@ Name of QuantLet: ISP_multipleRegression
 Published in:  An Introduction to Statistics with Python
 
 Description: 'Multiple Regression
-    Shows how to calculate just the best fit, or - using <statsmodels> - all the
-    corresponding statistical parameters.'
+    - Shows how to calculate the best fit to a plane in 3D, and how to find the
+      corresponding statistical parameters.
+    - Demonstrates how to make a 3d plot.
+    - Example of multiscatterplot, for visualizing correlations in three- to
+      six-dimensional datasets.'
 
-    Also shows how to make 3d plots.
-
-Keywords: plot
-
-See also:  
+Keywords: plot, multiple regression, multilinear regression
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
-
-Datafile:  
-
-Input:  
-
-Output: 
 
 Example:  3dSurface.png, multiScatterplot.png

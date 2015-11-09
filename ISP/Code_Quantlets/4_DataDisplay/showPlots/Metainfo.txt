@@ -4,7 +4,7 @@ Published in:  An Introduction to Statistics with Python
 
 Description: 'Show different ways to present statistical data
     The examples contain:
-    - scatter plots, with 1-dimensional and higher-dimensional data
+    - scatter plots
     - histograms
     - cumulative density functions
     - KDE-plots
@@ -18,6 +18,8 @@ Description: 'Show different ways to present statistical data
     - 3D surface and wireframe plots'
 
 Keywords: data visualization, plot, visualization
+
+See also: ISP_gettingStarted
 
 Author: Thomas Haslwanter 
 

@@ -8,16 +8,6 @@ Description: 'Demonstration of the package <lifelines>
 
 Keywords: logrank test, kaplan-meier curve 
 
-See also:  
-
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
-
-Datafile:  
-
-Input:  
-
-Output: 
-
-Example:  

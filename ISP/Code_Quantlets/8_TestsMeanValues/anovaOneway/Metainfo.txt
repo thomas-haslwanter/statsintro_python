@@ -12,16 +12,11 @@ Description: 'Analysis of Variance (ANOVA)
 
 Keywords: anova, levene test, one-way anova, t-test
 
-See also:  
+See also: 'ISP_anovaOneway, ISP_anovaTwoway, ISP_kruskalWallis,
+    ISP_multipleTesting, ISP_oneGroup, ISP_twoGroups' 
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
 
 Datafile:  altman_910.txt, galton.csv
-
-Input:  
-
-Output:
-
-Example: linefit.png  

@@ -9,9 +9,9 @@ Description: 'Example of PyMC - The Challenger Disaster
     Input data are the recorded O-ring performances of the space shuttles
     before 1986.'
 
-Keywords: plot, fitting, bayesian statistics
+Keywords: plot, fitting, bayesian statistics, logistic regression
 
-See also:  
+See also:  ISP_logisticRegression
 
 Author: Thomas Haslwanter 
 
@@ -19,8 +19,4 @@ Submitted: October 31, 2015
 
 Datafile: challenger_data.csv 
 
-Input:  
-
-Output: 
-
-Example: Challenger_Parameters.png 
+Example: Challenger_Parameters.png, Challenger_CIs.png

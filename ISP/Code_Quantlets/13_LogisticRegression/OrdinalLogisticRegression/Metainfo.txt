@@ -6,16 +6,10 @@ Description: Implementation of logistic ordinal regression (aka proportional odd
 
 Keywords: plot, fitting, ordinal logistic regression
 
-See also:  
+See also:  ISP_logisticRegression, ISP_bayesianStats
 
 Author: fernando pedorosa
 
 Submitted: march-2013
-
-Datafile:  
-
-Input:  
-
-Output: 
 
 Example:  

@@ -8,16 +8,9 @@ Description: 'Calculate the sample size for experiments, for normally distribute
 
 Keywords: sample size
 
-See also:  
+See also: ISP_checkNormality 
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
 
-Datafile:  
-
-Input:  
-
-Output: 
-
-Example:  

@@ -11,16 +11,9 @@ Description: 'Analysis of categorical data
 
 Keywords: fisher exact test, chi-square test, mcnemar's test, cochran's test
 
-See also:  
+See also: ISP_twoGroups 
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
 
-Datafile:  
-
-Input:  
-
-Output: 
-
-Example:  

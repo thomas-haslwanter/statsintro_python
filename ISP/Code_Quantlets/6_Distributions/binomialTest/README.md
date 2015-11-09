@@ -1,4 +1,8 @@
 
+![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+
+## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_binomialTest**
+
 ```yaml
 Name of QuantLet: ISP_binomialTest
 
@@ -7,6 +11,8 @@ Published in:  An Introduction to Statistics with Python
 Description: Example of a one-and two-sided binomial test.
 
 Keywords: test, binomial, simulation
+
+See also: ISP_centralLimitTheorem, ISP_distContinuous, ISP_distDiscrete, ISP_distNormal
 
 Author: Thomas Haslwanter 
 

@@ -1,3 +1,37 @@
+
+![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+
+## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_multipleRegression**
+
+
+```yaml
+Name of QuantLet: ISP_multipleRegression
+
+Published in:  An Introduction to Statistics with Python
+
+Description: 'Multiple Regression
+    - Shows how to calculate the best fit to a plane in 3D, and how to find the
+      corresponding statistical parameters.
+    - Demonstrates how to make a 3d plot.
+    - Example of multiscatterplot, for visualizing correlations in three- to
+      six-dimensional datasets.'
+
+Keywords: plot, multiple regression, multilinear regression
+
+Author: Thomas Haslwanter 
+
+Submitted: October 31, 2015 
+
+Example:  3dSurface.png, multiScatterplot.png
+```
+
+
+![Picture1](multiScatterplot.png)
+
+![Picture2](3dSurface.png)
+
+
+```py
 '''Multiple Regression
 - Shows how to calculate the best fit to a plane in 3D, and how to find the
   corresponding statistical parameters.
@@ -112,3 +146,4 @@ if __name__ == '__main__':
     (X,Y,Z) = generateData()    
     regressionModel(X,Y,Z)    
     linearModel(X,Y,Z)
+```

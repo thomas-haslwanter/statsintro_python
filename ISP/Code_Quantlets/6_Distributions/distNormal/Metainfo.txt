@@ -9,16 +9,10 @@ Description: 'Simple manipulations of normal distribution functions.
 
 Keywords: probability density function, cumulative distribution function, survival function, percentile point function
 
-See also:  
+See also: ISP_binomialTest, ISP_centralLimitTheorem, ISP_distContinuous, ISP_distDiscrete
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
-
-Datafile:  
-
-Input:  
-
-Output: 
 
 Example:  Normal_Distribution_PDF.png, DistributionFunctions.png, Normal_MultHist.png

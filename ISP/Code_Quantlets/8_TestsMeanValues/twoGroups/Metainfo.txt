@@ -9,16 +9,11 @@ Description: 'Comparison of two groups
 Keywords: t-test, paired t-test, wilcoxon signed rank sum test, mann whitney
 u test
 
-See also:  
+See also: 'ISP_anovaOneway, ISP_anovaTwoway, ISP_kruskalWallis,
+    ISP_multipleTesting, ISP_oneGroup' 
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
 
 Datafile:  altman_93.txt, altman_94.txt
-
-Input:  
-
-Output: 
-
-Example:  

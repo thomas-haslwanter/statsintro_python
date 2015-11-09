@@ -23,16 +23,11 @@ Description: 'Multiple testing
 
 Keywords: post hoc test, anova, tukey's HSD test, Holm test
 
-See also:  
+See also: 'ISP_anovaOneway, ISP_anovaTwoway, ISP_kruskalWallis,
+    ISP_oneGroup, ISP_twoGroups' 
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
-
-Datafile:  
-
-Input:  
-
-Output:
 
 Example: multComp.png  

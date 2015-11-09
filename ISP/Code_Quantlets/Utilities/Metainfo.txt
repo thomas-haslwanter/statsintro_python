@@ -1,0 +1,14 @@
+Name of QuantLet: ISP_mystyle
+
+Published in:  An Introduction to Statistics with Python
+
+Description: 'Common formatting and print commands, for the book "Introduction
+    to Statistics with Python". These commands ensure a common layout, and reduce
+    the code required to generate plots in the other modules.'
+
+Keywords: utility function
+
+Author: Thomas Haslwanter 
+
+Submitted: October 31, 2015 
+

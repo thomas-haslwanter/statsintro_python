@@ -49,7 +49,7 @@ def show_binomial():
     
     # Format the plot
     plt.legend()
-    plt.title('Binomial distribuition')
+    plt.title('Binomial distribution')
     plt.xlabel('X')
     plt.ylabel('P(X)')
     plt.annotate('Upper Limit', xy=(20,0), xytext=(27,0.04), 

@@ -48,18 +48,12 @@ Description: 'Linear regression fit
     Example data and formulas are taken from
     D. Altman, <Practical Statistics for Medicine>'
 
-Keywords: line fit, confidence intervals, plot
-
-See also:  
+Keywords: line fit, confidence intervals, plot, linear regression
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
 
 Datafile:  
-
-Input:  
-
-Output:
 
 Example: regression_wLegend.png  

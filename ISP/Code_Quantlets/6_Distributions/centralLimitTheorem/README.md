@@ -1,14 +1,19 @@
 
+![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+
+## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_centralLimitTheorem**
+
+
 ```yaml
 Name of QuantLet: ISP_centralLimitTheorem
 
 Published in:  An Introduction to Statistics with Python
 
-Description: Practical demonstration of the central limit theorem, based on the uniform distribution
+Description: Practical demonstration of the *central limit theorem*, based on the uniform distribution
 
 Keywords: CLT, normal-distribution, normal approximation, simulation, uniform, distribution
 
-See also: 
+See also: ISP_binomialTest, ISP_distContinuous, ISP_distDiscrete, ISP_distNormal
 
 Author: Thomas Haslwanter
 
@@ -35,8 +40,19 @@ import os
 
 # additional packages
 import sys
-sys.path.append(r'..\..\Utilities')
-import ISP_mystyle
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+
+try:
+# Import formatting commands if directory "Utilities" is available
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
 
 # Formatting options
 sns.set(context='poster', style='ticks', palette='muted')
@@ -55,7 +71,7 @@ def showAsHistogram(axis, data, title):
 def main():
     '''Demonstrate central limit theorem.'''
     
-    ISP_mystyle.set(24)
+    setFonts(24)
     # Generate data
     data = np.random.random(ndata)
     
@@ -69,9 +85,7 @@ def main():
     # Format them and show them
     axs[0].set_ylabel('Counts')
     plt.tight_layout()
-    ISP_mystyle.showData('CentralLimitTheorem.png')
+    showData('CentralLimitTheorem.png')
     
 if __name__ == '__main__':
    main() 
-
-```

@@ -1,8 +1,7 @@
 
 ![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
 
-## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png)
-**ISP_distDiscrete**
+## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_distDiscrete**
 
 
 ```yaml
@@ -15,6 +14,8 @@ Description: 'Different discrete distribution functions.
     - Poisson distribution (PMF, CDF, and PPF)'
 
 Keywords: binomial distribution, poisson distribution, plot
+
+See also: ISP_binomialTest, ISP_centralLimitTheorem, ISP_distContinuous, ISP_distNormal
 
 Author: Thomas Haslwanter 
 

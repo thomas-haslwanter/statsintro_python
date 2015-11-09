@@ -8,16 +8,10 @@ Description: 'Different discrete distribution functions.
 
 Keywords: binomial distribution, poisson distribution, plot
 
-See also:  
+See also: ISP_binomialTest, ISP_centralLimitTheorem, ISP_distContinuous, ISP_distNormal
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
-
-Datafile:  
-
-Input:  
-
-Output:
 
 Example:  Biomial_distribution_pmf.png, Poisson_distribution_pmf.png

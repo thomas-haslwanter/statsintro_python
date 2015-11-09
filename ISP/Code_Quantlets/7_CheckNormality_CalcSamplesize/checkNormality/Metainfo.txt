@@ -11,16 +11,10 @@ Description: 'Graphical and quantitative check, if a given distribution is norma
 
 Keywords: lilliefors test, shapiro-wilk test, kolmogorov-smirnov test, omnibus test, qq-plot, probplot
 
-See also:  
+See also: ISP_sampleSize
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
-
-Datafile:  
-
-Input:  
-
-Output:
 
 Example: NormalityCheck.png  

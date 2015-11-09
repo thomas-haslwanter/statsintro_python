@@ -8,16 +8,11 @@ Description: 'Example of bootstrapping the confidence interval for the mean of a
 
 Keywords: bootstrap
 
-See also:  
+See also: 'ISP_anscombe, ISP_bivariate, ISP_fitLine,
+        ISP_modelImplementations, ISP_simpleModels'
+
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
 
-Datafile:  
-
-Input:  
-
-Output: 
-
-Example:  

@@ -1,4 +1,9 @@
 
+![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+
+## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_gettingStarted**
+
+
 ```yaml
 Name of QuantLet: ISP_gettingStarted
 
@@ -23,6 +28,8 @@ it by default when the module is imported by the main program, is a bit
 superfluous. But it shows good Python coding style.'
 
 Keywords: plot, fitting
+
+See also: ISP_showPlots
 
 Author: Thomas Haslwanter 
 

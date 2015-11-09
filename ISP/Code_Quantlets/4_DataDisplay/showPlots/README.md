@@ -1,6 +1,11 @@
 
+![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+
+## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_showPlots**
+
+
 ```yaml
-Name of QuantLet: ISP_showData
+Name of QuantLet: ISP_showPlots
 
 Published in:  An Introduction to Statistics with Python
 
@@ -21,6 +26,8 @@ Description: 'Show different ways to present statistical data
 
 Keywords: data visualization, plot, visualization
 
+See also: ISP_gettingStarted
+
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
@@ -39,9 +46,7 @@ Example:
 ```
 
 
-![Picture1](3dGraph.png)
-![Picture2](barplot.png)
-![Picture3](bivariate.png)
+![showPlots](showPlots_s.png)
 
 
 ```py
@@ -62,7 +67,7 @@ The examples contain:
 - 3D surface and wireframe plots
 '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2015
 
 # First, import the libraries that you are going to need. You could also do
 # that later, but it is better style to do that at the beginning.
@@ -80,10 +85,43 @@ import os
 
 # additional packages
 import matplotlib as mpl
-import sys
-sys.path.append(r'..\..\Utilities')
-import ISP_mystyle
 
+import sys
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+# Import formatting commands if directory "Utilities" is available
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
+
+def printout(outFile, xlabel = '', ylabel='', title='', outDir = '.'):
+    '''Save the current figure to a file, and then display it'''
+    
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.title(title)
+    
+    plt.tight_layout
+    
+    xlim = plt.gca().get_xlim()
+    plt.hlines(0, xlim[0], xlim[1], linestyles='--', colors='#999999')
+    plt.gca().set_xlim(xlim)
+    
+    saveTo = os.path.join(outDir, outFile)
+    plt.savefig(saveTo, dpi=200)
+    
+    print('OutDir: {0}'.format(outDir))
+    print('Figure saved to {0}'.format(outFile))
+    
+    plt.show()
+    plt.close()
+    
 def simplePlots():
     '''Demonstrate the generation of different statistical standard plots'''
     
@@ -99,39 +137,39 @@ def simplePlots():
     sns.set(context='poster', style='ticks', palette=sns.color_palette('muted'))
     
     # Set the fonts the way I like them
-    ISP_mystyle.set(fs=32)
+    setFonts(32)
     
     # Scatter plot
     plt.scatter(np.arange(len(x)), x)
     plt.xlim([0, len(x)])
     
     # Save and show the data, in a systematic format
-    ISP_mystyle.printout('scatterPlot.png', xlabel='Datapoints', ylabel='Values', title='Scatter')
+    printout('scatterPlot.png', xlabel='Datapoints', ylabel='Values', title='Scatter')
     
     # Histogram
     plt.hist(x)
-    ISP_mystyle.printout('histogram_plain.png', xlabel='Data Values',
+    printout('histogram_plain.png', xlabel='Data Values',
              ylabel='Frequency', title='Histogram, default settings')
     
     plt.hist(x,25)
-    ISP_mystyle.printout('histogram.png', xlabel='Data Values', ylabel='Frequency',
+    printout('histogram.png', xlabel='Data Values', ylabel='Frequency',
              title='Histogram, 25 bins')
     
     # Cumulative probability density
     numbins = 20
     plt.plot(stats.cumfreq(x,numbins)[0])
-    ISP_mystyle.printout('CumulativeFrequencyFunction.png', xlabel='Data Values',
+    printout('CumulativeFrequencyFunction.png', xlabel='Data Values',
              ylabel='CumFreq', title='Cumulative Frequency')
 
     # KDE-plot
     sns.kdeplot(x)
-    ISP_mystyle.printout('kde.png', xlabel='Data Values', ylabel='Density',
+    printout('kde.png', xlabel='Data Values', ylabel='Density',
             title='KDE_plot')
     
     # Boxplot
     # The ox consists of the first, second (middle) and third quartile
     plt.boxplot(x, sym='*')
-    ISP_mystyle.printout('boxplot.png', xlabel='Values', title='Boxplot')
+    printout('boxplot.png', xlabel='Values', title='Boxplot')
     
     plt.boxplot(x, sym='*', vert=False)
     plt.title('Boxplot, horizontal')
@@ -145,7 +183,7 @@ def simplePlots():
     plt.errorbar(x,y, yerr=errorBar, fmt='o', capsize=5, capthick=3)
     plt.xlim([-0.2, 4.2])
     plt.ylim([-0.2, 19])
-    ISP_mystyle.printout('Errorbars.png', xlabel='Data Values', ylabel='Measurements', title='Errorbars')
+    printout('Errorbars.png', xlabel='Data Values', ylabel='Measurements', title='Errorbars')
     
     # Violinplot
     nd = stats.norm
@@ -158,31 +196,31 @@ def simplePlots():
     df = pd.DataFrame({'Girls':data, 'Boys':data2})
     sns.violinplot(df)
     
-    ISP_mystyle.printout('violinplot.png', title='Violinplot')
+    printout('violinplot.png', title='Violinplot')
     
     # Barplot
     # The font-size is set such that the legend does not overlap with the data
     np.random.seed(1234)
-    ISP_mystyle.set(20)
+    setFonts(20)
     
     df = pd.DataFrame(np.random.rand(10, 4), columns=['a', 'b', 'c', 'd'])
     df.plot(kind='bar', grid=False, color=sns.color_palette('muted'))
     
-    ISP_mystyle.showData('barplot.png')
-    ISP_mystyle.set(28)
+    showData('barplot.png')
+    setFonts(28)
 
     # Bivariate Plots
     df2 = pd.DataFrame(np.random.rand(50, 3), columns=['a', 'b', 'c'])
     df2.plot(kind='scatter', x='a', y='b', s=df2['c']*500);
     plt.axhline(0, ls='--', color='#999999')
     plt.axvline(0, ls='--', color='#999999')
-    ISP_mystyle.printout('bivariate.png')
+    printout('bivariate.png')
     
     # Grouped Boxplot
     sns.set_style('whitegrid')
     sns.boxplot(df)
-    ISP_mystyle.set(fs=28)
-    ISP_mystyle.printout('groupedBoxplot.png', title='sns.boxplot')
+    setFonts(28)
+    printout('groupedBoxplot.png', title='sns.boxplot')
 
     sns.set_style('ticks')
 
@@ -195,7 +233,7 @@ def simplePlots():
             autopct='%1.1f%%', shadow=True, startangle=90,
             colors=sns.color_palette('muted') )
     plt.axis('equal')
-    ISP_mystyle.printout('piePlot.png', title=' ')
+    printout('piePlot.png', title=' ')
 
 def show3D():
     '''Generation of 3D plots'''
@@ -208,7 +246,7 @@ def show3D():
     
     # Twice as wide as it is tall.
     fig = plt.figure(figsize=plt.figaspect(0.5))
-    ISP_mystyle.set(fs=14)
+    setFonts(16)
     
     #---- First subplot
     # Generate the data
@@ -238,10 +276,8 @@ def show3D():
     X, Y, Z = get_test_data(0.05)
     ax.plot_wireframe(X, Y, Z, rstride=10, cstride=10)
 
-    ISP_mystyle.showData('3dGraph.png')
+    showData('3dGraph.png')
     
 if __name__ == '__main__':
     simplePlots()
     show3D()
-
-```

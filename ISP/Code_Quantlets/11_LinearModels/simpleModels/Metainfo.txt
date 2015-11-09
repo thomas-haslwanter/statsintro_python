@@ -9,16 +9,11 @@ Description: 'Simple linear models.
 
 Keywords: linear regression model
 
-See also:  
+See also: 'ISP_anscombe, ISP_bivariate, ISP_bootstrapDemo, ISP_fitLine,
+        ISP_modelImplementations'
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
 
 Datafile: swim100m.csv 
-
-Input:  
-
-Output: 
-
-Example:  

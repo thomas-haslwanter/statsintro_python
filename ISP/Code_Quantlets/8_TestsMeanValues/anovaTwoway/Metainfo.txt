@@ -8,7 +8,8 @@ Description: 'Two-way Analysis of Variance (ANOVA)
 
 Keywords: plot, fitting, two-way anova
 
-See also:  
+See also: 'ISP_anovaOneway, ISP_kruskalWallis,
+    ISP_multipleTesting, ISP_oneGroup, ISP_twoGroups' 
 
 Author: Thomas Haslwanter 
 
@@ -16,8 +17,3 @@ Submitted: October 31, 2015
 
 Datafile: altman_12_6.txt 
 
-Input:  
-
-Output: 
-
-Example:  

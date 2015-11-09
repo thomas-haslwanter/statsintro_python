@@ -6,6 +6,8 @@ Description: Example of a one-and two-sided binomial test.
 
 Keywords: test, binomial, simulation
 
+See also: ISP_centralLimitTheorem, ISP_distContinuous, ISP_distDiscrete, ISP_distNormal
+
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 

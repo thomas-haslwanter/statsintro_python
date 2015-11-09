@@ -12,16 +12,11 @@ Description: 'Analysis of one group of data
 
 Keywords: t test, Wilcoxon signed rank sum test, t distribution
 
-See also:  
+See also: 'ISP_anovaOneway, ISP_anovaTwoway, ISP_kruskalWallis,
+    ISP_multipleTesting, ISP_twoGroups' 
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
 
 Datafile: altman_91.txt 
-
-Input:  
-
-Output: 
-
-Example:  

@@ -13,16 +13,12 @@ Description: 'Logistic Regression
 
 Keywords: plot, fitting, logistic regression
 
-See also:  
+See also: ISP_ordinalLogisticRegression, ISP_bayesianStats
 
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
 
 Datafile:  challenger_data.csv 
-
-Input:  
-
-Output:
 
 Example: ChallengerPlain.png  

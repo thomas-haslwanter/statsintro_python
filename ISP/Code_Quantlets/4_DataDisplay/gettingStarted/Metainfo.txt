@@ -22,6 +22,8 @@ superfluous. But it shows good Python coding style.'
 
 Keywords: plot, fitting
 
+See also: ISP_showPlots
+
 Author: Thomas Haslwanter 
 
 Submitted: October 31, 2015 
