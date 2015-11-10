@@ -1,5 +1,5 @@
 
-![quantletLogo FH](http://work.thaslwanter.at/quantletLogo.png)
+![quantletLogoFH FH](http://work.thaslwanter.at/quantletLogoFH.png)
 
 ## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_twoGroups**
 
