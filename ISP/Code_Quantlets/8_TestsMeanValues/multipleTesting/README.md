@@ -10,7 +10,6 @@ Name of QuantLet: ISP_multipleTesting
 Published in:  An Introduction to Statistics with Python
 
 Description: 'Multiple testing
-
     This script provides an example, where three treatments are compared. It
     first performs a one-way ANOVA, to see if there is a difference between the
     groups. Then it performs multiple comparisons, to check which of the groups
@@ -23,12 +22,11 @@ Description: 'Multiple testing
     comparison between three stress treatment programs, one using mental
     methods, one using physical training, and one using medication. The values
     represent how effective the treatment programs were at reducing
-    participant's stress levels, with higher numbers indicating higher
+    participant''s stress levels, with higher numbers indicating higher
     effectiveness.
-
     Taken from an example by Josef Perktold (http://jpktd.blogspot.co.at/)'
 
-Keywords: post hoc test, anova, tukey's HSD test, Holm test
+Keywords: 'post hoc test, anova, tukey''s HSD test, Holm test'
 
 See also: 'ISP_anovaOneway, ISP_anovaTwoway, ISP_kruskalWallis,
     ISP_oneGroup, ISP_twoGroups' 

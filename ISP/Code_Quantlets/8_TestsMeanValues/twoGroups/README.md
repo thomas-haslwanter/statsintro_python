@@ -12,8 +12,7 @@ Description: 'Comparison of two groups
     - Analysis of paired data
     - Analysis of unpaired data'
 
-Keywords: t-test, paired t-test, wilcoxon signed rank sum test, mann whitney
-u test
+Keywords: t-test, paired t-test, wilcoxon signed rank sum test, mann whitney u test
 
 See also: 'ISP_anovaOneway, ISP_anovaTwoway, ISP_kruskalWallis,
     ISP_multipleTesting, ISP_oneGroup' 
