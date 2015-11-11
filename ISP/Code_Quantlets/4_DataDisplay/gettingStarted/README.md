@@ -1,5 +1,5 @@
 
-![quantletLogoFH FH](statsintro_python/quantletLogo_FH.png)
+![quantletLogoFH](statsintro_python/quantletLogo_FH.png)
 
 ## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_gettingStarted**
 
