@@ -1,5 +1,5 @@
 
-![quantletLogo_FH](pictures/quantletLogo_FH.png)
+![quantletLogo_FH](../../../../pictures/quantletLogo_FH)
 
 ## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_gettingStarted**
 

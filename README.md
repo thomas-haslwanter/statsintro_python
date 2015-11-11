@@ -1,4 +1,4 @@
-![Title](statsIntro.png)
+![Title](pictures/statsIntro.png)
 
 Python modules and IPython Notebooks, which accompany the book *Introduction to Statistics With Python*
 This repo contains two folders: *ISP*, and *ipynb*
