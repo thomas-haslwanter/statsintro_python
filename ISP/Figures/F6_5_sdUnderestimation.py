@@ -1,6 +1,6 @@
 '''Sketch to indicate why the sample SD underestimates the population SD '''
 
-# author: Thomas Haslwanter, date: Nov-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the BSD 3-Clause License
 
 import numpy as np
 import matplotlib.pyplot as plt
