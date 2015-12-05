@@ -39,7 +39,7 @@ Datafile:  altman_910.txt, galton.csv
   a T-test: t^2 = F
 '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the BSD 3-Clause License
 
 # Import standard packages
 import numpy as np

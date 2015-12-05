@@ -1,7 +1,7 @@
 
 ![quantletLogo_FH](../../../../pictures/quantletLogo_FH.png)
 
-## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_xxx**
+## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_distNormal**
 
 
 ```yaml
@@ -37,7 +37,7 @@ Example:  Normal_Distribution_PDF.png, DistributionFunctions.png, Normal_MultHis
 - Work with the cumulative distribution function (CDF)
 '''
 
-# author: Thomas Haslwanter, date: Nov-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the BSD 3-Clause License
 
 # Import standard packages
 import numpy as np

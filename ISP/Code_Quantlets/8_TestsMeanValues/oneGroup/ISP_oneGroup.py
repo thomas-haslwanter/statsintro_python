@@ -6,7 +6,7 @@ This script shows how to
 - Compare the values from the t-distribution with those of a normal distribution
 '''
 
-# author: Thomas Haslwanter, date: Sept-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the BSD 3-Clause License
 
 # Import standard packages
 import numpy as np

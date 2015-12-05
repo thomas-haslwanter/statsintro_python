@@ -2,7 +2,7 @@
 Based on the demo-code in http://lifelines.readthedocs.org, by Cam Davidson-Pilon
 '''
 
-# author: Thomas Haslwanter, date: Nov-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the BSD 3-Clause License
 
 # Import standard packages
 import numpy as np

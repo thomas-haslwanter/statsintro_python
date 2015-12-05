@@ -32,7 +32,7 @@ Datafile:  altman_11_1.txt, altman_11_6.txt
 - Correlation (Pearson-rho, Spearman-rho, and Kendall-tau)
 '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the BSD 3-Clause License
 
 # Import standard packages
 import numpy as np
