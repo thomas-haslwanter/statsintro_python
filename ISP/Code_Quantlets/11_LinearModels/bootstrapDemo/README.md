@@ -2,10 +2,6 @@
 
 ## [<img src="../../../../pictures/qloqo.png" alt="Visit QuantNet">](http://quantlet.de/) **ISP_bootstrapDemo** [<img src="../../../../pictures/QN2.png" width="60" alt="Visit QuantNet 2.0">](http://quantlet.de/d3/ia)
 
-![quantletLogo_FH](../../../../pictures/quantletLogo_FH.png)
-
-## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_bootstrapDemo**
-
 
 ```yaml
 Name of QuantLet: ISP_bootstrapDemo
