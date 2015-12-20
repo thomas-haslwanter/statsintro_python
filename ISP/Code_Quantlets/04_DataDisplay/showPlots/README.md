@@ -66,7 +66,7 @@ The examples contain:
 - 3D surface and wireframe plots
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the BSD 3-Clause License
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # First, import the libraries that you are going to need. You could also do
 # that later, but it is better style to do that at the beginning.

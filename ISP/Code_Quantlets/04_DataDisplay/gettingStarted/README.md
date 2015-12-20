@@ -64,7 +64,7 @@ it by default when the module is imported by the main program, is a bit
 superfluous. But it shows good Python coding style.
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the BSD 3-Clause License
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # In contrast to MATLAB, you explicitly have to load the modules that you need.
 import numpy as np

@@ -45,7 +45,7 @@ and the fit indicates the likelihood of failure for an O-ring.
 Taken from http://www.brightstat.com/index.php?option=com_content&task=view&id=41&Itemid=1&limit=1&limitstart=2
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the BSD 3-Clause License
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np

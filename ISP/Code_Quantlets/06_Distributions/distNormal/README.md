@@ -36,7 +36,7 @@ Example:  Normal_Distribution_PDF.png, DistributionFunctions.png, Normal_MultHis
 - Work with the cumulative distribution function (CDF)
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the BSD 3-Clause License
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
