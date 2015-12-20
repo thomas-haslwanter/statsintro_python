@@ -11,7 +11,7 @@ tricks that should make interactive use of plots simpler. The functions below sh
 author: Thomas Haslwanter
 date:   Nov-2015
 ver:    1.1
-license: Creative Commons Zero (almost public domain) http://scpyce.org/cc0
+license: CC BY-SA 4.0
 
 '''
 # Import standard packages

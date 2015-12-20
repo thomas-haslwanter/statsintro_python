@@ -1,6 +1,6 @@
 ''' Short demo of how to check for the significance of an individual value. '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the BSD 3-Clause License
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
