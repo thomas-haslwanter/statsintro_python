@@ -38,7 +38,7 @@ Output: linefit.png
 
 ```
 
-<img src="linefit.png" alt="Picture1" style="width=200px;"/>
+<img src="linefit.png" alt="Picture1" style="width: 200px;"/>
 
 
 ```py
