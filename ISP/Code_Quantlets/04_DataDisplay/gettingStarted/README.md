@@ -39,7 +39,7 @@ Output: linefit.png
 ```
 
 
-![Picture1](linefit.png)
+![Picture1](linefit.png=300x)
 
 
 ```py
