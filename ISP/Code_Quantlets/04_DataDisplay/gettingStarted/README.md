@@ -38,8 +38,7 @@ Output: linefit.png
 
 ```
 
-
-![Picture1](linefit.png)
+<img src="linefit.png" alt="Picture1" style="width: 300px;"/>
 
 
 ```py
