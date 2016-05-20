@@ -26,7 +26,7 @@ Example: NormalityCheck.png
 ```
 
 
-![NormalityCheck](NormalityCheck.png)
+<img src="NormalityCheck.png" alt="NormalityCheck" width="500"/>
 
 
 ```py
