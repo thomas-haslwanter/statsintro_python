@@ -29,10 +29,11 @@ Datafile:  altman_93.txt, altman_94.txt
 - Analysis of unpaired data
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2016, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
+import scipy as sp
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 
@@ -100,7 +101,15 @@ def unpaired_data():
     
     # For non-normally distributed data, perform the two-sample wilcoxon test
     # a.k.a Mann Whitney U
-    u, p_value = stats.mannwhitneyu(group1, group2)
+    # Watch out: the keyword "alternative" was introduced in scipy 0.17, with default"two-sided";
+    #            before scipy 0.17, the keyword "use_continuity" was in use, with the
+    #            default "use_continuity=True", corresponding to "alternative='greater'"!
+    if np.int(sp.__version__.split('.')[1]) > 16:
+        u, p_value = stats.mannwhitneyu(group1, group2, alternative='two-sided')
+    else:
+        u, p_value = stats.mannwhitneyu(group1, group2, use_continuity=True)
+        p_value *= 2    # because the default was a one-sided p-value
+        
     print(("Mann-Whitney test", p_value))
     # --- >>> STOP stats <<< ---
     
@@ -121,7 +130,7 @@ def unpaired_data():
     #plt.legend(['obese', 'lean'])
     #plt.show()
     
-    return p_value  # should be 0.0010608066929400244
+    return p_value  # should be 0.0021216133858800489
 
 if __name__ == '__main__':
     paired_data()    
