@@ -26,7 +26,7 @@ Example:  Normal_Distribution_PDF.png, DistributionFunctions.png, Normal_MultHis
 ```
 
 
-![distNormal](distNormal_s.png)
+<img src="distNormal_s.png" alt="distNormal" width="500"/>
 
 
 ```py

@@ -19,7 +19,7 @@ Author: Thomas Haslwanter
 Submitted: October 31, 2015 
 ```
 
-![lifelines](lifelines.png)
+<img src="lifelines.png" alt="lifelines" width="500"/>
 
 
 ```py

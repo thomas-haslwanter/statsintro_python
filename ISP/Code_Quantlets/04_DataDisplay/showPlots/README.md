@@ -45,7 +45,7 @@ Example:
 ```
 
 
-![showPlots](showPlots_s.png)
+<img src="showPlots_s.png" alt="showPlots" width="500"/>
 
 
 ```py

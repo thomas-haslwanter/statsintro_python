@@ -23,7 +23,7 @@ Example: CentralLimitTheorem.png
 ```
 
 
-![Picture1](CentralLimitTheorem.png)
+<img src="CentralLimitTheorem.png" alt="CentralLimitTheorem" width="500"/>
 
 
 ```py

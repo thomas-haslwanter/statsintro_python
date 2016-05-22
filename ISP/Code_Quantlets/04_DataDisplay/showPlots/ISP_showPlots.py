@@ -178,7 +178,7 @@ def simplePlots():
     offsets =(0, 0.05, 0, 0)
     
     plt.pie(fractions, explode=offsets, labels=txtLabels,
-            autopct='%1.1f%%', shadow=True, startangle=90,
+            autopct='%1.1f%%', shadow=False, startangle=90,
             colors=sns.color_palette('muted') )
     plt.axis('equal')
     printout('piePlot.png', title=' ')

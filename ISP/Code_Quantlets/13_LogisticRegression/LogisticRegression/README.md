@@ -32,7 +32,7 @@ Example: ChallengerPlain.png
 ```
 
 
-![logisticRegression](ChallengerPlain.png)
+<img src="ChallengerPlain.png" alt="logisticRegression" width="500"/>
 
 
 ```py

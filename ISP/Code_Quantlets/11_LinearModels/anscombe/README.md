@@ -26,7 +26,7 @@ Submitted: October 31, 2015
 Example: Anscombes_quartet.png  
 ```
 
-![Anscombe](Anscombes_quartet.png)
+<img src="Anscombes_quartet.png" alt="Anscombe" width="500"/>
 
 ```py
 '''Code for generating Anscombe's Quartet.

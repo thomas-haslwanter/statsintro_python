@@ -64,7 +64,7 @@ def showChi2():
     Chi2Vals = [1,2,3,5]
     
     for chi2 in Chi2Vals:
-        plt.plot(t, stats.chi2.pdf(t, chi2), label='k={0}'.format(chi2))
+        plt.plot(t, stats.chi2.pdf(t, chi2), label='n={0}'.format(chi2))
     plt.legend()
         
     plt.xlim(0,8)

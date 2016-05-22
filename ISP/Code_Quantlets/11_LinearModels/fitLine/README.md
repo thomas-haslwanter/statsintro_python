@@ -67,7 +67,7 @@ Example: regression_wLegend.png
 ```
 
 
-![linearRegression](regression_wLegend.png)
+<img src="regression_wLegende.png" alt="linearRegression" width="500"/>
 
 
 ```py

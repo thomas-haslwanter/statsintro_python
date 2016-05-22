@@ -37,7 +37,7 @@ Example: multComp.png
 ```
 
 
-![multComp](multComp.png)
+<img src="multComp.png" alt="multComp" width="500"/>
 
 
 ```py

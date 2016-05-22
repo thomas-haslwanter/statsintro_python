@@ -28,7 +28,7 @@ except ImportError:
 sns.set(context='poster', style='ticks', palette='muted')
 
 # Input data
-ndata = 1e5
+ndata = 100000
 nbins = 50
 
 def showAsHistogram(axis, data, title):
@@ -49,8 +49,8 @@ def main():
     fig, axs = plt.subplots(1,3)
     
     showAsHistogram(axs[0], data, 'Random data')
-    showAsHistogram(axs[1], np.mean(data.reshape((ndata/2, 2 )), axis=1), 'Average over 2')
-    showAsHistogram(axs[2], np.mean(data.reshape((ndata/10,10)), axis=1), 'Average over 10')
+    showAsHistogram(axs[1], np.mean(data.reshape((ndata//2, 2 )), axis=1), 'Average over 2')
+    showAsHistogram(axs[2], np.mean(data.reshape((ndata//10,10)), axis=1), 'Average over 10')
     
     # Format them and show them
     axs[0].set_ylabel('Counts')

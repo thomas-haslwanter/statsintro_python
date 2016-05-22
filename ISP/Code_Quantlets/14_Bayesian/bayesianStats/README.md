@@ -29,8 +29,8 @@ Example: Challenger_Parameters.png, Challenger_CIs.png
 ```
 
 
-![Picture1](Challenger_Parameters.png)
-![Picture2](Challenger_CIs.png)
+<img src="Challenger_Parameters.png" alt="Challenger_Parameters" width="500"/>
+<img src="Challenger_CIs.png" alt="Challenger_CIs" width="500"/>
 
 ```py
 '''Example of PyMC - The Challenger Disaster

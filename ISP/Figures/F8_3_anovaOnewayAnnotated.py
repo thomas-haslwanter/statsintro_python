@@ -13,7 +13,7 @@ import seaborn as sns
 # Import formatting commands if directory "Utilities" is available
 import os
 import sys
-sys.path.append(os.path.join('..', '..', 'Utilities'))
+sys.path.append(os.path.join('..', 'Code_Quantlets', 'Utilities'))
 try:
     from ISP_mystyle import setFonts, showData 
     

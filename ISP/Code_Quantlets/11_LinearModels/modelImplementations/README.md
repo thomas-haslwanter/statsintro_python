@@ -26,7 +26,7 @@ Example: linearModel.png
 ```
 
 
-![linearModel](linearModel.png)
+<img src="linearModel.png" alt="linearModel" width="500"/>
 
 
 ```py

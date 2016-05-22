@@ -23,7 +23,7 @@ Example:  Biomial_distribution_pmf.png, Poisson_distribution_pmf.png
 ```
 
 
-![DiscreteDistributions](DiscreteDistributions.png)
+<img src="DiscreteDistributions.png" alt="DiscreteDistributions" width="500"/>
 
 ```py
 ''' Different discrete distribution functions.

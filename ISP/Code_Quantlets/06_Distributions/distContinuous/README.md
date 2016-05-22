@@ -27,7 +27,7 @@ Example:  dist_t.png, dist_chi2.png, dist_f.png, dist_exp.png, Weibull_PDF.png
 ```
 
 
-![Picture1](distContinuous_s.png)
+<img src="distContinuous_s.png" alt="distContinuous_s" width="500"/>
 
 
 ```py

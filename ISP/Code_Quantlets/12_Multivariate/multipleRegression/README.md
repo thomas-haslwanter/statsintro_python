@@ -26,9 +26,9 @@ Example:  3dSurface.png, multiScatterplot.png
 ```
 
 
-![Picture1](multiScatterplot.png)
+<img src="multiScatterplot.png" alt="multiScatterplot" width="500"/>
 
-![Picture2](3dSurface.png)
+<img src="3dSurface.png" alt="3dSurface" width="500"/>
 
 
 ```py
