@@ -4,6 +4,8 @@ Python modules and IPython Notebooks, which accompany the book [Introduction to 
 
 ![cover](pictures/cover.jpg)
 
+<img src="pictures/cover.jpg" width="100">
+
 This repo contains two folders: *ISP*, and *ipynb*
 
 
