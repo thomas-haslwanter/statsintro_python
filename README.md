@@ -1,6 +1,9 @@
 ![Title](pictures/statsIntro.png)
 
-Python modules and IPython Notebooks, which accompany the book *Introduction to Statistics With Python*
+Python modules and IPython Notebooks, which accompany the book [Introduction to Statistics With Python](http://www.springer.com/us/book/9783319283159)
+
+![cover](pictures/cover.jpg)
+
 This repo contains two folders: *ISP*, and *ipynb*
 
 
