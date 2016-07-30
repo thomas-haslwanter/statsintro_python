@@ -25,7 +25,12 @@ Author: Thomas Haslwanter
 Submitted: October 31, 2015 
 
 Datafile:  altman_910.txt, galton.csv
+
+Example: anova_annotated.png
 ```
+
+<img src="anova_annotated.png" alt="ANOVA" width="500"/>
+
 
 ```py
 ''' Analysis of Variance (ANOVA)
