@@ -19,3 +19,8 @@ All the Python programs that go with the book:
   important samples and solutions to statistical applications of Python.
 - Also contains a folder for data used by the IPython notebooks.
 
+## Questions & Comments
+- For questions and comments that relate to the Python code posted here,
+  please [open a new *Issue*](issues)
+- For questions on *statistics*, comments on the text, or other issues
+  beyond the Python code, please click here [![Codewake](https://www.codewake.com/badges/ask_question.svg)](https://www.codewake.com/p/statsintro_python)
