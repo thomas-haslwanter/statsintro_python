@@ -20,7 +20,7 @@ All the Python programs that go with the book:
 - Also contains a folder for data used by the IPython notebooks.
 
 ## Questions & Comments
-- For questions and comments that relate to the Python code posted here,
-  please [open a new *Issue*](issues)
-- For questions on *statistics*, comments on the text, or other issues
-  beyond the Python code, please click here [![Codewake](https://www.codewake.com/badges/ask_question.svg)](https://www.codewake.com/p/statsintro_python)
+- [Open a new *Issue*](https://github.com/thomas-haslwanter/statsintro_python/issues) - for questions and comments that relate to the Python code posted here.
+- [![Codewake](https://www.codewake.com/badges/ask_question.svg)](https://www.codewake.com/p/statsintro_python) - for
+  questions on statistics, comments on the text, or other issues beyond the Python code.
+
