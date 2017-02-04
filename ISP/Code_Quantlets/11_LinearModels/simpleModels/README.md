@@ -1,5 +1,5 @@
 
-![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+![quantletLogo_FH](../../../../pictures/quantletLogo_FH.png)
 
 ## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_simpleModels**
 
@@ -32,7 +32,7 @@ Datafile: swim100m.csv
 - "polynomial_regression" shows how to work with simple design matrices, like MATLAB's "regress" command.
 '''
 
-# author: Thomas Haslwanter, date: May-2013
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np

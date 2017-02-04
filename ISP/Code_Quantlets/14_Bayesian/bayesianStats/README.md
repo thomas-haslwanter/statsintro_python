@@ -1,5 +1,5 @@
 
-![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+![quantletLogo_FH](../../../../pictures/quantletLogo_FH.png)
 
 ## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_bayesianStats**
 
@@ -29,8 +29,8 @@ Example: Challenger_Parameters.png, Challenger_CIs.png
 ```
 
 
-![Picture1](Challenger_Parameters.png)
-![Picture2](Challenger_CIs.png)
+<img src="Challenger_Parameters.png" alt="Challenger_Parameters" width="500"/>
+<img src="Challenger_CIs.png" alt="Challenger_CIs" width="500"/>
 
 ```py
 '''Example of PyMC - The Challenger Disaster
@@ -40,7 +40,7 @@ of the ambient temperature.
 Input data are the recorded O-ring performances of the space shuttles before 1986.
 '''
 
-# author: Thomas Haslwanter, date: Nov-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np

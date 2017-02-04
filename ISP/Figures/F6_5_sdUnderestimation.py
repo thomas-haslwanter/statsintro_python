@@ -1,6 +1,6 @@
 '''Sketch to indicate why the sample SD underestimates the population SD '''
 
-# author: Thomas Haslwanter, date: Nov-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,7 +10,7 @@ from scipy import stats
 # Import formatting commands if directory "Utilities" is available
 import os
 import sys
-sys.path.append(os.path.join('..', '..', 'Utilities'))
+sys.path.append(os.path.join('..', 'Code_Quantlets', 'Utilities'))
 try:
     from ISP_mystyle import showData 
     

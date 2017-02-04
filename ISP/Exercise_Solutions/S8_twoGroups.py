@@ -1,9 +1,10 @@
 '''Solution for Exercise "Comparing Groups" '''
 
-# author: Thomas Haslwanter, date: Sept-2015
+# author: Thomas Haslwanter, date: May-2016
 
 import numpy as np
 import matplotlib.pyplot as plt
+import scipy as sp
 from scipy import stats
 import os
 
@@ -69,7 +70,13 @@ def twoGroups():
     
     # Mann-Whitney test --------------------------------------------------------------
     print('\n Mann-Whitney test --------------------------------------------------------')
-    u, pval = stats.mannwhitneyu(data1, data2)
+    # Watch out: the keyword "alternative" was introduced in scipy 0.17, with default"two-sided";
+    if np.int(sp.__version__.split('.')[1]) > 16:
+        u, pval = stats.mannwhitneyu(data1, data2, alternative='two-sided')
+    else:
+        u, pval = stats.mannwhitneyu(data1, data2)
+        pval *= 2    # because the default was a one-sided p-value
+
     if pval < 0.05:
         print('With the Mann-Whitney test, data1 and data2 are significantly different(p = {0:5.3f})'.format(pval))
     else:

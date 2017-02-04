@@ -1,5 +1,5 @@
 
-![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+![quantletLogo_FH](../../../../pictures/quantletLogo_FH.png)
 
 ## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_bootstrapDemo**
 
@@ -31,7 +31,7 @@ This function requires "bootstrap.py", which is available from
 https://github.com/cgevans/scikits-bootstrap
 '''
 
-# author: Thomas Haslwanter, date: Sept-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import matplotlib.pyplot as plt

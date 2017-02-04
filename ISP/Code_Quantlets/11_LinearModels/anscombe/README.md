@@ -1,5 +1,5 @@
 
-![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+![quantletLogo_FH](../../../../pictures/quantletLogo_FH.png)
 
 ## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_anscombe**
 
@@ -26,7 +26,7 @@ Submitted: October 31, 2015
 Example: Anscombes_quartet.png  
 ```
 
-![Anscombe](Anscombes_quartet.png)
+<img src="Anscombes_quartet.png" alt="Anscombe" width="500"/>
 
 ```py
 '''Code for generating Anscombe's Quartet.
@@ -35,7 +35,7 @@ http://web.stanford.edu/~mwaskom/software/seaborn/examples/anscombes_quartet.htm
 Note that this program requires a web-connection to load the dataset!
 '''
 
-# author: Thomas Haslwanter, date: Nov-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import seaborn as sns

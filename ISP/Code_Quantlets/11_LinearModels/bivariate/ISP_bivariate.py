@@ -3,7 +3,7 @@
 - Correlation (Pearson-rho, Spearman-rho, and Kendall-tau)
 '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np

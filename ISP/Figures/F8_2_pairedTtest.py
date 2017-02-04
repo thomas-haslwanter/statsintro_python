@@ -1,7 +1,7 @@
 ''' Paired T-test
 '''
 
-# author: Thomas Haslwanter, Nov 2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -12,7 +12,7 @@ from scipy import stats
 # Import formatting commands if directory "Utilities" is available
 import os
 import sys
-sys.path.append(os.path.join('..', '..', 'Utilities'))
+sys.path.append(os.path.join('..', 'Code_Quantlets', 'Utilities'))
 try:
     from ISP_mystyle import setFonts, showData 
     

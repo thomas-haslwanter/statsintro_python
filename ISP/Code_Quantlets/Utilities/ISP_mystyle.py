@@ -3,7 +3,7 @@ These commands ensure a common layout, and reduce the code required to generate 
 in the other modules.
 '''
 
-# author: Thomas Haslwanter, date: Nov-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import matplotlib.pyplot as plt

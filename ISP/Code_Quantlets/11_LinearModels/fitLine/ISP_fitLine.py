@@ -46,7 +46,7 @@ Example data and formulas are taken from
 D. Altman, "Practical Statistics for Medicine"
 '''
 
-# author: Thomas Haslwanter, date: Dec-2012
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np

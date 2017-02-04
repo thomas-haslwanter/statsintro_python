@@ -1,5 +1,5 @@
 
-![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+![quantletLogo_FH](../../../../pictures/quantletLogo_FH.png)
 
 ## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_lifelinesDemo**
 
@@ -19,7 +19,7 @@ Author: Thomas Haslwanter
 Submitted: October 31, 2015 
 ```
 
-![lifelines](lifelines.png)
+<img src="lifelines.png" alt="lifelines" width="500"/>
 
 
 ```py
@@ -27,7 +27,7 @@ Submitted: October 31, 2015
 Based on the demo-code in http://lifelines.readthedocs.org, by Cam Davidson-Pilon
 '''
 
-# author: Thomas Haslwanter, date: Nov-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np

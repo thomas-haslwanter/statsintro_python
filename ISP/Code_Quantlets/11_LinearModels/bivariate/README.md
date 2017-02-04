@@ -1,5 +1,5 @@
 
-![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+![quantletLogo_FH](../../../../pictures/quantletLogo_FH.png)
 
 ## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_bivariate**
 
@@ -32,7 +32,7 @@ Datafile:  altman_11_1.txt, altman_11_6.txt
 - Correlation (Pearson-rho, Spearman-rho, and Kendall-tau)
 '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np

@@ -1,5 +1,5 @@
 
-![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+![quantletLogo_FH](../../../../pictures/quantletLogo_FH.png)
 
 ## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_multipleRegression**
 
@@ -26,9 +26,9 @@ Example:  3dSurface.png, multiScatterplot.png
 ```
 
 
-![Picture1](multiScatterplot.png)
+<img src="multiScatterplot.png" alt="multiScatterplot" width="500"/>
 
-![Picture2](3dSurface.png)
+<img src="3dSurface.png" alt="3dSurface" width="500"/>
 
 
 ```py
@@ -40,7 +40,7 @@ Example:  3dSurface.png, multiScatterplot.png
   six-dimensional datasets.
 '''
 
-# author: Thomas Haslwanter, date: Nov-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np

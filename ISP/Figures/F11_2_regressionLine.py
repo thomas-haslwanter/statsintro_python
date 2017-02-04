@@ -1,6 +1,6 @@
 """ Figure with simple regression line """
 
-# author: Thomas Haslwanter, date: Nov-2015
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -11,23 +11,7 @@ import seaborn as sns
 # Import formatting commands if directory "Utilities" is available
 import os
 import sys
-sys.path.append(os.path.join('..', '..', 'Utilities'))
-try:
-    from ISP_mystyle import setFonts, showData 
-    
-except ImportError:
-# Ensure correct performance otherwise
-    def setFonts(*options):
-        return
-    def showData(*options):
-        plt.show()
-        return
-
-# additional packages
-# Import formatting commands if directory "Utilities" is available
-import os
-import sys
-sys.path.append(os.path.join('..', '..', 'Utilities'))
+sys.path.append(os.path.join('..', 'Code_Quantlets', 'Utilities'))
 try:
     from ISP_mystyle import setFonts, showData 
     

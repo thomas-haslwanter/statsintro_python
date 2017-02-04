@@ -1,5 +1,5 @@
 
-![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+![quantletLogo_FH](../../../../pictures/quantletLogo_FH.png)
 
 ## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_fitLine**
 
@@ -67,7 +67,7 @@ Example: regression_wLegend.png
 ```
 
 
-![linearRegression](regression_wLegend.png)
+<img src="regression_wLegend.png" alt="linearRegression" width="500"/>
 
 
 ```py
@@ -119,7 +119,7 @@ Example data and formulas are taken from
 D. Altman, "Practical Statistics for Medicine"
 '''
 
-# author: Thomas Haslwanter, date: Dec-2012
+# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
