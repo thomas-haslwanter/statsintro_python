@@ -15,7 +15,7 @@ The examples contain:
 - 3D surface and wireframe plots
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2017, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # First, import the libraries that you are going to need. You could also do
 # that later, but it is better style to do that at the beginning.
@@ -82,10 +82,11 @@ def simplePlots():
     x = np.random.randn(500)
     
     # Other graphics settings
-    sns.set(context='poster', style='ticks', palette=sns.color_palette('muted'))
+    # Set " context='poster' " for printouts, and "setFonts(32)"
+    sns.set(context='notebook', style='ticks', palette=sns.color_palette('muted'))
     
     # Set the fonts the way I like them
-    setFonts(32)
+    setFonts(16)
     
     # Scatter plot
     plt.scatter(np.arange(len(x)), x)
@@ -142,7 +143,7 @@ def simplePlots():
     
     # Use pandas and the seaborn package for the violin plot
     df = pd.DataFrame({'Girls':data, 'Boys':data2})
-    sns.violinplot(df)
+    sns.violinplot(data=df)
     
     printout('violinplot.png', title='Violinplot')
     
@@ -166,7 +167,7 @@ def simplePlots():
     
     # Grouped Boxplot
     sns.set_style('whitegrid')
-    sns.boxplot(df)
+    sns.boxplot(data=df)
     setFonts(28)
     printout('groupedBoxplot.png', title='sns.boxplot')
 
@@ -178,7 +179,7 @@ def simplePlots():
     offsets =(0, 0.05, 0, 0)
     
     plt.pie(fractions, explode=offsets, labels=txtLabels,
-            autopct='%1.1f%%', shadow=False, startangle=90,
+            autopct='%1.1f%%', shadow=True, startangle=90,
             colors=sns.color_palette('muted') )
     plt.axis('equal')
     printout('piePlot.png', title=' ')

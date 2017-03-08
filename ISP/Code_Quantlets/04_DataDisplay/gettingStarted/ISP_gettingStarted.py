@@ -19,7 +19,7 @@ it by default when the module is imported by the main program, is a bit
 superfluous. But it shows good Python coding style.
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2017, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # In contrast to MATLAB, you explicitly have to load the modules that you need.
 import numpy as np
@@ -71,7 +71,6 @@ def main():
 
     # Show and plot the fit, and save it to a PNG-file with a medium resolution.
     # The "modern" way of Python-formatting is used
-    plt.hold(True)
     plt.plot(tHigh, intercept + slope*tHigh, 'r')
     plt.title('Hit any key to continue')
     plt.savefig('linefit.png', dpi=200)
@@ -82,17 +81,20 @@ def main():
     # If you want to know confidence intervals, best switch to "pandas"
     # Note that this is an advanced topic, and requires new data structures
     # such ad "DataFrames" and "ordinary-least-squares" or "ols-models".
+    
     import pandas as pd
+    import statsmodels.formula.api as smf
     
     # Put the data into a pandas DataFrame
     myDict = {'x':tHigh, 'y':xHigh}
     df = pd.DataFrame(myDict)
     
-    # Fit the model
-    model = pd.ols(y=df['y'], x=df['x'])
+    # Fit the model: here the "formula"-syntax commonly used in statistics is employed
+    # 'y~x' means "y is a linear function of x, taking a possible offset into consideration"
+    results = smf.ols('y~x', data=df).fit()
     
     # Print the results
-    print(model)
+    print(results.summary())
     #raw_input('These are the summary results from Pandas - Hit any key to continue')
 
 
