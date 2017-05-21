@@ -33,3 +33,6 @@ on your computer if you want to use those slides.
 - Or you copy this directory (i.e. *ipynb_slides*) to the location where
   your *reveal.js* directories are, and are ready to go right away.
 
+## Errata
+The file [Errata.pdf](Errata.pdf) contains the a list of mistakes in the manuscript, and
+the corresponding corrections.
