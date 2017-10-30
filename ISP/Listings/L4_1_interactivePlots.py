@@ -9,8 +9,8 @@ tricks that should make interactive use of plots simpler. The functions below sh
 - Evaluate keyboard inputs
 
 author: Thomas Haslwanter
-date:   Nov-2015
-ver:    1.1
+date:   Nov-2017
+ver:    1.2
 license: CC BY-SA 4.0
 
 '''
@@ -92,8 +92,16 @@ def showAndPause():
     
 def waitForInput():    
     ''' This time, proceed with a click or by hitting any key '''
-    plt.plot(t,c)
+    fig, ax = plt.subplots()
+    ax.plot(t,c)
     plt.title('Click in that window, or hit any key to continue')
+    
+    
+    # The following 2 lines were not required originally
+    # This functionality has changed a bit, and I am unsure if this code
+    # works for all backends!
+    fig.canvas.manager.window.focus_force()
+    plt.show(block=False)
     
     plt.waitforbuttonpress()
     plt.close()
@@ -113,6 +121,10 @@ def keySelection():
     
     ax.plot(t,c)
     ax.set_title('First, enter a vowel:')
+    
+    # Otherwise, the window must be clicked first
+    fig.canvas.manager.window.focus_force()
+    
     plt.show()
     
 def on_key_event(event):
