@@ -10,12 +10,17 @@ tricks that should make interactive use of plots simpler. The functions below sh
 
 author: Thomas Haslwanter
 date:   Nov-2017
-ver:    1.2
+ver:    1.3
 license: CC BY-SA 4.0
 
 '''
 # Import standard packages
 import numpy as np
+import matplotlib
+
+# To try out different backends, the backend has to be defined before "plt" gets imported
+#matplotlib.use('Qt5Agg')
+
 import matplotlib.pyplot as plt
 
 # additional packages
@@ -98,9 +103,13 @@ def waitForInput():
     
     
     # The following 2 lines were not required originally
-    # This functionality has changed a bit, and I am unsure if this code
-    # works for all backends!
-    fig.canvas.manager.window.focus_force()
+    # First, check the backend
+    backend = matplotlib.get_backend()
+    if backend.lower().find('qt')>=0:
+        fig.canvas.manager.window.activateWindow()  # for Qt-backends
+    else:
+        fig.canvas.manager.window.focus_force()     # otherwise; not sure if all backends are covered
+    
     plt.show(block=False)
     
     plt.waitforbuttonpress()
@@ -123,7 +132,12 @@ def keySelection():
     ax.set_title('First, enter a vowel:')
     
     # Otherwise, the window must be clicked first
-    fig.canvas.manager.window.focus_force()
+    # First, check the backend
+    backend = matplotlib.get_backend()
+    if backend.lower().find('qt')>=0:
+        fig.canvas.manager.window.activateWindow()  # for Qt-backends
+    else:
+        fig.canvas.manager.window.focus_force()     # otherwise; not sure if all backends are covered
     
     plt.show()
     
