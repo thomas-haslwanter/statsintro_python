@@ -41,7 +41,7 @@ plt.show()
 # F-distribution --------------------------------------------------
 apples1 = [110, 121, 143]
 apples2 = [88, 93, 105, 124]
-fval = np.std(apples1, ddof=1)/np.std(apples2, ddof=1)
+fval = np.var(apples1, ddof=1)/np.var(apples2, ddof=1)
 fd = stats.distributions.f(len(apples1),len(apples2))
 pval = fd.cdf(fval)
 print('The p-value of the F-distribution = {0}.'.format(pval))
