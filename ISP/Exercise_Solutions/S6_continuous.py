@@ -1,6 +1,6 @@
 '''Solution for Exercise "Continuous Distribution Functions" '''
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: Nov-2018
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -42,7 +42,7 @@ plt.show()
 apples1 = [110, 121, 143]
 apples2 = [88, 93, 105, 124]
 fval = np.var(apples1, ddof=1)/np.var(apples2, ddof=1)
-fd = stats.distributions.f(len(apples1),len(apples2))
+fd = stats.distributions.f(len(apples1)-1,len(apples2)-1)
 pval = fd.cdf(fval)
 print('The p-value of the F-distribution = {0}.'.format(pval))
 if pval>0.025 and pval<0.975:
