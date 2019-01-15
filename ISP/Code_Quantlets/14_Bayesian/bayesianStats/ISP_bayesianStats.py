@@ -122,12 +122,12 @@ def showSimResults(alpha_samples, beta_samples):
     plt.subplot(211)
     plt.title(r"Posterior distributions of the variables $\alpha, \beta$")
     plt.hist(beta_samples, histtype='stepfilled', bins=35, alpha=0.85,
-             label=r"posterior of $\beta$", color="#7A68A6", normed=True)
+             label=r"posterior of $\beta$", color="#7A68A6", density=True)
     plt.legend()
     
     plt.subplot(212)
     plt.hist(alpha_samples, histtype='stepfilled', bins=35, alpha=0.85,
-             label=r"posterior of $\alpha$", color="#A60628", normed=True)
+             label=r"posterior of $\alpha$", color="#A60628", density=True)
     plt.legend()
     
     outFile = 'Challenger_Parameters.png'
