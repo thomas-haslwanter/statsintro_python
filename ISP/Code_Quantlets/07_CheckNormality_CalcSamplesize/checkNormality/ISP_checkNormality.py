@@ -6,7 +6,7 @@ are not known.
 - the Kolmogorov-Smirnov(Kolmogorov-Smirnov) test should only be used for large sample numbers (>300)
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -15,7 +15,7 @@ import scipy.stats as stats
 import pandas as pd
 
 # additional packages
-from statsmodels.stats.diagnostic import lillifors
+from statsmodels.stats.diagnostic import lilliefors
 
 def check_normality():
     '''Check if the distribution is normal.'''
@@ -52,8 +52,8 @@ def check_normality():
     _, pFewVals['Shapiro-Wilk'] = stats.shapiro(fewData)
     
     # Or you can check for normality with Lilliefors-test
-    _, pVals['Lilliefors']    = lillifors(data)
-    _, pFewVals['Lilliefors'] = lillifors(fewData)
+    _, pVals['Lilliefors']    = lilliefors(data)
+    _, pFewVals['Lilliefors'] = lilliefors(fewData)
     
     # Alternatively with original Kolmogorov-Smirnov test
     _, pVals['Kolmogorov-Smirnov']    = stats.kstest((data-np.mean(data))/np.std(data,ddof=1), 'norm')
