@@ -1,6 +1,6 @@
 """ Plot explaining the principle of a Kernel-Density-Estimation (KDE). """
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -28,13 +28,12 @@ setFonts(18)
 def plot_histogram(ax, data):
     ''' Left plot: histogram '''
     
-    ax.hist(data, bins=6, range=[-4, 8], normed=True)
+    ax.hist(data, bins=6, range=[-4, 8], density=True)
     
     ax.set_xlim(-6, 11)
     ax.set_ylim(-0.005, 0.18)
     ax.set_xlabel('x')
     ax.set_ylabel('Density Function')
-    plt.hold(True)
     
     # Add rugplot
     for ii in range(len(data)):

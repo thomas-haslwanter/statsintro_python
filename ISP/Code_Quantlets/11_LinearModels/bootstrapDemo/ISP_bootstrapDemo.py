@@ -1,9 +1,14 @@
 ''' Example of bootstrapping the confidence interval for the mean of a sample distribution
-This function requires "bootstrap.py", which is available from
+
+This function requires "bootstrap.py", which is can be installed with
+    pip install scikits-bootstrap
+
+Sourcecode is available at
 https://github.com/cgevans/scikits-bootstrap
+
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import matplotlib.pyplot as plt

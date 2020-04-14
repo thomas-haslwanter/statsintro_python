@@ -1,6 +1,6 @@
 ''' Example for Skewness and Kurtosis '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -10,7 +10,6 @@ import os
 import seaborn as sns
 
 # additional packages
-from matplotlib.mlab import frange
 
 # Import formatting commands if directory "Utilities" is available
 import os
@@ -30,7 +29,7 @@ sns.set(context='poster', style='ticks', palette='deep')
 def skewness(ax):
     '''Normal and skewed distribution'''
     
-    t = frange(-6,10,0.1) # generate the desirded x-values
+    t = np.arange(-6,10,0.1) # generate the desirded x-values
     normal = stats.norm.pdf(t,1,1.6)   
     chi2 = stats.chi2.pdf(t,3)
     
@@ -44,7 +43,7 @@ def kurtosis(ax):
     ''' Distributions with different kurtosis'''
     
     # Generate the data
-    t = frange(-3,3,0.1) # generate the desirded x-values
+    t = np.arange(-3,3,0.1) # generate the desirded x-values
     platykurtic = stats.laplace.pdf(t)
     
     wigner = np.zeros(np.size(t))

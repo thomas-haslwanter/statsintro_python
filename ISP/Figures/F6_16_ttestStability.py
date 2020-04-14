@@ -1,6 +1,6 @@
 ''' Stability of the T-distribution against outliers, compared to the normal distribution. '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -55,13 +55,13 @@ fitted_t_w = stats.t.pdf(fitted_x, df=ndata-1, loc=fit_t_w[1], scale=fit_t_w[2])
 # Show the data
 fig, axs = plt.subplots(2,1, sharex=True)
 
-axs[0].hist(data, normed=True, bins=25, color='#CCCCCC')
+axs[0].hist(data, density=True, bins=25, color='#CCCCCC')
 axs[0].plot(fitted_x, fitted_gauss_wo, label='normal')
 axs[0].plot(fitted_x, fitted_t_wo, ls='--', lw=2, label='t-dist')
 axs[0].set_title('Without outliers')
 axs[0].legend()
 
-axs[1].hist(dataWOutlier, normed=True, bins=25, color='#CCCCCC')
+axs[1].hist(dataWOutlier, density=True, bins=25, color='#CCCCCC')
 axs[1].plot(fitted_x, fitted_gauss_w, label='norm')
 axs[1].plot(fitted_x, fitted_t_w, ls='--', lw=2, label='t-dist')
 axs[1].set_title('With outliers')

@@ -1,6 +1,6 @@
 ''' Figure explaining the T-Test '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -43,7 +43,7 @@ fig, axs = plt.subplots(1,2)
 xval = np.linspace(-5,20, 100)
 yval = stats.norm(meanVal,stdVal).pdf(xval)
 
-axs[0].hist(data, normed=True, color='#eeefff')
+axs[0].hist(data, density=True, color='#eeefff')
 axs[0].plot(xval, yval, 'g', label='normal-fit')
 axs[0].set_title('Recorded data')
 axs[0].legend()

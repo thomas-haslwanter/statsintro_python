@@ -6,7 +6,7 @@
 - Weibull
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -16,7 +16,6 @@ import seaborn as sns
 import os
 
 # additional packages
-from matplotlib.mlab import frange
 import sys
 sys.path.append(os.path.join('..', '..', 'Utilities'))
 
@@ -36,7 +35,7 @@ sns.set(context='poster', style='ticks', palette='muted', font_scale=1.5)
 def showT():
     '''Utility function to show T distributions'''
     
-    t = frange(-5, 5, 0.05)
+    t = np.arange(-5, 5, 0.05)
     TVals = [1,5]
     
     normal = stats.norm.pdf(t)
@@ -60,7 +59,7 @@ def showT():
 def showChi2():
     '''Utility function to show Chi2 distributions'''
     
-    t = frange(0, 8, 0.05)
+    t = np.arange(0, 8, 0.05)
     Chi2Vals = [1,2,3,5]
     
     for chi2 in Chi2Vals:
@@ -79,7 +78,7 @@ def showChi2():
 def showF():
     '''Utility function to show F distributions'''
     
-    t = frange(0, 3, 0.01)
+    t = np.arange(0, 3, 0.01)
     d1s = [1,2,5,100]
     d2s = [1,1,2,100]
     
@@ -100,7 +99,7 @@ def showF():
 def showExp():
     '''Utility function to show exponential distributions'''
     
-    t = frange(0, 3, 0.01)
+    t = np.arange(0, 3, 0.01)
     lambdas = [0.5, 1, 1.5]
     
     for par in lambdas:
@@ -120,7 +119,7 @@ def showExp():
 def showWeibull():
     '''Utility function to show Weibull distributions'''
     
-    t = frange(0, 2.5, 0.01)
+    t = np.arange(0, 2.5, 0.01)
     lambdaVal = 1
     ks = [0.5, 1, 1.5, 5]
     

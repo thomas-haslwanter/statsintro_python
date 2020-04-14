@@ -4,7 +4,7 @@
 - Work with the cumulative distribution function (CDF)
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -12,9 +12,6 @@ import scipy.stats as stats
 import matplotlib.pyplot as plt
 import os
 import seaborn as sns
-
-# additional packages
-from matplotlib.mlab import frange
 
 import sys
 sys.path.append(os.path.join('..', '..', 'Utilities'))
@@ -106,7 +103,7 @@ def shifted_normal():
     # Select 3 mean values, and 3 SDs
     myMean = [0,0,0,-2]
     mySD = [0.2,1,5,0.5]
-    t = frange(-5,5,0.02)
+    t = np.arange(-5,5,0.02)
     
     # Plot the 3 PDFs, using the color-palette "hls"
     with sns.color_palette('hls', 4):

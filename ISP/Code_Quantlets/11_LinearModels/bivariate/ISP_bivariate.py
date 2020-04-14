@@ -3,12 +3,13 @@
 - Correlation (Pearson-rho, Spearman-rho, and Kendall-tau)
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
 from scipy import stats
 import pandas as pd
+import statsmodels.formula.api as smf
 
 def regression_line():
     '''Fit a line, using the powerful "ordinary least square" method of pandas.
@@ -26,11 +27,12 @@ def regression_line():
 
     # --- >>> START stats <<< ---
     # Fit a regression line to the data, and display the model results
-    model = pd.ols(y=df['Vcf'], x=df['glucose'])
-    print((model.summary))
+    model = smf.ols(formula='Vcf~glucose', data=df)
+    res = model.fit()
+    print(res.summary())
     # --- >>> STOP stats <<< ---
     
-    return model.f_stat['f-stat'] # should be 4.4140184331462571
+    return res._results.fvalue # should be 4.4140184331462571
     
 def correlation():
     '''Pearson correlation, and two types of rank correlation (Spearman, Kendall)

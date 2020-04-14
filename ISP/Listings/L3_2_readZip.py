@@ -1,6 +1,10 @@
-'''Get data from MS-Excel files, which are stored zipped on the WWW. '''
+'''Get data from MS-Excel files, which are stored zipped on the WWW
 
-# author: Thomas Haslwanter, date: Nov-2015
+Note that Python 2.x is no longer supported!
+'''
+
+# author:   Thomas Haslwanter
+# date:     April-2020
 
 # Import standard packages
 import pandas as pd
@@ -8,13 +12,7 @@ import pandas as pd
 # additional packages
 import io
 import zipfile
-
-# Python 2/3 use different packages for "urlopen"
-import sys
-if sys.version_info[0] == 3:
-    from urllib.request import urlopen
-else:
-    from urllib import urlopen
+from urllib.request import urlopen
     
 def getDataDobson(url, inFile):
     '''Extract data from a zipped-archive on the web'''
@@ -38,8 +36,8 @@ def getDataDobson(url, inFile):
 
 if __name__ == '__main__':
     # Select archive (on the web) and the file in the archive
-    url = 'http://cdn.crcpress.com/downloads/C9500/GLM_data.zip'
-    inFile = r'GLM_data/Table 2.8 Waist loss.xls'
+    url = 'https://www.routledge.com/downloads/K32369/GLM.dobson.data.zip'
+    inFile = r'Table 2.8 Waist loss.xls'
 
     df = getDataDobson(url, inFile)
     print(df)

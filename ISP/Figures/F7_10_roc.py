@@ -4,7 +4,7 @@ The example here uses two normally distributed groups, with a mean of 1 and 6,
 respectively, and a standard deviation of 2.
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -69,7 +69,6 @@ def main():
     
     # Plot and label the PDF-curves
     ax1.plot(x,y1)
-    ax1.hold(True)
     ax1.fill_between(x,0,y1, where=x<3, facecolor='#CCCCCC', alpha=0.5)
     ax1.annotate('Sensitivity',
                  xy=(x[75], y1[65]),
@@ -91,7 +90,6 @@ def main():
     
     # Plot the ROC-curve
     ax2.plot(nd2.cdf(x), nd1.cdf(x), 'k')
-    ax2.hold(True)
     ax2.plot(np.array([0,1]), np.array([0,1]), 'k--')
     
     # Format the ROC-curve

@@ -67,7 +67,7 @@ def main():
     # To do so, you have to generate a matrix with "time" in the first
     # column, and a column of "1" in the second column:
     xMat = np.vstack((tHigh, np.ones_like(tHigh))).T
-    slope, intercept = np.linalg.lstsq(xMat, xHigh)[0]
+    slope, intercept = np.linalg.lstsq(xMat, xHigh, rcond=None)[0]
 
     # Show and plot the fit, and save it to a PNG-file with a medium resolution.
     # The "modern" way of Python-formatting is used

@@ -5,7 +5,7 @@ Strongly based on a blog by Connor Johnson.
 http://connor-johnson.com/2014/02/18/linear-regression-with-python/
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -213,7 +213,6 @@ else:
 plt.plot( df.Tobacco[:-1], df.Alcohol[:-1], 'bo', markersize=10,
     label=labelStart + clean_score )
 
-plt.hold(True)
 if sys.version_info[0] == 3:
     labelStart = 'N. Ireland, outlier, $Rˆ2$ = ' 
 else:

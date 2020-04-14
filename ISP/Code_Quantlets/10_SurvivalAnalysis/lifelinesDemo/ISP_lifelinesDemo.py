@@ -1,8 +1,12 @@
 ''' Demonstration of the package "lifelines"
+Note that to run this script, you first may have to install the package
+"lifelines", with the command
+pip install lifelines
+
 Based on the demo-code in http://lifelines.readthedocs.org, by Cam Davidson-Pilon
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np

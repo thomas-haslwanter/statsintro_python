@@ -1,6 +1,6 @@
 ''' Demonstration of the probplot of a non-normal distribution '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -103,7 +103,6 @@ def KS_principle(inData):
     setFonts(36)
     
     plt.plot(nd_x, nd_y, 'k--')
-    plt.hold(True)
     plt.plot(ecdf_x, ecdf_y, color='k')
     plt.xlabel('X')
     plt.ylabel('Cumulative Probability')

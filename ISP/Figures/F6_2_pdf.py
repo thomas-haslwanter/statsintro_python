@@ -46,7 +46,7 @@ plt.text(0.5 * (a + b), 0.1, r"$\int_a^b p(x)\mathrm{d}x$",
 
 plt.figtext(0.9, 0.05, '$x$', fontsize=fs)
 plt.figtext(0.2, 0.95, '$p(x)$', fontsize=fs)
-plt.axvline(x=-2, ymin=0, ymax=1, hold=None, color='k', linewidth=1)
+plt.axvline(x=-2, ymin=0, ymax=1, color='k', linewidth=1)
 
 # Despine the axes
 for loc in ['left', 'right', 'top']:

@@ -3,7 +3,7 @@
 - Analysis of unpaired data
 '''
 
-# Copyright(c) 2016, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -75,21 +75,13 @@ def unpaired_data():
     
     # For non-normally distributed data, perform the two-sample wilcoxon test
     # a.k.a Mann Whitney U
-    # Watch out: the keyword "alternative" was introduced in scipy 0.17, with default"two-sided";
-    #            before scipy 0.17, the keyword "use_continuity" was in use, with the
-    #            default "use_continuity=True", corresponding to "alternative='greater'"!
-    if np.int(sp.__version__.split('.')[1]) > 16:
-        u, p_value = stats.mannwhitneyu(group1, group2, alternative='two-sided')
-    else:
-        u, p_value = stats.mannwhitneyu(group1, group2, use_continuity=True)
-        p_value *= 2    # because the default was a one-sided p-value
+    u, p_value = stats.mannwhitneyu(group1, group2, alternative='two-sided')
         
     print(("Mann-Whitney test", p_value))
     # --- >>> STOP stats <<< ---
     
     # Plot the data
     plt.plot(group1, 'bx', label='obese')
-    plt.hold(True)
     plt.plot(group2, 'ro', label='lean')
     plt.legend(loc=0)
     plt.show()

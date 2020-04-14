@@ -1,6 +1,6 @@
 '''Demo-plot of residuals to a best-fit line '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
 
 # Import standard packages
 import numpy as np
@@ -32,7 +32,6 @@ def main():
     
     # plot the data
     plt.scatter(x,y)
-    plt.hold(True)
     plt.plot(x, yfit, '--',lw=2)
     for ii in range(len(x)):
         plt.plot([x[ii], x[ii]], [yfit[ii], y[ii]], 'k')

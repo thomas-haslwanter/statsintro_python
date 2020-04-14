@@ -1,7 +1,8 @@
 """ Implementation of logistic ordinal regression (aka proportional odds) model
-
-author: fernando pedorosa, date: march-2013
 """
+
+# author: fernando pedorosa, date: march-2013
+# modified by:  thomas haslwanter, date: april-2020
 
 # Import standard packages
 import numpy as np
@@ -251,7 +252,8 @@ def main():
 ================================================================================
     """
     print(DOC)
-    from sklearn import cross_validation, datasets
+    from sklearn import datasets
+    from sklearn import model_selection
     boston = datasets.load_boston()
     X, y = boston.data, np.round(boston.target)
     #X -= X.mean()
@@ -260,11 +262,11 @@ def main():
     idx = np.argsort(y)
     X = X[idx]
     y = y[idx]
-    cv = cross_validation.ShuffleSplit(y.size, n_iter=50, test_size=.1, random_state=0)
+    rs = model_selection.ShuffleSplit(n_splits=50, test_size=.1, random_state=0)
     score_logistic = []
     score_ordinal_logistic = []
     score_ridge = []
-    for i, (train, test) in enumerate(cv):
+    for ii, (train, test) in enumerate(rs.split(X)):
         #test = train
         if not np.all(np.unique(y[train]) == np.unique(y)):
             # we need the train set to have all different classes
@@ -276,7 +278,7 @@ def main():
                                         solver='TNC')
         pred = ordinal_logistic_predict(w, theta, X[test])
         s = metrics.mean_absolute_error(y[test], pred)
-        print('ERROR (ORDINAL)  fold %s: %s' % (i+1, s))
+        print('ERROR (ORDINAL)  fold %s: %s' % (ii+1, s))
         score_ordinal_logistic.append(s)
 
         from sklearn import linear_model
@@ -284,7 +286,7 @@ def main():
         clf.fit(X[train], y[train])
         pred = clf.predict(X[test])
         s = metrics.mean_absolute_error(y[test], pred)
-        print('ERROR (LOGISTIC) fold %s: %s' % (i+1, s))
+        print('ERROR (LOGISTIC) fold %s: %s' % (ii+1, s))
         score_logistic.append(s)
 
         from sklearn import linear_model
@@ -292,7 +294,7 @@ def main():
         clf.fit(X[train], y[train])
         pred = np.round(clf.predict(X[test]))
         s = metrics.mean_absolute_error(y[test], pred)
-        print('ERROR (RIDGE)    fold %s: %s' % (i+1, s))
+        print('ERROR (RIDGE)    fold %s: %s' % (ii+1, s))
         score_ridge.append(s)
 
 
