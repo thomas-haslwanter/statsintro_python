@@ -1,6 +1,6 @@
-'''Demo-plot of residuals to a best-fit line '''
+"""Demo-plot of residuals to a best-fit line """
 
-# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -20,6 +20,7 @@ except ImportError:
         plt.show()
         return
 
+    
 def main():
     # generate the data
     x = np.arange(10)
@@ -42,5 +43,6 @@ def main():
     
     showData('residuals.png') 
 
+    
 if __name__ == '__main__':
     main()

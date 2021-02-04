@@ -1,6 +1,6 @@
-''' Example of fitting the Weibull modulus. '''
+""" Example of fitting the Weibull modulus. """
 
-# author: Thomas Haslwanter, date: Jun-2015
+# author: Thomas Haslwanter, date: [xxx]-2021
 
 # Import standard packages
 import matplotlib.pyplot as plt
@@ -15,4 +15,5 @@ data = WeibullDist.rvs(500)
 fitPars = stats.weibull_min.fit(data)
 
 # Note: fitPars contains (WeibullModulus, Location, Scale)
-print('The fitted Weibull modulus is {0:5.2f}, compared to the exact value of 1.5 .'.format(fitPars[0]))
+print(f'The fitted Weibull modulus is {fitPars[0]:5.2f},' +
+      ' compared to the exact value of 1.5 .')

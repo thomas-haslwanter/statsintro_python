@@ -1,8 +1,8 @@
-'''Solution for Exercise "Categorical Data"
+"""Solution for Exercise "Categorical Data"
 McNemar's Test
-'''
+"""
 
-# author: Thomas Haslwanter, date: Sept-2015
+# author: Thomas Haslwanter, date: Feb-2021
 
 from scipy import stats
 from statsmodels.sandbox.stats.runs import mcnemar
@@ -15,11 +15,15 @@ _, p2 = mcnemar(obs2)
 
 print('\n--- McNemar Test ---')
 if p < 0.05:
-    print('The results from the neurologist are significanlty different from the questionnaire (p={0:5.3f}).'.format(p))
+    print('The results from the neurologist are' +
+    f' significanlty different from the questionnaire (p={p:5.3f}).')
 else:
-    print('The results from the neurologist are NOT significanlty different from the questionnaire (p={0:5.3f}).'.format(p))
+    print('The results from the neurologist are' +
+          f' NOT significanlty different from the questionnaire (p={p:5.3f}).')
     
 if (p<0.05 == p2<0.05):
-    print('The results would NOT change if the expert had diagnosed all "sane" people correctly.')
+    print('The results would NOT change' +
+          ' if the expert had diagnosed all "sane" people correctly.')
 else:
-    print('The results would change if the expert had diagnosed all "sane" people correctly.')
+    print('The results would change' +
+          ' if the expert had diagnosed all "sane" people correctly.')

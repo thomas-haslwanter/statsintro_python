@@ -1,6 +1,6 @@
 """ Plot explaining the principle of a Kernel-Density-Estimation (KDE). """
 
-# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -25,8 +25,9 @@ except ImportError:
 
 setFonts(18)
 
+
 def plot_histogram(ax, data):
-    ''' Left plot: histogram '''
+    """ Left plot: histogram """
     
     ax.hist(data, bins=6, range=[-4, 8], density=True)
     
@@ -39,8 +40,9 @@ def plot_histogram(ax, data):
     for ii in range(len(data)):
         ax.plot([data,data], [0, -0.005], 'b')    
     
+
 def plotNorm(pos, sd, xcum, ycum):
-    ''' Plot individual curves '''
+    """ Plot individual curves """
     
     x = np.arange(pos-3*sd, pos+3*sd, 0.1)
     nd = stats.norm(pos, sd)
@@ -54,8 +56,9 @@ def plotNorm(pos, sd, xcum, ycum):
         ycum[xcr==xir[ii]] += y[ii]
     return ycum
     
+
 def explain_KDE(ax, data):
-    ''' Right plot: Explanation of KDE '''
+    """ Right plot: Explanation of KDE """
     
     # Prepare cumulative arrays
     xcum = np.arange(-6, 11, 0.1)
@@ -80,6 +83,7 @@ def explain_KDE(ax, data):
     ycum /= np.sum(ycum)/10
     ax.plot(xcum, ycum)
 
+    
 def main():
     # Generate dummy data
     x = np.array([-2.1, -1.3, -0.4, 1.9, 5.1, 6.2])
@@ -96,6 +100,7 @@ def main():
     # Save and show
     showData('KDEexplained.png')
     plt.show()
+    
     
 if __name__ == '__main__':
     main()

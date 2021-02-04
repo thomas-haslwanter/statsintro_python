@@ -1,19 +1,20 @@
-''' Solution to Exercise "Data Input" '''
+""" Solution to Exercise "Data Input" """
 
-# author: Thomas Haslwanter, date: Oct-2015
+# author: Thomas Haslwanter, date: [xxx]-2021
 
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-import urllib
+from urllib.request import urlopen
 import io
 import zipfile
 
-def getDataDobson(url, inFile):
-    '''Extract data from a zipped-archive'''
+
+def getDataDobson(url: str, inFile: str) -> pd.DataFrame:
+    """ Extract data from a zipped-archive on the web. """
 
     # get the zip-archive
-    GLM_archive = urllib.request.urlopen(url).read()
+    GLM_archive = urlopen(url).read()
 
     # make the archive available as a byte-stream
     zipdata = io.BytesIO()
@@ -44,9 +45,9 @@ if __name__ == '__main__':
     print(data.tail())
 
     # Read in a zipped data-file from the WWW
-    url = r'http://cdn.crcpress.com/downloads/C9500/GLM_data.zip'
-    inFile = r'GLM_data/Table 2.8 Waist loss.xls'
+    # Select archive (on the web) and the file in the archive
+    url = 'https://s3-eu-west-1.amazonaws.com/s3-euw1-ap-pe-ws4-cws-documents.ri-prod/9781138741515/GLM_data.zip'
+    inFile = r'Table 2.8 Waist loss.xls'
 
     df = getDataDobson(url, inFile)
     print(df.tail())
-

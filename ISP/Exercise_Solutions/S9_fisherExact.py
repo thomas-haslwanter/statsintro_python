@@ -1,8 +1,8 @@
-'''Solution for Exercise "Categorical Data"
+"""Solution for Exercise "Categorical Data"
 "A Lady Tasting Tea"
-'''
+"""
 
-# author: Thomas Haslwanter, date: Sept-2015
+# author: Thomas Haslwanter, date: Feb-2021
 
 from scipy import stats
 obs = [[3,1], [1,3]]
@@ -12,4 +12,5 @@ _, p = stats.fisher_exact(obs, alternative='greater')
 #stats.fisher_exact(obs2, alternative='greater')
 
 print('\n--- A Lady Tasting Tea (Fisher Exact Test) ---')
-print('The chance that the lady selects 3 or more cups correctly by chance is {0:5.3f}'.format(p))
+print('The chance that the lady selects 3 or more cups correctly' +
+      f' by chance is {p:5.3f}')

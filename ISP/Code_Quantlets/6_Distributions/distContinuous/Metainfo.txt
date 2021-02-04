@@ -1,0 +1,20 @@
+Name of QuantLet: ISP_distContinuous
+
+Published in:  An Introduction to Statistics with Python
+
+Description: 'Plots of different continuous distribution functions.
+    - T-distribution
+    - F-distribution
+    - Chi2-distribution
+    - Exponential
+    - Weibull'
+
+Keywords: visualization, plot, t-distribution, f-distribution, chi2-distribution, weibull distribution
+
+See also: ISP_binomialTest, ISP_centralLimitTheorem, ISP_distDiscrete, ISP_distNormal
+
+Author: Thomas Haslwanter 
+
+Submitted: October 31, 2015 
+
+Example:  dist_t.png, dist_chi2.png, dist_f.png, dist_exp.png, Weibull_PDF.png

@@ -1,9 +1,9 @@
-'''Common formatting and print commands, for the book "Introduction to Statistics with Python".
-These commands ensure a common layout, and reduce the code required to generate plots
-in the other modules.
-'''
+"""Common formatting and print commands for ISP
+These commands ensure a common layout, and reduce the code required to generate
+plots in the other modules.
+"""
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import matplotlib.pyplot as plt
@@ -12,8 +12,14 @@ import os
 # additional packages
 import matplotlib as mpl
 
-def setFonts(fs=24):
-    '''Set my favorite defaulte fonts'''
+
+def setFonts(fs: int=16) -> None:
+    """Set my favorite defaulte fonts
+
+    Parameters
+    ----------
+    fs : font-size
+    """
     
     font = {'family' : 'sans-serif',
             'weight' : 'normal',
@@ -41,20 +47,28 @@ def setFonts(fs=24):
     mpl.rc('legend', **legend)
     mpl.rc('figure', **figure)
     
-def showData(outFile, outDir = '.'):
-    '''Save a figure with subplots to a file, and then display it'''
+    
+def showData(out_file: str, out_dir: str='.') -> None:
+    """ Save a figure with subplots to a file, and then display it
+
+    Parameters
+    ----------
+    out_file : name of out-file
+    out_dir  : path of out-file
+    """
     
     # Generate the plot
-    saveTo = os.path.join(outDir, outFile)
+    saveTo = os.path.join(out_dir, out_file)
     plt.savefig(saveTo, dpi=200)
     
     # Show the user where the file is saved to
-    print('OutDir: {0}'.format(outDir))
-    print('Figure saved to {0}'.format(outFile))
+    print(f'out_dir: {out_dir}')
+    print(f'Figure saved to {out_file}')
     
     # Show the plot
     plt.show()
     plt.close()
+
 
 if __name__ == '__main__':
     setFonts()

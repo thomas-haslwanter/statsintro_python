@@ -1,9 +1,10 @@
-'''Simple linear models.
-- "model_formulas" is based on examples in Kaplan's book "Statistical Modeling".
-- "polynomial_regression" shows how to work with simple design matrices, like MATLAB's "regress" command.
-'''
+"""Simple linear models
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+- "model_formulas" is based on examples in Kaplan's book "Statistical Modeling".
+- "polynomial_regression" shows how to work with simple design matrices
+"""
+
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -13,18 +14,25 @@ import pandas as pd
 from statsmodels.formula.api import ols
 import statsmodels.regression.linear_model as sm
 from statsmodels.stats.anova import anova_lm
+from typing import List
 
-def model_formulas():
-    ''' Define models through formulas '''
+
+def model_formulas() -> float:
+    """ Define models through formulas 
+    
+    Returns
+    -------
+    F : Test statistic for the cubic model
+    """
     
     # Get the data:
-    # Development of world record times for the 100m Freestyle, for men and women.
+    # Development of world record times for the 100m Freestyle (men/women)
     data = pd.read_csv('swim100m.csv')
     
     # Different models
     model1 = ols("time ~ sex", data).fit()  # one factor
-    model2 = ols("time ~ sex + year", data).fit()   # two factors
-    model3 = ols("time ~ sex * year", data).fit()   # two factors with interaction
+    model2 = ols("time ~ sex + year", data).fit() # two factors
+    model3 = ols("time ~ sex * year", data).fit() # two factors with interaction
     
     # Model information
     print((model1.summary()))
@@ -45,10 +53,15 @@ def model_formulas():
     # Just to check the correct run
     return model3Results['F'][0] # should be 156.1407931415788
     
-def polynomial_regression():
-    ''' Define the model directly through the design matrix.
+
+def polynomial_regression() -> List[float]:
+    """ Define the model directly through the design matrix.
         Similar to MATLAB's "regress" command.
-        '''
+        
+        Returns
+        -------
+        params : coefficients for the quadratic model
+        """
 
     # Generate the data: a noisy second order polynomial
     
@@ -59,8 +72,8 @@ def polynomial_regression():
     y = 4 + 3*t + 2*t**2 + 5*np.random.randn(len(t))
     
     # --- >>> START stats <<< ---
-    # Make the fit. Note that this is another "OLS" than the one in "model_formulas",
-    # as it works directly with the design matrix!
+    # Make the fit. Note that this is another "OLS" than the one in
+    # "model_formulas", as it works directly with the design matrix!
     M = np.column_stack((np.ones(len(t)), t, t**2))
     res = sm.OLS(y, M).fit()
     # --- >>> STOP stats <<< ---
@@ -73,6 +86,7 @@ def polynomial_regression():
     print((res.conf_int()))
     
     return res.params # should be [ 4.74244177,  2.60675788,  2.03793634]
+
 
 if __name__ == '__main__':
     model_formulas()

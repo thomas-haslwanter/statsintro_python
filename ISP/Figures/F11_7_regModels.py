@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 Explanation of the output of statsmodels OLS-command.
 Strongly based on a blog by Connor Johnson.
 http://connor-johnson.com/2014/02/18/linear-regression-with-python/
-'''
+"""
 
-# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -34,7 +34,7 @@ import matplotlib as mpl
 import statsmodels.formula.api as sm
 from sklearn.linear_model import LinearRegression
 
-data_str = '''Region Alcohol Tobacco
+data_str = """Region Alcohol Tobacco
 North 6.47 4.03
 Yorkshire 6.13 3.76
 Northeast 6.19 3.77
@@ -45,7 +45,7 @@ Southeast 5.89 3.20
 Southwest 4.79 2.71
 Wales 5.27 3.53
 Scotland 6.08 4.51
-Northern_Ireland 4.02 4.56'''
+Northern_Ireland 4.02 4.56"""
 
 # Python 2/3 use different packages for "StringIO"
 if sys.version_info[0] == 3:

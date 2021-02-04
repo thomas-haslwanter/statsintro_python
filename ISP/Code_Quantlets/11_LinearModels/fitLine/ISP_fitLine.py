@@ -1,4 +1,4 @@
-'''
+"""
 Linear regression fit
 
 Parameters
@@ -44,17 +44,18 @@ Notes
 -----
 Example data and formulas are taken from
 D. Altman, "Practical Statistics for Medicine"
-'''
+"""
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 
+
 def fitLine(x, y, alpha=0.05, newx=[], plotFlag=1):
-    ''' Fit a curve to the data using a least squares 1st order polynomial fit '''
+    """ Fit a curve to the data using a least squares 1st order fit """
     
     # Summary data
     n = len(x)			   # number of samples     
@@ -88,15 +89,18 @@ def fitLine(x, y, alpha=0.05, newx=[], plotFlag=1):
 
     # create series of new test x-values to predict for
     npts = 100
-    px = np.linspace(np.min(x),np.max(x),num=npts)
+    px = np.linspace(np.min(x), np.max(x), num=npts)
     
     se_fit     = lambda x: sd_res * np.sqrt(  1./n + (x-mean_x)**2/Sxx)
     se_predict = lambda x: sd_res * np.sqrt(1+1./n + (x-mean_x)**2/Sxx)
     
-    print(('Summary: a={0:5.4f}+/-{1:5.4f}, b={2:5.4f}+/-{3:5.4f}'.format(a,tval*se_a,b,tval*se_b)))
-    print(('Confidence intervals: ci_a=({0:5.4f} - {1:5.4f}), ci_b=({2:5.4f} - {3:5.4f})'.format(ci_a[0], ci_a[1], ci_b[0], ci_b[1])))
-    print(('Residuals: variance = {0:5.4f}, standard deviation = {1:5.4f}'.format(var_res, sd_res)))
-    print(('alpha = {0:.3f}, tval = {1:5.4f}, df={2:d}'.format(alpha, tval, df)))
+    print(f'Summary: a={a:5.4f}+/-{tval*se_a:5.4f}, ' +
+          f'b={b:5.4f}+/-{tval*se_b:5.4f}')
+    print(f'Confidence intervals: ci_a=({ci_a[0]:5.4f} - {ci_a[1]:5.4f}), ' +
+           f'ci_b=({ci_b[0]:5.4f} - {ci_b[1]:5.4f})')
+    print(f'Residuals: variance = {var_res:5.4f}, ' +
+          f'standard deviation = {sd_res:5.4f}')
+    print(f'alpha = {alpha:.3f}, tval = {tval:5.4f}, df={df:d}')
     
     # Return info
     ri = {'residuals': residuals, 
@@ -116,11 +120,25 @@ def fitLine(x, y, alpha=0.05, newx=[], plotFlag=1):
         
         x.sort()
         limit = (1-alpha)*100
-        plt.plot(x, fit(x)+tval*se_fit(x), 'r--', lw=2, label='Confidence limit ({0:.1f}%)'.format(limit))
-        plt.plot(x, fit(x)-tval*se_fit(x), 'r--', lw=2 )
+        plt.plot(x, fit(x)+tval*se_fit(x),
+                 ls='--', 
+                 color='r', 
+                 lw=2, 
+                 label = f'Confidence limit ({limit:.1f}%)' )
+        plt.plot(x, fit(x)-tval*se_fit(x),
+                    ls='--',
+                    color='r', 
+                    lw=2 )
         
-        plt.plot(x, fit(x)+tval*se_predict(x), '--', lw=2, color=(0.2,1,0.2), label='Prediction limit ({0:.1f}%)'.format(limit))
-        plt.plot(x, fit(x)-tval*se_predict(x), '--', lw=2, color=(0.2,1,0.2))
+        plt.plot(x, fit(x)+tval*se_predict(x),
+                    ls='--',
+                    lw=2,
+                    color=(0.2,1,0.2), 
+                    label = f'Prediction limit ({limit:.1f}%)' )
+        plt.plot(x, fit(x)-tval*se_predict(x),
+                 ls='--',
+                 lw=2,
+                 color=(0.2,1,0.2) )
 
         plt.xlabel('X values')
         plt.ylabel('Y values')
@@ -133,9 +151,9 @@ def fitLine(x, y, alpha=0.05, newx=[], plotFlag=1):
         plt.setp(ltext, fontsize=14)
 
         # show the plot
-        outFile = 'regression_wLegend.png'
-        plt.savefig(outFile, dpi=200)
-        print('Image saved to {0}'.format(outFile))
+        out_file = 'regression_wLegend.png'
+        plt.savefig(out_file, dpi=200)
+        print(f'Image saved to {out_file}')
         plt.show()
         
     if newx != []:
@@ -144,13 +162,17 @@ def fitLine(x, y, alpha=0.05, newx=[], plotFlag=1):
         except AttributeError:
             newx = np.array([newx])
     
-        print(('Example: x = {0}+/-{1} => se_fit = {2:5.4f}, se_predict = {3:6.5f}'\
-        .format(newx[0], tval*se_predict(newx[0]), se_fit(newx[0]), se_predict(newx[0]))))
+        print(f'Example: x = {newx[0]} +/- {tval*se_predict(newx[0])} => ' +
+               f'se_fit = {se_fit(newx[0])}, ' +
+               f'se_predict = {se_predict(newx[0]):6.5f}' )
         
-        newy = (fit(newx), fit(newx)-se_predict(newx), fit(newx)+se_predict(newx))
+        newy = ( fit(newx),
+                 fit(newx) - se_predict(newx),
+                 fit(newx) + se_predict(newx) )
         return (a,b,(ci_a, ci_b), ri, newy)
     else:
         return (a,b,(ci_a, ci_b), ri)
+    
     
 if __name__ == '__main__':
         # example data
@@ -162,4 +184,6 @@ if __name__ == '__main__':
                       1.19, 1.05, 1.32, 1.03, 1.12, 1.70])
                       
         goodIndex = np.invert(np.logical_or(np.isnan(x), np.isnan(y)))
-        (a,b,(ci_a, ci_b), ri,newy) = fitLine(x[goodIndex],y[goodIndex], alpha=0.01,newx=np.array([1,4.5]))        
+        (a,b,(ci_a, ci_b), ri,newy) = fitLine(x[goodIndex], y[goodIndex],
+                                              alpha=0.01,
+                                              newx=np.array([1,4.5]) )        

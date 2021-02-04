@@ -1,6 +1,6 @@
-''' Figure explaining the T-Test '''
+""" Figure explaining the T-Test """
 
-# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -34,7 +34,7 @@ print('Real mean: {0:5.3f}; Sample mean: {1:5.3f}'.format(7, meanVal))
 print('Real SD: {0:5.3f}; Sample SD: {1:5.3f}'.format(3, stdVal))
 
 # Prepare the plot
-sns.set_context('poster')
+sns.set_context('notebook')
 sns.set_style('ticks')
 fig, axs = plt.subplots(1,2)
 
@@ -79,6 +79,7 @@ axs[1].plot(tVal, 0, 'rd', ms=25)
 axs[1].plot(0, 0, 'yd', ms=25)
 axs[1].set_xlabel('t-statistic')
 axs[1].set_title('t-distribution PDF')
+axs[1].margins(y=0)
 axs[1].legend()
 
 sns.despine()

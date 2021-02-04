@@ -1,6 +1,6 @@
-''' Solution to Exercise "Normal Distribution" '''
+""" Solution to Exercise "Normal Distribution" """
 
-# author: Thomas Haslwanter, date: Sept-2015
+# author: Thomas Haslwanter, date: Feb-2021
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -24,11 +24,12 @@ plt.hist(data)
 plt.show()
 
 # 95% confidence interval
-print('95% Confidence interval: {0:4.2f} - {1:4.2f}'.format(nd.ppf(0.025), nd.ppf(0.975)))
+print('95% Confidence interval: '+
+      f'{nd.ppf(0.025):4.2f} - {nd.ppf(0.975):4.2f}')
 
 # SD for hip implants
 nd = stats.norm()
 numSDs = nd.isf(0.0005)
 tolerance = 1/numSDs
-print('The required SD to fulfill both requirements = {0:6.4f} mm'.format(tolerance))
+print(f'The required SD to fulfill both requirements = {tolerance:6.4f} mm')
 

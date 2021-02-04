@@ -1,6 +1,6 @@
-'''Solution for Exercise "Categorical Data" '''
+"""Solution for Exercise "Categorical Data" """
 
-# author: Thomas Haslwanter, date: Sept-2015
+# author: Thomas Haslwanter, date: Feb-2021
 
 from scipy import stats
 
@@ -10,8 +10,10 @@ _, p = stats.chisquare(obs)
 
 print('\n--- Chi2-oneway ---')
 if p < 0.05:
-    print('The difference in opinion between the different age groups is significant (p={0:6.4f})'.format(p))
+    print('The difference in opinion between the different age groups is' +
+          f' significant (p={p:6.4f})')
 else:
-    print('The difference in opinion between the different age groups is NOT significant (p={0:6.4f})'.format(p))
+    print('The difference in opinion between the different age groups is' +
+    f' NOT significant (p={p:6.4f})')
 
-print('DOF={0:3d}'.format(len(obs)-1))
+print(f'DOF={len(obs)-1:3d}')

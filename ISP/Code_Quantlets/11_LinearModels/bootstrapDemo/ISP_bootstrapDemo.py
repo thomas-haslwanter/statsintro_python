@@ -1,14 +1,9 @@
-''' Example of bootstrapping the confidence interval for the mean of a sample distribution
-
-This function requires "bootstrap.py", which is can be installed with
-    pip install scikits-bootstrap
-
-Sourcecode is available at
+""" Example of bootstrapping the confidence interval for the mean
+This function requires "bootstrap.py", which is available from
 https://github.com/cgevans/scikits-bootstrap
+"""
 
-'''
-
-# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import matplotlib.pyplot as plt
@@ -18,8 +13,9 @@ from scipy import stats
 # additional packages
 import scikits.bootstrap as bootstrap
 
+
 def generate_data():
-    ''' Generate the data for the bootstrap simulation '''
+    """ Generate the data for the bootstrap simulation """
     
     # To get reproducable values, I provide a seed value
     sp.random.seed(987654321)   
@@ -35,8 +31,9 @@ def generate_data():
     
     return(data)
     
+
 def calc_bootstrap(data):
-    ''' Find the confidence interval for the mean of the given data set with bootstrapping. '''
+    """ Find the confidence interval for the mean of the given data set with bootstrapping. """
     
     # --- >>> START stats <<< ---
     # Calculate the bootstrap
@@ -44,9 +41,10 @@ def calc_bootstrap(data):
     # --- >>> STOP stats <<< ---
     
     # Print the data: the "*" turns the array "CIs" into a list
-    print(('The conficence intervals for the mean are: {0} - {1}'.format(*CIs)))
+    print(f'The conficence intervals for the mean are: {CIs[0]} - {CIs[1]}')
     
     return CIs
+
 
 if __name__ == '__main__':
     data = generate_data()

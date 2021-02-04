@@ -1,6 +1,6 @@
-''' Short demo of how to check for the significance of an individual value. '''
+""" Short demo of how to check for the significance of an individual value. """
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -30,22 +30,23 @@ md, sd = 3.5, 0.76
 nd = stats.norm(md, sd)
 
 # Set up the plot
-sns.set_context(context='poster')
+sns.set_context(context='notebook')
 sns.set_style('ticks')
 setFonts()
 
 # Plot the normal distribution within 3 SDs
 limits = (md-3*sd, md+3*sd)
-x = np.linspace(limits[0], limits[1])
+num_pts = 200
+x = np.linspace(limits[0], limits[1], num_pts)
 y = nd.pdf(x)
 
 # Shade the regions beyond a certain "checkVal"
 checkVal = 2.6
-print('p = {0:5.3f}'.format(nd.cdf(checkVal)))
+print(f'p = {nd.cdf(checkVal):5.3f}')
 
-x1 = np.linspace(limits[0], checkVal)
+x1 = np.linspace(limits[0], checkVal, num_pts)
 y1 = nd.pdf(x1)
-x2 = np.linspace(md + (md-checkVal), limits[1])
+x2 = np.linspace(md + (md-checkVal), limits[1], num_pts)
 y2 = nd.pdf(x2)
 
 plt.plot(x,y)
@@ -55,10 +56,11 @@ plt.fill_between(x2, y2, alpha=0.2)
 #  Label the axes
 plt.xlabel('Weight')
 plt.ylabel('P(Weight)')
-plt.text(2.1, 0.05, '11.8%', fontsize=24)
+plt.text(2.1, 0.05, '11.8%', fontsize=18)
 
 # Remove the right- and top-axis
 sns.despine()
+plt.gca().margins(0,0)
 
 # Save and show
 showData('pdf_checkValue.png')

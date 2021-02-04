@@ -1,6 +1,6 @@
-'''Figure for a an example of a T-test for a mean value '''
+"""Figure for a an example of a T-test for a mean value """
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -24,7 +24,7 @@ except ImportError:
         plt.show()
         return
 
-sns.set_context('poster')
+sns.set_context('notebook')
 sns.set_style('ticks')
 setFonts()
 

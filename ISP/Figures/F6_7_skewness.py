@@ -1,6 +1,6 @@
-''' Example for Skewness and Kurtosis '''
+""" Example for Skewness and Kurtosis """
 
-# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -8,8 +8,6 @@ import scipy.stats as stats
 import matplotlib.pyplot as plt
 import os
 import seaborn as sns
-
-# additional packages
 
 # Import formatting commands if directory "Utilities" is available
 import os
@@ -24,26 +22,29 @@ except ImportError:
         plt.show()
         return
 
-sns.set(context='poster', style='ticks', palette='deep')
+sns.set(context='notebook', style='ticks', palette='deep')
+
 
 def skewness(ax):
-    '''Normal and skewed distribution'''
+    """Normal and skewed distribution"""
     
-    t = np.arange(-6,10,0.1) # generate the desirded x-values
-    normal = stats.norm.pdf(t,1,1.6)   
-    chi2 = stats.chi2.pdf(t,3)
+    t = np.linspace(-6, 10, 201) # generate the desired x-values
+    normal = stats.norm.pdf(t, 1, 1.6)   
+    chi2 = stats.chi2.pdf(t, 3)
     
     ax.plot(t, normal, '--', label='normal')
     ax.plot(t, chi2, label='positive skew')
     ax.xaxis.set_ticks_position('bottom')
     ax.yaxis.set_ticks_position('left')
+    ax.margins(0,0)
     ax.legend()
     
+    
 def kurtosis(ax):
-    ''' Distributions with different kurtosis'''
+    """ Distributions with different kurtosis"""
     
     # Generate the data
-    t = np.arange(-3,3,0.1) # generate the desirded x-values
+    t = np.linspace(-3, 3, 201) # generate the desired x-values
     platykurtic = stats.laplace.pdf(t)
     
     wigner = np.zeros(np.size(t))
@@ -54,8 +55,10 @@ def kurtosis(ax):
     ax.plot(t, wigner, '--', label='kurtosis=-1')
     ax.xaxis.set_ticks_position('bottom')
     ax.yaxis.set_ticks_position('left')
+    ax.margins(0,0)
     ax.legend()
 
+    
 if __name__=='__main__':
     # Make 2 plots, side-by-side
     fig, axs = plt.subplots(1,2)    

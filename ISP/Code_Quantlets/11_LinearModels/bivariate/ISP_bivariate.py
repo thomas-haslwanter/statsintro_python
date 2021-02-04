@@ -1,9 +1,9 @@
-''' Analysis of multivariate data
+""" Analysis of multivariate data
 - Regression line
 - Correlation (Pearson-rho, Spearman-rho, and Kendall-tau)
-'''
+"""
 
-# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: 2021-01-11
 
 # Import standard packages
 import numpy as np
@@ -11,12 +11,18 @@ from scipy import stats
 import pandas as pd
 import statsmodels.formula.api as smf
 
-def regression_line():
-    '''Fit a line, using the powerful "ordinary least square" method of pandas.
+
+def regression_line() -> float:
+    """Fit a line, using the powerful "ordinary least square" method of pandas.
     
-    Data from 24 type 1 diabetic patients, relating fasting blood glucose (mmol/l)
-    to mean circumferential shortening velocity (%/sec), derived form echocardiography.
-    '''
+    Data from 24 type 1 diabetic patients, relating fasting blood
+    glucose (mmol/l) to mean circumferential shortening velocity (%/sec),
+    derived form echocardiography.
+
+    Returns
+    -------
+    f : test statistic
+    """
     
     # Get the data
     inFile = 'altman_11_6.txt'
@@ -27,17 +33,24 @@ def regression_line():
 
     # --- >>> START stats <<< ---
     # Fit a regression line to the data, and display the model results
-    model = smf.ols(formula='Vcf~glucose', data=df)
-    res = model.fit()
-    print(res.summary())
+    results = smf.ols('Vcf ~ glucose', data=df).fit()
+    # model = pd.ols(y=df['Vcf'], x=df['glucose'])
+    print(results.summary())
     # --- >>> STOP stats <<< ---
     
-    return res._results.fvalue # should be 4.4140184331462571
+    return results.fvalue   # should be 4.414018433146266
     
-def correlation():
-    '''Pearson correlation, and two types of rank correlation (Spearman, Kendall)
-    comparing age and %fat (measured by dual-photon absorptiometry) for 18 normal adults.
-    '''
+
+def correlation() -> float:
+    """Pearson correlation, and two types of rank correlation (Spearman,
+    Kendall) comparing age and %fat (measured by dual-photon absorptiometry)
+    for 18 normal adults.
+
+    Returns
+    -------
+    corr : Pearson's correlation coefficient
+
+    """
     
     # Get the data
     inFile = 'altman_11_1.txt'
@@ -58,10 +71,12 @@ def correlation():
     print(corr)    
     
     # Assert that Spearman's rho is just the correlation of the ranksorted data
-    np.testing.assert_almost_equal(corr['spearman'], stats.pearsonr(stats.rankdata(x), stats.rankdata(y))[0])
+    np.testing.assert_almost_equal(corr['spearman'],
+            stats.pearsonr(stats.rankdata(x), stats.rankdata(y))[0])
     
     return corr['pearson']  # should be 0.79208623217849117
     
+
 if __name__ == '__main__':
     regression_line()    
     correlation()

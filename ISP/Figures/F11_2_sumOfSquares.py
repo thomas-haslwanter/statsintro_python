@@ -1,6 +1,6 @@
-'''Visualization of the Sum-of-Squares. '''
+"""Visualization of the Sum-of-Squares. """
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: thomas haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -24,7 +24,7 @@ except ImportError:
         return
     
 # Set the figure style
-sns.set_context('poster')
+sns.set_context('notebook')
 sns.set_style('ticks')
 
 # Generate data
@@ -48,12 +48,13 @@ axs[0].set_xlim([0,7])
 axs[0].set_ylim([0, 6])
 axs[0].set_aspect('equal')
 axs[0].hlines(yMean, 0, 7, lw=0.5)
-axs[0].text(0.5, yMean+0.1, r'$\bar{y}$', fontsize=24)
+axs[0].text(0.5, yMean+0.1, r'$\bar{y}$', fontsize=18)
 sns.despine(ax=axs[0])
 
 for ii in range(len(y)):
     width = yMean - y[ii]
-    rect = Rectangle( (x[ii], y[ii]), width=width, height=width, facecolor='r', alpha=0.2)
+    rect = Rectangle( (x[ii], y[ii]), width=width, height=width,
+                      facecolor='r', alpha=0.2)
     axs[0].add_patch(rect)
 
 # Plot the datapoints, re \hat{y}
@@ -67,7 +68,8 @@ sns.despine(ax=axs[1])
 
 for ii in range(len(y)):
     width = np.polyval(fit, x[ii]) - y[ii]
-    rect = Rectangle( (x[ii], y[ii]), width=width, height=width, facecolor='b', alpha=0.4)
+    rect = Rectangle( (x[ii], y[ii]), width=width, height=width,
+                      facecolor='b', alpha=0.4)
     axs[1].add_patch(rect)
 
 # Save and show

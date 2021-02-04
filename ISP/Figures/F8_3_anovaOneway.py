@@ -1,6 +1,6 @@
-''' Figure explaining the T-Test '''
+""" Figure explaining the T-Test """
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -27,8 +27,9 @@ except ImportError:
 
 sns.set_palette('muted')
 
+
 def show_fig(std, ax, title):
-    '''Create a plot of normally distributed data in a given axis'''
+    """Create a plot of normally distributed data in a given axis"""
     
     for ii in range(3):
         data = stats.norm(centers[ii], std).rvs(numData)
@@ -39,6 +40,7 @@ def show_fig(std, ax, title):
     ax.set_xticklabels(['Group1', 'Group2', 'Group3'])
     ax.set_title(title)
     sns.despine()
+
 
 if __name__ == '__main__':
     

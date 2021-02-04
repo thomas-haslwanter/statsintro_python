@@ -1,6 +1,6 @@
-''' Figure explaining the T-Test '''
+""" Figure explaining the T-Test """
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -25,10 +25,11 @@ except ImportError:
         plt.show()
         return
     
-sns.set(context='poster', style='ticks', palette='muted')
+sns.set(context='notebook', style='ticks', palette='muted')
+
 
 def show_fig(std, ax, title):
-    '''Create plot of 3 different, normally distributed data groups'''
+    """Create plot of 3 different, normally distributed data groups"""
     
     groupMean = []
     for ii in range(3):
@@ -43,21 +44,25 @@ def show_fig(std, ax, title):
     ax.set_title(title)
     
     grandMean = np.mean(groupMean)
-    ax.axhline(grandMean, color='#999999')
-    ax.plot([80, 220], [groupMean[1], groupMean[1]], '#999999')
-    ax.plot([80, 120], [groupMean[1]+0.2, groupMean[1]+0.2], '#999999')
+    gray = '#999999'
+    arrowprops = dict(arrowstyle = '<->', facecolor='black', color=gray)
+    
+    ax.axhline(grandMean, color=gray)
+    ax.plot([80, 220], [groupMean[1], groupMean[1]], color=gray)
+    ax.plot([80, 120], [groupMean[1]+0.2, groupMean[1]+0.2], color=gray)
     ax.annotate('', xy=(210, grandMean), xytext=(210,groupMean[1]), 
-            arrowprops=dict(arrowstyle='<->, head_width=0.1', facecolor='black'))
+            arrowprops=arrowprops )
     ax.annotate('', xy=(90, groupMean[1]), xytext=(90,groupMean[1]+0.2), 
-            arrowprops=dict(arrowstyle='<->, head_width=0.1', facecolor='black'))
-    ax.text(210, (grandMean + groupMean[1])/2., '$SS_{Treatment}$', fontsize=36)
-    ax.text(90, groupMean[1]+0.1, '$SS_{Error}$', ha='right', fontsize=36)
+            arrowprops=arrowprops )
+    ax.text(210, (grandMean + groupMean[1])/2., '$SS_{Treatment}$', fontsize=18)
+    ax.text(90, groupMean[1]+0.1, '$SS_{Error}$', ha='right', fontsize=18)
 
+    
 if __name__ == '__main__':
     centers = [5, 5.3, 4.7]
     
     np.random.seed(123)
-    setFonts(30)
+    setFonts(18)
     
     fig = plt.figure()
     ax = fig.add_subplot(111)

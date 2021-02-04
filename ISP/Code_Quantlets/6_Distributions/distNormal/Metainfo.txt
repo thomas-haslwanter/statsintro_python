@@ -1,0 +1,18 @@
+Name of QuantLet: ISP_distNormal
+
+Published in:  An Introduction to Statistics with Python
+
+Description: 'Simple manipulations of normal distribution functions.
+    - Different displays of normally distributed data
+    - Compare different samples from a normal distribution
+    - Work with the cumulative distribution function (CDF)'
+
+Keywords: probability density function, cumulative distribution function, survival function, percentile point function
+
+See also: ISP_binomialTest, ISP_centralLimitTheorem, ISP_distContinuous, ISP_distDiscrete
+
+Author: Thomas Haslwanter 
+
+Submitted: October 31, 2015 
+
+Example:  Normal_Distribution_PDF.png, DistributionFunctions.png, Normal_MultHist.png

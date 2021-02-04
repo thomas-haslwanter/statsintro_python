@@ -1,6 +1,6 @@
 """ Figure with simple regression line """
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -23,13 +23,29 @@ except ImportError:
         plt.show()
         return
 
+# additional packages
+# Import formatting commands if directory "Utilities" is available
+import os
+import sys
+sys.path.append(os.path.join('..', '..', 'Utilities'))
+try:
+    from ISP_mystyle import setFonts, showData 
+    
+except ImportError:
+# Ensure correct performance otherwise
+    def setFonts(*options):
+        return
+    def showData(*options):
+        plt.show()
+        return
+
 # Generate the data
 x = np.arange(-20, 80)
 y = 10 + 0.2*x + 4*np.random.randn(len(x))
 
 # Make the plot
 sns.set_style('ticks')
-sns.set_context('poster')
+sns.set_context('notebook')
 setFonts()
 
 fig = plt.figure()

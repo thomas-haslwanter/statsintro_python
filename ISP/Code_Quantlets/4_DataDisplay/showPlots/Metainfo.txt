@@ -1,0 +1,37 @@
+Name of QuantLet: ISP_showPlots
+
+Published in:  An Introduction to Statistics with Python
+
+Description: 'Show different ways to present statistical data
+    The examples contain:
+    - scatter plots
+    - histograms
+    - cumulative density functions
+    - KDE-plots
+    - boxplots
+    - errorbars
+    - violinplots
+    - barplots
+    - grouped boxplots
+    - pieplots
+    - scatterplots, with markersize proportional to value of corresponding variable
+    - 3D surface and wireframe plots'
+
+Keywords: data visualization, plot, visualization
+
+See also: ISP_gettingStarted
+
+Author: Thomas Haslwanter 
+
+Submitted: October 31, 2015 
+
+Example:  
+- 3dGraph.png
+- barplot.png
+- bivariate.png
+- boxplot.png
+- groupedBoxplot.png
+- histogram.png
+- multiScatterplot.png
+- piePlot.png
+- violinplot.png

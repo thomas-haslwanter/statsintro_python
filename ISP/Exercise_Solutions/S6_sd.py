@@ -1,8 +1,9 @@
-''' Solution to Exercise "Sample Standard Deviation" '''
+""" Solution to Exercise "Sample Standard Deviation" """
 
-# author: Thomas Haslwanter, date: Sept-2015
+# author: Thomas Haslwanter, date: Feb-2021
 
 import numpy as np
 
-x = np.arange(1,11)
-print('The standard deviation of the numbers from 1 to 10 is {0:4.2f}'.format(np.std(x, ddof=1)))
+x = np.linspace(1, 10, 10)
+std = np.std(x, ddof=1)
+print(f'The standard deviation of the numbers from 1 to 10 is {std:4.2f}')

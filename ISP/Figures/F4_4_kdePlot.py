@@ -1,6 +1,6 @@
 """ Plot showing the effekt of a Kernel-Density-Estimation (KDE). """
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 from scipy import stats
@@ -43,7 +43,7 @@ kde = stats.kde.gaussian_kde(data, h)
 kde_large = stats.kde.gaussian_kde(data, 1)
 
 # Generate two plots: one KDE with rug-plot, and one with different parameters
-sns.set_context('poster')
+sns.set_context('notebook')
 sns.set_style('ticks')
 setFonts()
 fig, axs = plt.subplots(1,2)

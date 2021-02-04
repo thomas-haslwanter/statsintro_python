@@ -1,4 +1,4 @@
-'''Solution for Exercise "Regression" '''
+"""Solution for Exercise "Regression" """
 
 # author: Thomas Haslwanter, date: Sept-2015
 
@@ -17,10 +17,8 @@ if __name__== '__main__':
     data = getModelData(show=False)
     
     # Regression --------------------------------------------------------
-    # For "ordinary least square" models, you can do the model directly with pandas
-    #model = pd.ols(x=data['year'], y=data['AvgTmp'])
-    
-    # or you can use the formula-approach from statsmodels:
+    # For "ordinary least square" models, you can do the model 
+    # with the formula-approach from statsmodels:
     # offsets are automatically included in the model
     model = sm.ols('AvgTmp ~ year', data)
     results = model.fit()
@@ -33,7 +31,8 @@ if __name__== '__main__':
     # Is the inclination significant?
     ci = results.conf_int()
     
-    # This line is a bit tricky: if both are above or both below zero, the product is positive:
+    # This line is a bit tricky: if both are above or both below zero
+    #  the product is positive:
     # we look at the coefficient that describes the correlation with "year"
     if np.prod(ci.loc['year'])>0:
         print('The slope is significant')

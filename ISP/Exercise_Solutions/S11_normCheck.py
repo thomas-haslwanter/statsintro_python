@@ -1,6 +1,6 @@
-'''Solution for Exercise "Normality Check" in Chapter 11 '''
+"""Solution for Exercise "Normality Check" in Chapter 11 """
 
-# author: Thomas Haslwanter, date: Sept-2015
+# author: Thomas Haslwanter, date: Feb-2021
 
 from scipy import stats
 import matplotlib.pyplot as plt
@@ -29,6 +29,6 @@ if __name__== '__main__':
     # Normality test, for a quantitative check:
     _, pVal = stats.normaltest(res_data)
     if pVal < 0.05:
-        print('WARNING: The data are not normally distributed (p = {0})'.format(pVal))
+        print(f'WARNING: The data are not normally distributed (p = {pVal})')
     else:
         print('Data are normally distributed.')

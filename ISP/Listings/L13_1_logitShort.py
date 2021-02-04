@@ -8,7 +8,7 @@ from statsmodels.formula.api import glm
 from statsmodels.genmod.families import Binomial
 
 # Get the data
-inFile = 'challenger_data.csv'
+inFile = r'..\Misc\challenger_data.csv'
 challenger_data = np.genfromtxt(inFile, skip_header=1,
                     usecols=[1, 2], missing_values='NA',
                     delimiter=',')

@@ -1,5 +1,5 @@
 
-![quantletLogo_FH](../../../../pictures/quantletLogo_FH.png)
+![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
 
 ## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_modelImplementations**
 
@@ -26,7 +26,7 @@ Example: linearModel.png
 ```
 
 
-<img src="linearModel.png" alt="linearModel" width="500"/>
+![linearModel](linearModel.png)
 
 
 ```py
@@ -36,7 +36,7 @@ Example: linearModel.png
 - using the formula-based approach
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np

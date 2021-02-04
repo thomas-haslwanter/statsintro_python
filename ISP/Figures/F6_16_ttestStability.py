@@ -1,6 +1,7 @@
-''' Stability of the T-distribution against outliers, compared to the normal distribution. '''
+""" Stability of the T-distribution against outliers, compared to the
+ normal distribution. """
 
-# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -37,20 +38,24 @@ fit_t_wo = stats.t.fit(data)
 fit_t_w = stats.t.fit(dataWOutlier)
 
 # Display the fit-results
-print('Gaussian distribution: {0} -> {1}'.format(fit_gauss_wo, fit_gauss_w))
-print('T-distribution: {0} -> {1}'.format(fit_t_wo[1:], fit_t_w[1:]))
+print(f'Gaussian distribution: {fit_gauss_wo} -> {fit_gauss_w}')
+print(f'T-distribution: {fit_t_wo[1:]} -> {fit_t_w[1:]}')
 # Fit of "df" is not shown, as it is pretty unstable for large df
 
 # Plot the fitted curves, to both data sets
 fitted_x = np.linspace(-7, 7, 200)       # x-values for fitted curves
 
 # Fitted curves to the original data set
-fitted_gauss_wo = stats.norm.pdf(fitted_x, loc=fit_gauss_wo[0], scale=fit_gauss_wo[1])
-fitted_t_wo = stats.t.pdf(fitted_x, df=ndata-1, loc=fit_t_wo[1], scale=fit_t_wo[2])
+fitted_gauss_wo = stats.norm.pdf(fitted_x, loc=fit_gauss_wo[0],
+                                 scale=fit_gauss_wo[1])
+fitted_t_wo = stats.t.pdf(fitted_x, df=ndata-1, loc=fit_t_wo[1],
+                          scale=fit_t_wo[2])
 
 # Fitted curves to the data set with outliers
-fitted_gauss_w = stats.norm.pdf(fitted_x, loc=fit_gauss_w[0], scale=fit_gauss_w[1])
-fitted_t_w = stats.t.pdf(fitted_x, df=ndata-1, loc=fit_t_w[1], scale=fit_t_w[2])
+fitted_gauss_w = stats.norm.pdf(fitted_x, loc=fit_gauss_w[0],
+                                scale=fit_gauss_w[1])
+fitted_t_w = stats.t.pdf(fitted_x, df=ndata-1, loc=fit_t_w[1],
+                                scale=fit_t_w[2])
 
 # Show the data
 fig, axs = plt.subplots(2,1, sharex=True)

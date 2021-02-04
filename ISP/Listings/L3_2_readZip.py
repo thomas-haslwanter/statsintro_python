@@ -1,32 +1,39 @@
-'''Get data from MS-Excel files, which are stored zipped on the WWW
+"""Get data from MS-Excel files, which are stored zipped on the WWW. """
 
-Note that Python 2.x is no longer supported!
-'''
-
-# author:   Thomas Haslwanter
-# date:     April-2020
+# author: Thomas Haslwanter, date: [xxx]-2021
 
 # Import standard packages
 import pandas as pd
 
 # additional packages
 import io
-import zipfile
+from zipfile import ZipFile
 from urllib.request import urlopen
+from typing import List
+
     
-def getDataDobson(url, inFile):
-    '''Extract data from a zipped-archive on the web'''
+def get_dataDobson(url: str, in_file: str) -> pd.DataFrame:
+    """ Extract data from a zipped-archive on the web.
+    
+    Parameters
+    ----------
+    url : URL of the archived zip-file
+    
+    Returns
+    -------
+    zipdata : bytestream/buffer with the zipped archive
+    """
 
     # get the zip-archive
-    GLM_archive = urlopen(url).read()
+    archive = urlopen(url).read()
 
     # make the archive available as a byte-stream
     zipdata = io.BytesIO()
-    zipdata.write(GLM_archive)
+    zipdata.write(archive)
 
     # extract the requested file from the archive, as a pandas XLS-file
-    myzipfile = zipfile.ZipFile(zipdata)
-    xlsfile = myzipfile.open(inFile)
+    myzipfile = ZipFile(zipdata)
+    xlsfile = myzipfile.open(in_file)
 
     # read the xls-file into Python, using Pandas, and return the extracted data
     xls = pd.ExcelFile(xlsfile)
@@ -34,12 +41,13 @@ def getDataDobson(url, inFile):
 
     return df
 
+
 if __name__ == '__main__':
     # Select archive (on the web) and the file in the archive
-    url = 'https://www.routledge.com/downloads/K32369/GLM.dobson.data.zip'
-    inFile = r'Table 2.8 Waist loss.xls'
+    url = 'https://s3-eu-west-1.amazonaws.com/s3-euw1-ap-pe-ws4-cws-documents.ri-prod/9781138741515/GLM_data.zip'
+    in_file = 'Table 2.8 Waist loss.xls'
 
-    df = getDataDobson(url, inFile)
+    df = get_dataDobson(url, in_file)
     print(df)
 
     input('All done!')

@@ -1,7 +1,7 @@
-''' Paired T-test
-'''
+""" Paired T-test
+"""
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -49,7 +49,8 @@ plt.tight_layout()
 # P-values for paired and unpaired T-tests
 _, p_paired = stats.ttest_rel(x, xs)
 _, p_ind = stats.ttest_ind(x, xs)
-print('A paired comparison yields p={0:.4f}, while an unpaired T-test gives us p={1:.3f}'.format(p_paired, p_ind))
+print('A paired comparison yields p={p_paired:.4f},' +
+    f' while an unpaired T-test gives us p={p_ind:.3f}')
 
 # Show and save figure
 outFile = 'pairedTtest.png'

@@ -1,6 +1,6 @@
-''' Solution for Exercise "Data Display" 
+""" Solution for Exercise "Data Display" 
 Read in weight-data recorded from newborns, and analyze the
-data based on the gender of the baby.'''
+data based on the gender of the baby."""
 
 # author: Thomas Haslwanter, date: Oct-2015
 
@@ -12,7 +12,7 @@ import seaborn as sns
 import os
 
 def getData():
-    '''Read in data from a text-file, and return them as labelled DataFrame'''
+    """Read in data from a text-file, and return them as labelled DataFrame"""
     
     # Set directory and infile
     dataDir = '.'
@@ -20,7 +20,7 @@ def getData():
     
     # Read and label the data
     os.chdir(dataDir)
-    data = pd.read_csv(inFile, sep='[ ]*', header=None, engine='python',
+    data = pd.read_csv(inFile, header=None, delim_whitespace=True,
                        names= ['TOB', 'sex', 'Weight', 'Minutes'])
     
     # Eliminate "Minutes", since this is redundant
@@ -29,7 +29,7 @@ def getData():
     return(df)
 
 def showData(df):
-    '''Graphical data display'''
+    """Graphical data display"""
     
     # Show the data: first all of them ....
     plt.plot(df.Weight, 'o')
@@ -57,10 +57,11 @@ def showData(df):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     
-    # "enumerate" provides a counter, and variables can be assigned names in one step if
-    # the "for"-loop uses a tuple as input for each loop:
+    # "enumerate" provides a counter, and variables can be assigned names in one
+    # step if the "for"-loop uses a tuple as input for each loop:
     for (ii, (sex, group)) in enumerate(grouped):
-        ax.plot(group['Weight'], marker = symbols[ii], linewidth=0, color = colors[ii], label=sex)
+        ax.plot(group['Weight'], marker = symbols[ii], linewidth=0,
+                color=colors[ii], label=sex)
         
     ax.legend()
     ax.set_ylabel('Weight [g]')
@@ -70,7 +71,6 @@ def showData(df):
     df.Weight = np.double(df.Weight)    # kdeplot requires doubles
     
     sns.kdeplot(grouped.get_group('male').Weight, color='b', label='male')
-    plt.hold(True)
     sns.kdeplot(grouped.get_group('female').Weight, color='r', label='female')
     
     plt.xlabel('Weight [g]')
@@ -79,7 +79,7 @@ def showData(df):
 
 # Statistics: are the data normally distributed?
 def isNormal(data, dataType):
-    '''Check if the data are normally distributed'''
+    """Check if the data are normally distributed"""
     alpha = 0.05
     (k2, pVal) = stats.normaltest(data)
     if pVal < alpha:
@@ -88,7 +88,7 @@ def isNormal(data, dataType):
         print('{0} are normally distributed.'.format(dataType))
         
 def checkNormality(df):
-    '''Check selected data vlaues for normality'''
+    """Check selected data vlaues for normality"""
     
     grouped = df.groupby('sex')
     
@@ -97,7 +97,7 @@ def checkNormality(df):
     isNormal(grouped.get_group('female').Weight, 'female')
 
 if __name__ == '__main__':
-    '''Main Program'''
+    """Main Program"""
     
     df = getData()
     showData(df)

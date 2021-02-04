@@ -1,6 +1,6 @@
-''' Demonstration of the probplot of a non-normal distribution '''
+""" Demonstration of the probplot of a non-normal distribution """
 
-# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -24,8 +24,9 @@ except ImportError:
         plt.show()
         return
 
+    
 def generate_probplot():
-    '''Generate a prob-plot for a chi2-distribution of sample data'''
+    """Generate a prob-plot for a chi2-distribution of sample data"""
     # Define the skewed distribution
     chi2 = stats.chi2(3)
     
@@ -37,7 +38,7 @@ def generate_probplot():
     data = chi2.rvs(numData)
     
     # Arrange subplots
-    sns.set_context('paper')
+    sns.set_context('notebook')
     sns.set_style('white')
     setFonts(11)
     fig, axs = plt.subplots(1,2)
@@ -67,7 +68,7 @@ def generate_probplot():
     showData('chi2pp.png')
     
     return(data)
-    '''
+    """
     # To get an idea how probplot works, calculate the quantiles directly.
     # in "probplot", Filliben's estimate is used, which changes the values slightly
     data.sort()
@@ -76,10 +77,11 @@ def generate_probplot():
     nd = stats.norm()
     mark_x = nd.ppf(np.arange(1,len(data))/numData)
     axs[1].plot(mark_x, mark_y, 'rx-')
-    '''
+    """
+    
     
 def KS_principle(inData):
-    '''Show the principle of the Kolmogorov-Smirnov test.'''
+    """Show the principle of the Kolmogorov-Smirnov test."""
     
     # CDF of normally distributed data
     nd = stats.norm()
@@ -99,13 +101,14 @@ def KS_principle(inData):
     
     # Plot the data
     sns.set_style('ticks')
-    sns.set_context('poster')
-    setFonts(36)
+    sns.set_context('notebook')
+    setFonts(18)
     
     plt.plot(nd_x, nd_y, 'k--')
     plt.plot(ecdf_x, ecdf_y, color='k')
     plt.xlabel('X')
     plt.ylabel('Cumulative Probability')
+    plt.gca().margins(0, 0)
     
     # For the arrow, find the start
     ecdf_startIndex = np.min(np.where(ecdf_x >= 2))
@@ -124,7 +127,7 @@ def KS_principle(inData):
     outFile = 'KS_Example.png'
     showData(outFile)
     
+
 if __name__=='__main__':
     data = generate_probplot()    
     KS_principle(data)
-    

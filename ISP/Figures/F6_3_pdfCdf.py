@@ -1,6 +1,7 @@
-''' Graphical display of PDF (probability density function) and CDF (cumulative density function) '''
+""" Graphical display of PDF (probability density function) and
+    CDF (cumulative density function) """
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -43,14 +44,17 @@ figs, axs = plt.subplots(1,2)
 
 axs[0].plot(x,yp, 'k')
 axs[0].fill_between(x1, y1, facecolor='#CCCCCC')
-axs[0].text(0, 0.1, 'CDF(x)', family='cursive', fontsize=14, horizontalalignment='center', style='italic')
+axs[0].text(0, 0.1, 'CDF(x)', family='sans-serif', fontsize=14,
+            horizontalalignment='center', style='italic')
 axs[0].set_xlabel('x')
 axs[0].set_ylabel('PDF(x)')
+axs[0].margins(0,0)
 sns.despine()
 
 axs[1].plot(x, y, '#999999', lw=3)
 axs[1].set_xlabel('x')
 axs[1].set_ylabel('CDF(x)')
+axs[1].margins(0,0)
 plt.vlines(0, 0, 1, linestyles='--')
 sns.despine()
 

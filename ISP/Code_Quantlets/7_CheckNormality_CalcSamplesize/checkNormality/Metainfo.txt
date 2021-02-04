@@ -1,0 +1,20 @@
+Name of QuantLet: ISP_checkNormality
+
+Published in:  An Introduction to Statistics with Python
+
+Description: 'Graphical and quantitative check, if a given distribution is normal.
+    - For small sample-numbers (<50), you should use the Shapiro-Wilk test or the "normaltest"
+    - for intermediate sample numbers, the Lilliefors-test is good since the original Kolmogorov-Smirnov-test is unreliable when mean and std of the distribution
+    are not known.
+    - the Kolmogorov-Smirnov(Kolmogorov-Smirnov) test should only be used for
+      large sample numbers (>300)'
+
+Keywords: lilliefors test, shapiro-wilk test, kolmogorov-smirnov test, omnibus test, qq-plot, probplot
+
+See also: ISP_sampleSize
+
+Author: Thomas Haslwanter 
+
+Submitted: October 31, 2015 
+
+Example: NormalityCheck.png  

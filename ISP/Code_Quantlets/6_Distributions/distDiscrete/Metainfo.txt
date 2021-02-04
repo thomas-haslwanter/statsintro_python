@@ -1,0 +1,17 @@
+Name of QuantLet: ISP_distDiscrete
+
+Published in:  An Introduction to Statistics with Python
+
+Description: 'Different discrete distribution functions.
+    - Binomial distribution
+    - Poisson distribution (PMF, CDF, and PPF)'
+
+Keywords: binomial distribution, poisson distribution, plot
+
+See also: ISP_binomialTest, ISP_centralLimitTheorem, ISP_distContinuous, ISP_distNormal
+
+Author: Thomas Haslwanter 
+
+Submitted: October 31, 2015 
+
+Example:  Biomial_distribution_pmf.png, Poisson_distribution_pmf.png

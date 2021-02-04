@@ -1,12 +1,12 @@
-'''Multiple Regression
+"""Multiple Regression
 - Shows how to calculate the best fit to a plane in 3D, and how to find the
   corresponding statistical parameters.
 - Demonstrates how to make a 3d plot.
 - Example of multiscatterplot, for visualizing correlations in three- to
   six-dimensional datasets.
-'''
+"""
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Nov-2015
 
 # Import standard packages
 import numpy as np
@@ -17,6 +17,8 @@ import seaborn as sns
 # additional packages
 import sys
 import os
+from typing import Tuple, List
+
 sys.path.append(os.path.join('..', '..', 'Utilities'))
 
 try:
@@ -37,8 +39,16 @@ from matplotlib import cm
 # ... and for the statistic
 from statsmodels.formula.api import ols
 
-def generateData():
-    ''' Generate and show the data: a plane in 3D '''
+
+def generateData() -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """ Generate and show the data: a plane in 3D
+    
+    Returns
+    -------
+    X : x-values (vector)
+    Y : y-values (vector)
+    Z : z-values (vector)
+    """
     
     x = np.linspace(-5,5,101)
     (X,Y) = np.meshgrid(x,x)
@@ -69,11 +79,23 @@ def generateData():
     outFile = '3dSurface.png'
     showData(outFile)
     
-    
-    return (X.flatten(),Y.flatten(),Z.flatten())
+    return (X.flatten(), Y.flatten(), Z.flatten())
 
-def regressionModel(X,Y,Z):
-    '''Multilinear regression model, calculating fit, P-values, confidence intervals etc.'''
+
+def regressionModel(X: np.ndarray, Y: np.ndarray, Z: np.ndarray) -> List[float]:
+    """Multilinear regression model, calculating fit, P-values,
+    confidence intervals etc.
+    
+    Parameters
+    ----------
+    X : x-values (vector)
+    Y : y-values (vector)
+    Z : z-values (vector)
+    
+    Returns
+    -------
+    params : coefficients of the plane-fit
+    """
     
     # Convert the data into a Pandas DataFrame
     df = pd.DataFrame({'x':X, 'y':Y, 'z':Z})
@@ -86,10 +108,23 @@ def regressionModel(X,Y,Z):
     print((model.summary()))
     # --- >>> STOP stats <<< ---
     
-    return model._results.params  # should be array([-4.99754526,  3.00250049, -0.50514907])
+    # should be array([-4.99754526,  3.00250049, -0.50514907])
+    return model._results.params 
 
-def linearModel(X,Y,Z):
-    '''Just fit the plane, using the tools from numpy'''
+
+def linearModel(X:np.ndarray, Y:np.ndarray, Z:np.ndarray):
+    """Just fit the plane, using the tools from numpy
+    
+    Parameters
+    ----------
+    X : x-values (vector)
+    Y : y-values (vector)
+    Z : z-values (vector)
+    
+    Returns
+    -------
+    bestfit : coefficients of the plane-fit
+    """
     
     # --- >>> START stats <<< ---
     M = np.vstack((np.ones(len(X)), X, Y)).T
@@ -100,12 +135,14 @@ def linearModel(X,Y,Z):
     
     return bestfit
                   
-def scatterplot():
-    '''Fancy scatterplots, using the package "seaborn" '''
+
+def scatterplot() -> None:
+    """Fancy scatterplots, using the package "seaborn" """
     
     df = sns.load_dataset("iris")
     sns.pairplot(df, hue="species", size=2.5)    
     showData('multiScatterplot.png')
+    
     
 if __name__ == '__main__':
     scatterplot()

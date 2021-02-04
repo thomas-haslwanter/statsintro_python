@@ -1,10 +1,10 @@
-''' Three different ways to fit a linear model:
+""" Three different ways to fit a linear model:
 - analytically
 - using the statsmodels tools
 - using the formula-based approach
-'''
+"""
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -13,6 +13,9 @@ import os
 
 # additional packages
 import sys
+from typing import Tuple
+
+
 sys.path.append(os.path.join('..', '..', 'Utilities'))
 
 try:
@@ -25,16 +28,37 @@ except ImportError:
         plt.show()
         return
 
-def createData():
-    ''' Generate a noisy, slightly quadratic dataset '''
+    
+def createData() -> Tuple[np.ndarray, np.ndarray]:
+    """ Generate a noisy, slightly quadratic dataset
+    
+    Returns
+    -------
+    x : x-values, evenly spaced
+    y : noisy y-values
+    """
+    
     x = np.arange(100)
     y = 150 + 3*x + 0.03*x**2 + 5*np.random.randn(len(x))
     return(x,y)
 
-def analyticalSolution(x,y):
-    '''Analytical solution, using "lstsq"
-    Input: x/y data
-    '''
+
+def analyticalSolution(x: np.ndarray, y: np.ndarray) -> Tuple[np.ndarray, 
+                                                              np.ndarray, 
+                                                              np.ndarray]:
+    """Analytical solution, using "lstsq"
+    
+    Parameters
+    ----------
+    x : x-values
+    y : y-values (noisy)
+    
+    Returns
+    -------
+    M1 : design matrix for linear fit 
+    M2 : design matrix for quadratic fit 
+    M3 : design matrix for cubic fit 
+    """
     
     # Create the Design Matrices
     M1 = np.vstack( (np.ones_like(x), x) ).T
@@ -57,10 +81,17 @@ def analyticalSolution(x,y):
     
     return (M1, M2, M3)
 
-def smSolution(M1, M2, M3):
-    '''Solution with the tools from statsmodels
+
+def smSolution(M1, M2, M3) -> None:
+    """Solution with the tools from statsmodels
     Input:  design matrices for linear quadratic, and cubic fit
-    '''
+    
+    Parameters
+    ----------
+    M1 : design matrix for linear fit 
+    M2 : design matrix for quadratic fit 
+    M3 : design matrix for cubic fit 
+    """
     
     import statsmodels.api as sm
     
@@ -84,10 +115,15 @@ def smSolution(M1, M2, M3):
     
     showData('linearModel.png')
 
-def smfSolution(x,y):
-    '''Formula-based modeling, using the tools from statsmodels
-    Input: x/y data
-    '''
+    
+def smfSolution(x: np.ndarray, y: np.ndarray) -> None:
+    """Formula-based modeling, using the tools from statsmodels
+    
+    Parameters
+    ----------
+    x : x-values
+    y : y-values (noisy)
+    """
     
     import pandas as pd
     import statsmodels.formula.api as smf
@@ -108,6 +144,7 @@ def smfSolution(x,y):
     #Res1.conf_int()
     #Res1F.conf_int()
 
+    
 if __name__=='__main__':
     x,y = createData()    
     M1, M2, M3 = analyticalSolution(x, y)        

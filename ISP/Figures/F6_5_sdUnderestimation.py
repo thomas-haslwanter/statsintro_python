@@ -1,6 +1,6 @@
-'''Sketch to indicate why the sample SD underestimates the population SD '''
+"""Sketch to indicate why the sample SD underestimates the population SD """
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -30,7 +30,8 @@ gauss_wide = stats.norm(0,3).pdf(x_wide)
 # Points for the narrow distribution
 data = np.array([-1,1])
 
-# On each of the three plots, plot a normal distribution fitted to the (two) datapoints:
+# On each of the three plots, plot a normal distribution fitted to the
+# (two) datapoints:
 for index, offset in enumerate([-3,0,3]):
     curData = data + offset
     fitPars = stats.norm.fit(curData)

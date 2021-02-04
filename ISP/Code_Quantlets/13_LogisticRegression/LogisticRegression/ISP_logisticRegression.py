@@ -1,13 +1,13 @@
-'''Logistic Regression
+"""Logistic Regression
 A logistic regression is an example of a "Generalized Linear Model (GLM)".
 
-The input values are the recorded O-ring data from the space shuttle launches before 1986,
-and the fit indicates the likelihood of failure for an O-ring.
+The input values are the recorded O-ring data from the space shuttle launches
+before 1986, and the fit indicates the likelihood of failure for an O-ring.
 
 Taken from http://www.brightstat.com/index.php?option=com_content&task=view&id=41&Itemid=1&limit=1&limitstart=2
-'''
+"""
 
-# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -37,8 +37,13 @@ from statsmodels.genmod.families import Binomial
 
 sns.set_context('poster')
 
-def getData():
-    '''Get the data '''
+
+def getData() -> np.ndarray:
+    """Get the data
+    Returns
+    -------
+    data : the info from the space shuttle launches
+    """
     
     inFile = 'challenger_data.csv'
     data = np.genfromtxt(inFile, skip_header=1, usecols=[1, 2],
@@ -48,9 +53,19 @@ def getData():
     
     return data
     
-def prepareForFit(inData):
-    ''' Make the temperature-values unique, and count the number of failures and successes.
-    Returns a DataFrame'''
+
+def prepareForFit(inData: np.ndarray) -> pd.DataFrame:
+    """ Make the temperature-values unique, and count the number of failures
+    and successes.
+    
+    Parameters
+    ----------
+    data : the info from the space shuttle launches
+    
+    Returns
+    -------
+    df : 
+    """
     
     # Create a dataframe, with suitable columns for the fit
     df = pd.DataFrame()
@@ -72,12 +87,22 @@ def prepareForFit(inData):
     
     return df
 
-def logistic(x, beta, alpha=0):
-    ''' Logistic Function '''
+
+def logistic(x: np.ndarray, beta:float, alpha:float=0) -> np.ndarray:
+    """ Logistic Function """
+    
     return 1.0 / (1.0 + np.exp(np.dot(beta, x) + alpha))
 
-def showResults(challenger_data, model):
-    ''' Show the original data, and the resulting logit-fit'''
+
+def showResults(challenger_data: np.ndarray, model) -> None:
+    """ Show the original data, and the resulting logit-fit
+    
+    Paramters
+    ---------
+    challenger_data : input data
+    model : model results (statsmodels.genmod.generalized_linear_model.GLM)
+    
+    """
     
     temperature = challenger_data[:,0]
     failures = challenger_data[:,1]

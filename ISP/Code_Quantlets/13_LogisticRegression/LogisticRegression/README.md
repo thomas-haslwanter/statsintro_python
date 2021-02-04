@@ -1,5 +1,5 @@
 
-![quantletLogo_FH](../../../../pictures/quantletLogo_FH.png)
+![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
 
 ## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_logisticRegression**
 
@@ -32,7 +32,7 @@ Example: ChallengerPlain.png
 ```
 
 
-<img src="ChallengerPlain.png" alt="logisticRegression" width="500"/>
+![logisticRegression](ChallengerPlain.png)
 
 
 ```py
@@ -45,7 +45,7 @@ and the fit indicates the likelihood of failure for an O-ring.
 Taken from http://www.brightstat.com/index.php?option=com_content&task=view&id=41&Itemid=1&limit=1&limitstart=2
 '''
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Sept-2015
 
 # Import standard packages
 import numpy as np

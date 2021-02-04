@@ -1,6 +1,6 @@
-'''Scatterplot of normally distributed data, with Standard Deviation and Standard Error'''
+"""Scatterplot of normally distributed data, with Standard Deviation and Standard Error"""
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -38,7 +38,7 @@ se = np.mean(x) + seVal*np.r_[-1, 1]
 
 # Set up the plot
 sns.set_style('ticks')
-sns.set_context('poster')
+sns.set_context('notebook')
 setFonts()
 
 # Plot the data
@@ -71,11 +71,12 @@ plt.arrow(35, np.mean(x)-4*seVal, 0, 3*seVal,
 plt.arrow(35, np.mean(x)+4*seVal, 0, -3*seVal,
     width=0.2, length_includes_head=True, head_length=0.1, head_width=1, color='k')
 
-#plt.text(10, 5.5, '$\pm$ 1SD', family='sans-seriv', fontsize=28)
-#plt.text(35, 5.2, '$\pm$ 1SEM', family='sans-seriv', fontsize=28)
-plt.text(10, 5.5, '$\pm$ 1SD', fontsize=28)
-plt.text(35, 5.2, '$\pm$ 1SEM', fontsize=28)
-plt.annotate('mean', (70,np.mean(x)),xycoords='data', fontsize=28, 
+fs = 16
+#plt.text(10, 5.5, '$\pm$ 1SD', family='sans-seriv', fontsize=fs)
+#plt.text(35, 5.2, '$\pm$ 1SEM', family='sans-seriv', fontsize=fs)
+plt.text(10, 5.5, '$\pm$ 1SD', fontsize=fs)
+plt.text(35, 5.2, '$\pm$ 1SEM', fontsize=fs)
+plt.annotate('mean', (70,np.mean(x)),xycoords='data', fontsize=fs, 
                 xytext=(75, 5.5), textcoords='data',
                 arrowprops=dict(facecolor='black', shrink=0.05))
 

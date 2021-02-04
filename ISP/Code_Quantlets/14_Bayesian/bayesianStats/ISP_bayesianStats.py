@@ -1,11 +1,12 @@
-'''Example of PyMC - The Challenger Disaster
+"""Example of PyMC - The Challenger Disaster
 This example uses Bayesian methods to find the  mean and the 95% confidence
-intervals for the likelihood of an O-ring failure in a space shuttle, as a function
-of the ambient temperature.
-Input data are the recorded O-ring performances of the space shuttles before 1986.
-'''
+intervals for the likelihood of an O-ring failure in a space shuttle, as a
+function of the ambient temperature.
+Input data are the recorded O-ring performances of the space shuttles
+before 1986.
+"""
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -18,6 +19,7 @@ import os
 # additional packages
 import pymc as pm
 from scipy.stats.mstats import mquantiles
+from typing import Tuple
 
 # additional packages
 import sys
@@ -37,13 +39,21 @@ except ImportError:
 
 sns.set_context('poster')
 
-def logistic(x, beta, alpha=0):
-    '''Logistic Function'''
+
+def logistic(x: np.ndarray, beta:float, alpha:float=0) -> np.ndarray:
+    """Logistic Function"""
     
     return 1.0 / (1.0 + np.exp(np.dot(beta, x) + alpha))
 
-def getData():
-    '''Get and show the O-ring data'''
+
+def getData() -> Tuple[np.ndarray, np.ndarray]:
+    """Get and show the O-ring data
+    
+    Results
+    -------
+    temperature : temperature data
+    failureData : corresponding failure status
+    """
     
     inFile = 'challenger_data.csv'
     
@@ -57,8 +67,16 @@ def getData():
     failureData = challenger_data[:, 1]  # defect or not?
     return (temperature, failureData)
 
-def showAndSave(temperature, failures):
-    '''Shows the input data, and saves the resulting figure'''
+
+def showAndSave(temperature: np.ndarray, failures: np.ndarray) -> None:
+    """Shows the input data, and saves the resulting figure
+    
+    Parameters
+    ----------
+    temperature : temperature data
+    failureData : corresponding failure status
+    
+    """
     
     # Plot it, as a function of tempature
     plt.figure()
@@ -76,8 +94,21 @@ def showAndSave(temperature, failures):
     outFile = 'Challenger_ORings.png'
     showData(outFile)
 
-def mcmcSimulations(temperature, failures):
-    '''Perform the MCMC-simulations'''
+    
+def mcmcSimulations(temperature: np.ndarray, failures: np.ndarray) -> Tuple:
+    """Perform the MCMC-simulations
+    
+    Parameters
+    ----------
+    temperature : temperature data
+    failureData : corresponding failure status
+    
+    Returns
+    -------
+    alpha_post : posterior distribution of alpha values
+    beta_post :  posterior distribution of beta values
+    """
+    
     
     # Define the prior distributions for alpha and beta
     # 'value' sets the start parameter for the simulation
@@ -111,8 +142,15 @@ def mcmcSimulations(temperature, failures):
     
     return(alpha_samples, beta_samples)
 
-def showSimResults(alpha_samples, beta_samples):
-    '''Show the results of the simulations, and save them to an outFile'''
+
+def showSimResults(alpha_samples, beta_samples) -> None:
+    """Show the results of the simulations, and save them to an outFile
+    
+    Parameters
+    ----------
+    alpha_samples: posterior distribution of alpha values
+    beta_samples :  posterior distribution of beta values
+    """
     
     plt.figure(figsize=(12.5, 6))
     sns.set_style('darkgrid')
@@ -135,7 +173,15 @@ def showSimResults(alpha_samples, beta_samples):
     
     
 def calculateProbability(alpha_samples, beta_samples, temperature, failures):
-    '''Calculate the mean probability, and the CIs'''
+    """Calculate the mean probability, and the CIs
+    
+    Parameters
+    ----------
+    
+    Returns
+    -------
+    
+    """
     
     # Calculate the probability as a function of time
     t = np.linspace(temperature.min() - 5, temperature.max() + 5, 50)[:, None]
@@ -149,8 +195,21 @@ def calculateProbability(alpha_samples, beta_samples, temperature, failures):
     
     return (t, mean_prob_t, p_t, quantiles)
     
-def showProbabilities(linearTemperature, temperature, failures, mean_prob_t, p_t, quantiles):
-    '''Show the posterior probabilities, and save the resulting figures'''
+
+def showProbabilities(linearTemperature, temperature, failures,
+                      mean_prob_t, p_t, quantiles) -> None:
+    """Show the posterior probabilities, and save the resulting figures
+    
+    Parameters
+    ----------
+    linearTemperature :
+    temperature : 
+    failures :
+    mean_prob_t :
+    p_t :
+    quantiles :
+    
+    """
 
     # --- Show the probability curve ----
     plt.figure(figsize=(12.5, 4))
@@ -193,6 +252,7 @@ def showProbabilities(linearTemperature, temperature, failures, mean_prob_t, p_t
     outFile = 'Challenger_CIs.png'
     showData(outFile)
 
+    
 if __name__=='__main__':
     (temperature, failures) = getData()    
     showAndSave(temperature, failures)

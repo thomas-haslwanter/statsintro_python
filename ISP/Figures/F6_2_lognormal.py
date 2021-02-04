@@ -1,6 +1,6 @@
-''' Lognormal distribution functions. '''
+""" Lognormal distribution functions. """
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 
 # Import standard packages
@@ -34,18 +34,20 @@ y = lnd.pdf(x)
 sns.set_style('ticks')
 setFonts(18)
 fig, axs = plt.subplots(1,2, sharey=True)
-sns.set_context('poster')
+sns.set_context('notebook')
 
 # Left plot: linear scale on x-axis
 axs[0].plot(x,y)
 axs[0].set_xlim(-0.5,8)
 axs[0].set_xlabel('x')
 axs[0].set_ylabel('pdf(x)')
+axs[0].margins(0,0)
 
 # Right plot: logarithmic scale on x-axis
 axs[1].plot(np.log(x), y)
 axs[1].set_xlim(-12,5)
 axs[1].set_xlabel('log(x)')
+axs[1].margins(0,0)
 
 # Save and show
 outFile = 'logNormal.png'

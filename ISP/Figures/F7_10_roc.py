@@ -1,10 +1,10 @@
-'''Show the origin of ROC-curves
+"""Show the origin of ROC-curves
 ROC curves plot "sensitivity" against "1-specificity".
 The example here uses two normally distributed groups, with a mean of 1 and 6,
 respectively, and a standard deviation of 2.
-'''
+"""
 
-# Copyright(c) 2020, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import numpy as np
@@ -25,8 +25,9 @@ except ImportError:
         plt.show()
         return
 
+    
 def arrow_bidir(ax, start, end, headWidth=0.01):
-    '''Plot a bidirectional arrow'''
+    """Plot a bidirectional arrow"""
     
        # For the arrow, find the start
        
@@ -35,10 +36,12 @@ def arrow_bidir(ax, start, end, headWidth=0.01):
     delta = end - start
     
     ax.arrow(start[0], start[1], delta[0], delta[1],
-              width=headWidth, length_includes_head=True, head_length=headWidth*3, head_width=headWidth*5, color='k')
+              width=headWidth, length_includes_head=True,
+              head_length=headWidth*3, head_width=headWidth*5, color='k')
     
     ax.arrow(end[0], end[1], -delta[0], -delta[1],
-              width=headWidth, length_includes_head=True, head_length=headWidth*3, head_width=headWidth*5, color='k')
+              width=headWidth, length_includes_head=True,
+              head_length=headWidth*3, head_width=headWidth*5, color='k')
 
 def main():
     # Calculate the PDF-curves
@@ -69,7 +72,7 @@ def main():
     
     # Plot and label the PDF-curves
     ax1.plot(x,y1)
-    ax1.fill_between(x,0,y1, where=x<3, facecolor='#CCCCCC', alpha=0.5)
+    ax1.fill_between(x,0,y1, where=x<3, facecolor='#EEEEEE', alpha=0.5)
     ax1.annotate('Sensitivity',
                  xy=(x[75], y1[65]),
                  xytext=(x[40], y1[75]*1.2), 
@@ -78,10 +81,10 @@ def main():
                  arrowprops=dict(facecolor='#CCCCCC'))
     
     ax1.plot(x,y2,'#888888')
-    ax1.fill_between(x,0,y2, where=x<3, facecolor='#888888', alpha=0.5)
+    ax1.fill_between(x,0,y2, where=x<3, facecolor='#555555', alpha=0.5)
     ax1.annotate('1-Specificity',
                  xy=(2.5, 0.03),
-                 xytext=(6,0.05), 
+                 xytext=(8,0.05), 
                  fontsize=14,
                  horizontalalignment='center',
                  arrowprops=dict(facecolor='#888888'))

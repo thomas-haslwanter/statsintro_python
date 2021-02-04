@@ -1,10 +1,10 @@
-'''
+"""
 Short demonstration of a Python script.
 
 author: Thomas Haslwanter
 date:   May-2015
 ver:    1.0
-'''
+"""
 
 # Import standard packages
 import numpy as np

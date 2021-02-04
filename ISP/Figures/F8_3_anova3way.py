@@ -1,6 +1,6 @@
 """ Plotting a three-way ANOVA """
 
-# Copyright(c) 2015, Thomas Haslwanter. All rights reserved, under the CC BY-SA 4.0 International License
+# author: Thomas Haslwanter, date: Feb-2021
 
 # Import standard packages
 import matplotlib.pyplot as plt

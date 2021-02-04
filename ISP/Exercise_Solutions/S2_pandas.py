@@ -1,7 +1,7 @@
-''' Solution to Exercise "First Steps with pandas":
+""" Solution to Exercise "First Steps with pandas":
 Generate a sine and cosine wave using pandas' DataFrames,
 and write them to an out-file.
-'''
+"""
 
 # author: Thomas Haslwanter, date: Sept-2015
 
