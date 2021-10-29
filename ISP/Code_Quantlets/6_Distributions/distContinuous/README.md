@@ -1,7 +1,7 @@
 
-![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+[<img src="../../../../pictures/quantletLogo_FH.png" alt="Intro to Statistics with Python">](https://github.com/thomas-haslwanter/statsintro_python)
 
-## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_distContinuous**
+## [<img src="../../../../pictures/qloqo.png" alt="Visit QuantNet">](http://quantlet.de/)  **ISP_distContinuous** [<img src="../../../../pictures/QN2.png" width="60" alt="Visit QuantNet 2.0">](http://quantlet.de/)
 
 
 ```yaml
