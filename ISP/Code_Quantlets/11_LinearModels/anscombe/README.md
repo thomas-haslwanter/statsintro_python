@@ -1,5 +1,11 @@
 
+<<<<<<< HEAD
 [<img src="../../../../pictures/quantletLogo_FH.png" alt="Intro to Statistics with Python">](https://github.com/thomas-haslwanter/statsintro_python)
+=======
+![quantletLogo FH](http://work.thaslwanter.at/ISP2/quantletLogo_FH.png)
+
+## ![qlogo](http://work.thaslwanter.at/ISP2/qletlogo_s.jpg) **ISP_anscombe**
+>>>>>>> origin/master
 
 ## [<img src="../../../../pictures/qloqo.png" alt="Visit QuantNet">](http://quantlet.de/) **ISP_anscombe** [<img src="../../../../pictures/QN2.png" width="60" alt="Visit QuantNet 2.0">](http://quantlet.de/)
 
