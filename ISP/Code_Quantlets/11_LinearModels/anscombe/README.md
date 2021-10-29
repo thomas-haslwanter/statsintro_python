@@ -1,7 +1,7 @@
 
-![quantletLogo FH](http://work.thaslwanter.at/quantletLogo_FH.png)
+![quantletLogo FH](http://work.thaslwanter.at/ISP2/quantletLogo_FH.png)
 
-## ![qlogo](http://quantnet.wiwi.hu-berlin.de/graphics/quantlogo.png) **ISP_anscombe**
+## ![qlogo](http://work.thaslwanter.at/ISP2/qletlogo_tr.png) **ISP_anscombe**
 
 
 ```yaml
